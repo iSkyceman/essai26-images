@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Encodage et responsive -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO : titre clair, mot-clé principal en début, max 60 caractères -->
+  <title>Industrie 5.0 : Audit IA & Transformation - iSkyce Michel Klein</title>
+
+  <!-- Meta description engageante, max 155 caractères -->
+  <meta name="description" content="Audit et transformation Industrie 5.0 : +15% productivité, -20% coûts, -40% CO₂. Feuille de route stratégique personnalisée." />
+
+  <!-- Favicon (doit être dans /public) -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Préconnexion pour accélérer le chargement des polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts : Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome pour les icônes -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Open Graph pour le partage social -->
+  <meta property="og:title" content="Industrie 5.0 : Audit IA & Transformation - iSkyce Michel Klein" />
+  <meta property="og:description" content="Audit et transformation Industrie 5.0 : +15% productivité, -20% coûts, -40% CO₂. Feuille de route stratégique personnalisée." />
+  <meta property="og:image" content="/images/og-image.jpg" /> <!-- Remplace par ton image -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ton-site.com/" /> <!-- Remplace par ton URL -->
+
+  <!-- Twitter Card pour le partage sur X/Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Industrie 5.0 : Audit IA & Transformation - iSkyce Michel Klein" />
+  <meta name="twitter:description" content="Audit et transformation Industrie 5.0 : +15% productivité, -20% coûts, -40% CO₂. Feuille de route stratégique personnalisée." />
+  <meta name="twitter:image" content="/images/og-image.jpg" /> <!-- Remplace par ton image -->
+
+  <!-- Feuille de style personnalisée (si besoin) -->
+  <style>
+ :root {
+  --bleu: #0A1F3D;
+  --orange: #FF6B35;
+  --vert: #00C9A7;
+  --gris-clair: #F5F5F5;
+  --texte: #1F2937;
+  --font-primary: 'Inter', sans-serif;
+  --spacing-unit: 1rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--texte);
+  background-color: var(--gris-clair);
+}
+
+a { text-decoration: none; color: var(--bleu); }
+img { max-width: 100%; height: auto; display: block; }
+
+header.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  color: white;
+  padding: 2rem 10% 0 10%;
+  overflow: hidden;
+}
+
+.hero-bg-parallax {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(10, 31, 61, 0.92) 0%, rgba(10, 31, 61, 0.7) 100%),
+    url('images/usine.png') center/cover no-repeat;
+  will-change: transform;
+  transition: transform 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+header.hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to right, var(--orange) 0%, var(--vert) 100%);
+  z-index: 3;
+}
+
+/* === CONTENU === */
+.hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 650px;
+  text-align: left;
+  margin-top: -40px; /* remonte le contenu de 20px */
+  padding-top: 0;     /* supprime le padding */
+}
+@media (max-width: 768px) {
+  .hero-content {
+    top: -15px; /* moins de remontée sur mobile */
+  }
+}
+.hero-logo {
+  width: 170px;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 0.1s;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin: 0 0 1rem 0;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 0.3s;
+}
+
+header p {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 600px;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 0.6s;
+}
+
+/* === CTA ROW : bouton + mini-icônes === */
+.cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-main {
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 0.9s;
+  position: relative;
+  overflow: hidden;
+  height: 58px;
+}
+.cta-main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+.cta-main:hover::after { left: 100%; }
+.cta-main:hover {
+  background: var(--vert);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transform: translateY(-2px) scale(1.03);
+}
+.cta-main i {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+.cta-main:hover i { transform: translateX(5px); }
+
+.cta-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.icon-card-mini {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.13);
+  border-radius: 16px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  gap: 0.5rem;
+  height: 38px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 1.1s;
+}
+
+.icon-card-mini i {
+  font-size: 1.2rem;
+  color: var(--orange);
+  margin-right: 0.4rem;
+}
+
+/* === ANIMATION === */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .hero-content { max-width: 95vw; }
+}
+@media (max-width: 768px) {
+  header.hero {
+    padding: 0 5%;
+  }
+  .hero-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+  .hero-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header h1,
+  header p,
+  .cta-main {
+    text-align: center;
+  }
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+  }
+  .cta-icons {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 600px) {
+  header h1 { font-size: 1.5rem; }
+  .cta-main { font-size: 1.1rem; padding: 0.8rem 1.5rem; }
+}
+
+
+    /* Popup IA */
+    #popup-potentiel-ia {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.5);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-ia-content {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 420px;        /* Largeur maximale sur desktop */
+  width: 95vw;             /* Largeur adaptative sur mobile */
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(10,31,61,0.15);
+  animation: popupIn 0.35s;
+  max-height: 90vh;        /* Hauteur maximale pour éviter le débordement */
+  overflow-y: auto;        /* Scroll si contenu trop long */
+}
+    @keyframes popupIn {
+      from { transform: scale(0.95); opacity:0; }
+      to { transform: scale(1); opacity:1; }
+    }
+    .popup-ia-content h2 {
+      margin-bottom: 1rem;
+      color: var(--bleu);
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    .popup-ia-content label { display: block; margin: 0.7rem 0 0.2rem 0; font-weight: 600;}
+    .popup-ia-content input, .popup-ia-content select, .popup-ia-content textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+    }
+    .popup-ia-content button {
+      background: var(--bleu);
+      color: #fff;
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.2s;
+      display: block;
+      width: 100%;
+    }
+    .popup-ia-content button:hover { background: var(--orange);}
+    .popup-ia-close {
+      position: absolute; top: 10px; right: 15px;
+      background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #888;
+    }
+    .popup-ia-close {
+  position: absolute;
+  top: 12px;       /* place la croix à 12px du haut */
+  right: 12px;     /* place la croix à 12px de la droite */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ff8400;
+  z-index: 10;
+  line-height: 1;
+  margin: 0;       /* annule toute marge par défaut */
+  padding: 0;      /* annule tout padding */
+}
+
+
+    .tarif-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+.tarif-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    min-width: 260px;
+    flex: 1 1 240px;
+    box-shadow: 0 2px 8px rgba(10,31,61,0.04);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+.tarif-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(10,31,61,0.10);
+}
+.tarif-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--orange);
+    font-size: 1.3rem;
+}
+.tarif-card .tarif-prix {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--bleu);
+    margin: 1rem 0 0.5rem 0;
+}
+.tarif-card small {
+    color: #555;
+    font-size: 0.95rem;
+}
+.tarif-card select {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: #fff;
+    width: 100%;
+}
+.benefices, .risques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+
+.benefice, .risque {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(10,31,61,0.06);
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.benefice:hover, .risque:hover {
+  box-shadow: 0 8px 30px rgba(10,31,61,0.12);
+  transform: translateY(-4px) scale(1.03);
+}
+.benefice i, .risque i {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+  color: var(--orange);
+}
+.risque i {
+  color: #e53935;
+}
+.benefice h4, .risque h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--bleu);
+}
+.benefice p, .risque p {
+  font-size: 1rem;
+  color: #444;
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .benefices, .risques {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .benefice, .risque {
+    padding: 1.2rem 0.8rem;
+  }
+}
+.btn-center {
+  display: flex;
+  justify-content: center;  /* centre horizontalement */
+  align-items: center;      /* centre verticalement si nécessaire */
+  margin-top: 2rem;
+}
+/* MENTIONS LEGALES avec fond dégradé linéaire bleu foncé -> bleu clair */
+.mentions-legales {
+  position: relative;
+  background: linear-gradient(180deg, #0A1F3D 0%, #1E3C72 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 430px;
+  margin: 2rem auto 2.5rem auto;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(10,31,61,0.18);
+  overflow: hidden;
+}
+
+/* Bandeau dégradé orange/vert en bas, comme dans le header */
+.mentions-legales::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 40px;
+  background: linear-gradient(to right, #ff8400 0%, #19e68c 100%);
+  border-radius: 0 0 12px 12px;
+  z-index: 1;
+}
+
+.mentions-legales h2,
+.mentions-legales .legal-section h3,
+.mentions-legales .legal-section p {
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.mentions-legales .legal-section {
+  margin-bottom: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.mentions-legales .legal-section p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.mentions-legales .legal-section h3 {
+  margin-bottom: 0.2rem;
+  font-size: 1.08rem;
+}
+
+/* Style pour le lien orange */
+.legal-link a {
+  color: #ff8400;
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.legal-link a:hover,
+.legal-link a:focus {
+  color: #e67300;
+  outline: none;
+}
+.contact-link {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+/* INFOBULLES */
+.info-bulle {
+  border-radius: 50%;
+  background: #e3f0fb;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  line-height: 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid #b3d2f3;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.info-bulle:hover {
+  background-color: #2196f3;
+  color: white;
+  transform: scale(1.2);
+}
+
+/* Infobulle enrichie pour offres IA */
+.info-bulle-custom {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 0.5em;
+  cursor: pointer;
+  color: #fff;
+  background: #444;
+  border-radius: 50%;
+  width: 1.3em;
+  height: 1.3em;
+  text-align: center;
+  line-height: 1.3em;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+
+.info-bulle-custom:focus,
+.info-bulle-custom:hover {
+  background: #2196f3;
+  outline: none;
+}
+
+.info-bulle-content {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 260px;
+  max-width: 320px;
+  background: #fff;
+  color: #222;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 2px 8px #0002;
+  z-index: 100;
+  font-size: 0.98em;
+  text-align: left;
+}
+
+.info-bulle-custom:focus .info-bulle-content,
+.info-bulle-custom:hover .info-bulle-content {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .info-bulle-content {
+    left: 0;
+    top: 120%;
+    transform: none;
+    min-width: 180px;
+    max-width: 90vw;
+  }
+}
+  </style> 
+</head>
+<body>
+
+ <header class="hero">
+  <div class="hero-bg-parallax"></div>
+  <div class="hero-content">
+    <img src="images/logo-iskyce-industrie-5.0.png" alt="Logo iSkyce industrie 5.0" class="hero-logo">
+    <h1>+15% de performance, -20% de coûts, 40% de réduction CO₂ : l’intelligence artificielle au service de votre entreprise</h1>
+<p>Obtenez une analyse IA personnalisée, optimisée et rapide, adaptée à votre secteur. Résultats en 72h pour prendre une longueur d’avance.</p>
+
+    <div class="cta-row">
+      <a href="#" class="cta-main" id="open-popup-ia">
+  Commencer l'analyse IA
+  <i class="fas fa-arrow-right"></i>
+</a>
+
+      <div class="cta-icons">
+        <span class="icon-card-mini">
+          <i class="fas fa-certificate"></i>
+          <span>Audit Prédictif </span>
+        </span>
+        <span class="icon-card-mini">
+          <i class="fas fa-chart-line"></i>
+          <span>ROI x3</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- MÉTHODE + AUDIO + BOUTON POTENTIEL -->
+  <section>
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-handshake"></i> Notre Méthode</h2>
+      <p class="mb-2">
+        Nous croyons en un accompagnement sur-mesure, basé sur l'écoute, la confidentialité et la transparence. Chaque mission débute par une analyse approfondie de vos besoins, suivie de recommandations personnalisées et d’un suivi régulier. Notre équipe certifiée s’engage à vos côtés pour garantir la réussite de votre transformation vers l’Industrie 5.0, tout en assurant la sécurité et la confidentialité de vos données.
+      </p>
+      <div style="margin: 2em 0;">
+        <p style="font-weight: bold; font-size: 1.1em;">
+          🎧 Écoutez la synthèse audio de notre démarche :
+        </p>
+        <audio controls style="width: 100%; max-width: 500px;">
+          <source src="https://github.com/iSkyceman/podcast/raw/refs/heads/main/podcast.mp3" type="audio/mpeg">
+          Votre navigateur ne supporte pas la lecture audio.
+        </audio>
+        <div style="text-align:center; margin-top:2em;">
+          <button class="cta-main" onclick="document.getElementById('popup-potentiel-ia').style.display='flex'">
+            Découvrir mon potentiel
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPUP CALCULATEUR IA -->
+<div id="popup-potentiel-ia">
+  <div class="popup-ia-content">
+    <button class="popup-ia-close" id="close-popup-ia" aria-label="Fermer la fenêtre">&times;</button>
+    <h2>Calculez votre score IA</h2>
+    <div id="ia-intro">
+      Remplissez ce formulaire pour découvrir gratuitement le potentiel IA de votre entreprise.<br>
+      Posez-nous une question : notre équipe vous répondra en plus de votre score personnalisé.
+    </div>
+    <form id="form-potentiel-ia">
+      <label for="ia-nom">Nom de l'entreprise</label>
+      <input type="text" id="ia-nom" required>
+
+      <label for="ia-siren">SIREN ou SIRET</label>
+      <input type="text" id="ia-siren" required pattern="\d{9}|\d{14}" title="Veuillez entrer un SIREN (9 chiffres) ou SIRET (14 chiffres)">
+
+      <label for="ia-secteur">Secteur d'activité</label>
+      <select id="ia-secteur" required>
+        <option value="">Sélectionner...</option>
+        <option value="industrie">Industrie manufacturière</option>
+        <option value="services">Services aux entreprises</option>
+        <option value="sante">Santé / Médico-social</option>
+        <option value="construction">Construction / BTP</option>
+        <option value="commerce">Commerce / Distribution</option>
+        <option value="transport">Transport / Logistique</option>
+        <option value="agroalimentaire">Agroalimentaire</option>
+        <option value="tourisme">Tourisme / Hôtellerie</option>
+        <option value="energie">Énergie / Environnement</option>
+        <option value="informatique">Informatique / Télécoms</option>
+        <option value="immobilier">Immobilier</option>
+        <option value="finance">Banque / Assurance / Finance</option>
+        <option value="education">Éducation / Formation</option>
+        <option value="administration">Administration / Collectivités</option>
+        <option value="autre">Autre secteur</option>
+      </select>
+
+      <label for="ia-utilisation">Votre entreprise utilise-t-elle déjà des solutions d’intelligence artificielle ?</label>
+      <select id="ia-utilisation" required>
+        <option value="">Sélectionner...</option>
+        <option value="non">Non, pas encore</option>
+        <option value="exp">Oui, en expérimentation</option>
+        <option value="oui">Oui, déjà intégrée à nos process</option>
+      </select>
+
+      <label for="ia-salaries">Nombre de salariés</label>
+      <input type="number" id="ia-salaries" name="ia-salaries" min="1" max="10000" required>
+
+      <label for="ia-contexte">Posez une question à notre IA (optionnel)</label>
+      <input type="text" id="ia-contexte" placeholder="Ex : Comment l’IA peut-elle optimiser nos chantiers ?">
+
+      <button type="submit">Calculer mon score IA</button>
+    </form>
+    <div class="popup-ia-result" id="ia-result" style="display:none;"></div>
+  </div>
+</div>
+  <script>
+ // Logique mini-calculateur IA optimisée
+document.getElementById('form-potentiel-ia').onsubmit = function(e) {
+  e.preventDefault();
+
+  // Récupération des valeurs du formulaire
+  const entreprise = document.getElementById('ia-nom').value.trim();
+  const secteur = document.getElementById('ia-secteur').value;
+  const utilisation = document.getElementById('ia-utilisation').value;
+  const salaries = parseInt(document.getElementById('ia-salaries').value, 10) || 0;
+  const contexte = document.getElementById('ia-contexte').value.trim();
+
+  // Score IA par secteur
+  const scores = {
+    industrie: 42, services: 45, sante: 28, construction: 15, commerce: 30,
+    transport: 35, agroalimentaire: 38, tourisme: 33, energie: 40,
+    informatique: 60, immobilier: 32, finance: 50, education: 36,
+    administration: 25, autre: 35
+  };
+  let score = scores[secteur] || 30;
+  if (utilisation === "oui") score += 30;
+  else if (utilisation === "exp") score += 15;
+  if (score > 100) score = 100;
+
+  // Suggestion IA par secteur
+  const suggestions = {
+    construction: "L’IA peut optimiser la gestion de vos chantiers, la planification, la gestion des stocks et l’analyse des devis.",
+    industrie: "L’IA optimise la maintenance prédictive, la production et anticipe les pannes.",
+    sante: "L’IA accélère la gestion des dossiers patients, aide au diagnostic et optimise les plannings.",
+    commerce: "L’IA analyse les ventes, prédit les tendances et automatise la gestion des stocks.",
+    services: "L’IA améliore la gestion des plannings, l’analyse client et automatise l’administratif.",
+    transport: "L’IA optimise la logistique, les itinéraires et la maintenance.",
+    agroalimentaire: "L’IA contrôle la qualité, anticipe la demande et optimise la logistique.",
+    tourisme: "L’IA personnalise l’expérience client, optimise les réservations et analyse la satisfaction.",
+    energie: "L’IA optimise la gestion énergétique, la maintenance et la prévision de la demande.",
+    informatique: "L’IA automatise la cybersécurité, l’analyse de données et le support technique.",
+    immobilier: "L’IA valorise les biens, analyse le marché et automatise la gestion locative.",
+    finance: "L’IA détecte les fraudes, optimise les investissements et personnalise les offres clients.",
+    education: "L’IA personnalise les parcours d’apprentissage et automatise l’évaluation.",
+    administration: "L’IA simplifie la gestion documentaire et automatise le traitement des demandes.",
+    autre: "L’IA automatise les tâches répétitives, analyse vos données et améliore la relation client."
+  };
+  let suggestion = suggestions[secteur] || suggestions["autre"];
+
+  // Offres dynamiques selon l'effectif
+function getOffres(salaries) {
+  if (salaries <= 15) {
+    return [
+      {
+        nom: "Diagnostic Express",
+        cible: "≤ 15 salariés",
+        prix: "590 €",
+        code: "diagnostic15",
+        detail: "Rapport IA personnalisé (10 slides), 4h de recherche, appel explicatif 15min"
+      },
+      {
+        nom: "Feuille de route stratégique",
+        cible: "≤ 15 salariés",
+        prix: "2 390 €",
+        code: "feuille15",
+        detail: "Rapport IA approfondi (25–30 slides), 12h de recherche, 3 sujets prioritaires, roadmap visuelle, appel 20min"
+      },
+      {
+        nom: "Analyse IA Totale",
+        cible: "≤ 15 salariés",
+        prix: "4 900 €",
+        code: "totale15",
+        detail: "Audit IA complet (40-45 slides), 30h de recherche, 5 sujets, roadmap avancée, appel 1h"
+      }
+    ];
+  } else if (salaries <= 49) {
+    return [
+      {
+        nom: "Diagnostic Express",
+        cible: "16 à 49 salariés",
+        prix: "990 €",
+        code: "diagnostic49",
+        detail: "Rapport IA personnalisé (10 slides), 4h de recherche, appel explicatif 15min"
+      },
+      {
+        nom: "Feuille de route stratégique",
+        cible: "16 à 49 salariés",
+        prix: "3 900 €",
+        code: "feuille49",
+        detail: "Rapport IA approfondi (25–30 slides), 12h de recherche, 3 sujets prioritaires, roadmap visuelle, appel 20min"
+      },
+      {
+        nom: "Analyse IA Totale",
+        cible: "16 à 49 salariés",
+        prix: "7 900 €",
+        code: "totale49",
+        detail: "Audit IA complet (40-45 slides), 30h de recherche, 5 sujets, roadmap avancée, appel 1h"
+      }
+    ];
+  } else if (salaries <= 99) {
+    return [
+      {
+        nom: "Diagnostic Express",
+        cible: "50 à 99 salariés",
+        prix: "1 990 €",
+        code: "diagnostic99",
+        detail: "Rapport IA personnalisé (10 slides), 4h de recherche, appel explicatif 15min"
+      },
+      {
+        nom: "Feuille de route stratégique",
+        cible: "50 à 99 salariés",
+        prix: "5 900 €",
+        code: "feuille99",
+        detail: "Rapport IA approfondi (25–30 slides), 12h de recherche, 3 sujets prioritaires, roadmap visuelle, appel 20min"
+      },
+      {
+        nom: "Analyse IA Totale",
+        cible: "50 à 99 salariés",
+        prix: "11 900 €",
+        code: "totale99",
+        detail: "Audit IA complet (40-45 slides), 30h de recherche, 5 sujets, roadmap avancée, appel 1h"
+      }
+    ];
+  } else if (salaries <= 250) {
+    return [
+      {
+        nom: "Diagnostic Express",
+        cible: "100 à 250 salariés",
+        prix: "2 990 €",
+        code: "diagnostic250",
+        detail: "Rapport IA personnalisé (10 slides), 4h de recherche, appel explicatif 15min"
+      },
+      {
+        nom: "Feuille de route stratégique",
+        cible: "100 à 250 salariés",
+        prix: "7 900 €",
+        code: "feuille250",
+        detail: "Rapport IA approfondi (25–30 slides), 12h de recherche, 3 sujets prioritaires, roadmap visuelle, appel 20min"
+      },
+      {
+        nom: "Analyse IA Totale",
+        cible: "100 à 250 salariés",
+        prix: "15 900 €",
+        code: "totale250",
+        detail: "Audit IA complet (40-45 slides), 30h de recherche, 5 sujets, roadmap avancée, appel 1h"
+      }
+    ];
+  } else {
+    return [
+      {
+        nom: "Diagnostic Express",
+        cible: "> 250 salariés",
+        prix: "3 900 €",
+        code: "diagnosticplus",
+        detail: "Rapport IA personnalisé (10 slides), 4h de recherche, appel explicatif 15min"
+      },
+      {
+        nom: "Feuille de route stratégique",
+        cible: "> 250 salariés",
+        prix: "15 900 €",
+        code: "feuilleplus",
+        detail: "Rapport IA approfondi (25–30 slides), 12h de recherche, 3 sujets prioritaires, roadmap visuelle, appel 20min"
+      },
+      {
+        nom: "Analyse IA Totale",
+        cible: "> 250 salariés",
+        prix: "29 900 €",
+        code: "totaleplus",
+        detail: "Audit IA complet (40-45 slides), 30h de recherche, 5 sujets, roadmap avancée, appel 1h"
+      }
+    ];
+  }
+}
+let options = getOffres(salaries);
+
+
+  // Construction du message principal
+  let message = `<b>${entreprise ? entreprise : "Votre entreprise"}, voici votre diagnostic IA :</b><br>`;
+
+  // Jauge graphique améliorée
+  message += `
+    <div style="margin-bottom:0.5em;"><b>Score IA : ${score}%</b></div>
+    <div style="background:#eee;border-radius:8px;overflow:hidden;width:100%;max-width:320px;height:24px;margin:1em auto;position:relative;">
+      <div style="width:${score}%;background:linear-gradient(90deg,#ff9800,#4caf50);height:100%;transition:width 0.7s;"></div>
+      <span style="position:absolute;left:50%;top:0;transform:translateX(-50%);line-height:24px;font-weight:bold;color:#333;">${score}%</span>
+    </div>
+    <div style="margin:1em 0 0.5em 0;">
+      Ce score reflète le potentiel d’intégration de l’IA dans votre entreprise. Voici des pistes concrètes pour passer à l’action.
+    </div>
+  `;
+
+  // Affichage de la question et réponse personnalisée
+if (contexte) {
+  message += `
+    <div style="margin:1em 0 0.5em 0;">
+      <b>Votre question :</b> <i>${contexte}</i>
+    </div>
+    <div style="margin:0.5em 0 1em 0;">
+      <b>Notre réponse :</b> Intégrer l’IA dans votre développement interne peut vous permettre d’optimiser vos processus, d’automatiser certaines tâches et de gagner en compétitivité. Pour réussir, commencez par un projet pilote, formez vos équipes et entourez-vous d’experts en IA.
+    </div>
+  `;
+}
+
+message += `<div style="margin:0.5em 0 1em 0;"><b>Notre première piste pour vous :</b> ${suggestion}</div>`;
+
+// Introduction des solutions et question avant les boutons
+message += `
+  <div style="margin-top:1.2em;">Après analyse de vos données et de votre profil d'entreprise, voici nos trois solutions adaptées :</div>
+  <div style="margin-top:0.7em;font-weight:600;">Quelle offre souhaitez-vous retenir ?</div>
+  <div style="display:flex;gap:1em;flex-wrap:wrap;margin-top:1em;">
+`;
+
+const couleurs = ["#ff9800", "#2196f3", "#00bcd4"];
+options.forEach((opt, idx) => {
+  const bg = couleurs[idx] || "#2196f3";
+  const lienPDF =
+    (opt.code === "diagnostic15" ||
+     opt.code === "diagnostic49" ||
+     opt.code === "diagnostic99" ||
+     opt.code === "diagnostic250" ||
+     opt.code === "diagnosticplus")
+      ? `<br><a href="https://drive.google.com/file/d/1woF9MkW5Wm3omWyevfceOSzpwWe2n7nk/preview" target="_blank" style="color:#2196f3;text-decoration:underline;">Voir un exemple de rapport PDF</a>`
+      : (opt.code.startsWith("feuille")
+          ? `<br><a href="https://drive.google.com/file/d/1TNf3-9BoJRORJkrsvbXQP6PSrYnPtvn3/view?usp=sharing" target="_blank" style="color:#2196f3;text-decoration:underline;">Voir la présentation Feuille de Route (PDF)</a>`
+          : (opt.code.startsWith("totale") || opt.code === "analyse"
+              ? `<br><a href="https://drive.google.com/file/d/115txXF3KykV55nitlCK9HqSqld2uMlYn/view?usp=sharing" target="_blank" style="color:#2196f3;text-decoration:underline;">Voir la présentation Analyse IA Totale (PDF)</a>`
+              : ""
+            )
+        );
+  console.log('Génération bouton:', opt.code, 'LienPDF:', lienPDF);
+
+  message += `
+    <button class="option-btn" data-offre="${opt.code}" style="flex:1;min-width:220px;position:relative;padding:1em 1.2em;margin-bottom:1em;background:${bg};color:#fff;border:none;border-radius:8px;cursor:pointer;text-align:left;box-shadow:0 2px 8px #0001;">
+      <b>${opt.nom}</b><br>
+      <span style="font-size:0.9em;">${opt.cible}</span><br>
+      <b>${opt.prix}</b>
+      <span class="info-bulle-custom" tabindex="0" aria-label="Détails de l'offre" aria-describedby="info-${opt.code}">
+        <i class="fas fa-question-circle"></i>
+        <span class="info-bulle-content" id="info-${opt.code}" role="tooltip">
+          ${opt.detail}${lienPDF}
+        </span>
+      </span>
+    </button>
+  `;
+});
+
+message += `</div>`;
+
+
+  // Affichage du résultat
+const resultDiv = document.getElementById('ia-result');
+resultDiv.innerHTML = message;
+resultDiv.style.display = 'block';
+document.getElementById('form-potentiel-ia').style.display = 'none';
+
+// Masque aussi le texte d’intro s’il existe
+const introDiv = document.getElementById('ia-intro');
+if (introDiv) introDiv.style.display = 'none';
+// Scroll automatique vers le début du résultat
+resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+function brancherBoutonsOption() {
+  document.querySelectorAll('.option-btn').forEach(btn => {
+    btn.addEventListener('click', function handleClick() {
+      const offre = this.dataset.offre;
+      let selected = options.find(o => o.code === offre);
+
+   // Si offre feuille de route stratégique, affiche le formulaire UX mentor
+previousMessage = resultDiv.innerHTML;
+if (selected.code.startsWith("feuille")) {
+  resultDiv.innerHTML = `
+    <h2>${selected.nom}</h2>
+    <div>${selected.detail}</div>
+    <div style="margin:1em 0;">
+      <a href="https://drive.google.com/file/d/1TNf3-9BoJRORJkrsvbXQP6PSrYnPtvn3/view?usp=sharing"
+         target="_blank"
+         style="color:#2196f3;text-decoration:underline;font-weight:bold;">
+        Voir la présentation Feuille de Route Stratégique (PDF)
+      </a>
+    </div>
+    <form class="formulaire" id="form-feuille-route" autocomplete="off" style="margin-top:1em;">
+      <p style="margin-bottom:1em; font-size:1.07em;">
+        <b>Aidez-nous à personnaliser votre feuille de route IA</b><br>
+        Afin de vous proposer un accompagnement parfaitement adapté à vos enjeux, merci de nous préciser les <b>3 sujets ou problématiques à traiter en priorité</b>.<br>
+        <span style="color:#666;">Plus votre réponse est précise, plus notre feuille de route sera pertinente et actionnable.</span>
+      </p>
+      <label for="sujet1">Sujet prioritaire n°1 <span style="color:#888;font-size:0.95em;">(ex : automatisation, réduction des coûts, qualité…)</span></label>
+      <input id="sujet1" name="sujet1" type="text" required placeholder="Décrivez votre premier enjeu principal">
+      <label for="sujet2">Sujet prioritaire n°2</label>
+      <input id="sujet2" name="sujet2" type="text" placeholder="Décrivez un second enjeu ou objectif">
+      <label for="sujet3">Sujet prioritaire n°3</label>
+      <input id="sujet3" name="sujet3" type="text" placeholder="Décrivez un troisième enjeu ou objectif">
+      <div style="font-size:0.95em; color:#555; margin-top:0.7em;">
+        <i class="fa fa-info-circle" style="color:#2196f3;"></i>
+        Vous pouvez préciser un enjeu, un objectif, ou une difficulté rencontrée dans votre activité.<br>
+        Toutes vos informations restent strictement confidentielles.
+      </div>
+      <div style="display:flex;gap:1em;margin-top:1.2em;">
+        <button class="btn" type="submit">Valider et recevoir mon offre</button>
+        <button class="btn" type="button" id="retour-btn">⟵ Retour</button>
+      </div>
+    </form>
+  `;
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  document.getElementById('form-feuille-route').onsubmit = function(e) {
+    e.preventDefault();
+    const sujet1 = document.getElementById('sujet1').value.trim();
+    const sujet2 = document.getElementById('sujet2').value.trim();
+    const sujet3 = document.getElementById('sujet3').value.trim();
+    // Ici, traite ou envoie les problématiques, puis redirige vers paiement ou confirmation
+    paiementStripe(selected.code);
+  };
+  document.getElementById('retour-btn').onclick = function(e) {
+    e.preventDefault();
+    resultDiv.innerHTML = previousMessage;
+    brancherBoutonsOption();
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+} else {
+  // Diagnostic Express ou autre offre simple : paiement direct
+  resultDiv.innerHTML = `
+    <b>${selected.nom}</b><br>
+    <span>${selected.cible}</span><br>
+    <b>${selected.prix}</b><br>
+    <div style="margin:1em 0 1.5em 0;">${selected.detail}</div>
+    <button onclick="paiementStripe('${selected.code}')" style="background:var(--vert,#4caf50);color:#fff;border:none;padding:0.7em 1.4em;border-radius:6px;cursor:pointer;font-size:1.1em;">OK, je réserve et je paie</button>
+    <div style="margin-top:1.2em;"><a href="#" id="retour-btn" style="color:#2196f3;text-decoration:underline;">⟵ Retour</a></div>
+  `;
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  document.getElementById('retour-btn').onclick = function(e) {
+    e.preventDefault();
+    resultDiv.innerHTML = previousMessage;
+    brancherBoutonsOption();
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+}
+    });
+  });
+}
+brancherBoutonsOption();
+};
+
+// À personnaliser : intégration Stripe
+function paiementStripe(code) {
+  alert("Paiement Stripe pour l'offre : " + code + "\nIntégration Stripe à faire ici.");
+  // Redirige vers Stripe Checkout ou ouvre un modal Stripe selon ton implémentation réelle
+  // window.location.href = "https://checkout.stripe.com/pay/clé_checkout";
+}
+// AJOUTE ICI ta nouvelle fonction :
+function afficherFormFeuilleDeRoute() {
+  const container = document.getElementById('popup-content'); // adapte l'ID si besoin
+  container.innerHTML = `
+    <form class="formulaire" id="form-feuille-route" autocomplete="off">
+      <p style="margin-bottom:1em; font-size:1.07em;">
+        <b>Aidez-nous à personnaliser votre feuille de route IA</b><br>
+        Afin de vous proposer un accompagnement parfaitement adapté à vos enjeux, merci de nous préciser les <b>3 sujets ou problématiques à traiter en priorité</b>.<br>
+        <span style="color:#666;">Plus votre réponse est précise, plus notre feuille de route sera pertinente et actionnable.</span>
+      </p>
+      <label for="sujet1">Sujet prioritaire n°1 <span style="color:#888;font-size:0.95em;">(ex : automatisation, réduction des coûts, qualité…)</span></label>
+      <input id="sujet1" name="sujet1" type="text" required placeholder="Décrivez votre premier enjeu principal">
+      <label for="sujet2">Sujet prioritaire n°2</label>
+      <input id="sujet2" name="sujet2" type="text" placeholder="Décrivez un second enjeu ou objectif">
+      <label for="sujet3">Sujet prioritaire n°3</label>
+      <input id="sujet3" name="sujet3" type="text" placeholder="Décrivez un troisième enjeu ou objectif">
+      <div style="font-size:0.95em; color:#555; margin-top:0.7em;">
+        <i class="fa fa-info-circle" style="color:#2196f3;"></i>
+        Vous pouvez préciser un enjeu, un objectif, ou une difficulté rencontrée dans votre activité.<br>
+        Toutes vos informations restent strictement confidentielles.
+      </div>
+      <div style="display:flex;gap:1em;margin-top:1.2em;">
+        <button class="btn" type="submit">Valider et recevoir mon offre</button>
+        <button class="btn" type="button" onclick="fermerPopup()">⟵ Retour</button>
+      </div>
+    </form>
+  `;
+  document.getElementById('form-feuille-route').onsubmit = function(e) {
+    e.preventDefault();
+    const sujet1 = document.getElementById('sujet1').value.trim();
+    const sujet2 = document.getElementById('sujet2').value.trim();
+    const sujet3 = document.getElementById('sujet3').value.trim();
+    alert(
+      "Merci ! Nous avons bien reçu vos priorités :\n" +
+      "- " + sujet1 + "\n" +
+      (sujet2 ? "- " + sujet2 + "\n" : "") +
+      (sujet3 ? "- " + sujet3 : "")
+    );
+    // Tu peux ensuite fermer la popup, afficher une confirmation, etc.
+    // fermerPopup();
+  };
+}
+
+</script>
+  <!-- NOS OFFRES -->
+<section>
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-tags"></i> Nos Offres</h2>
+    <p class="mb-2">
+      Anticipez les défis, sécurisez votre croissance avec un accompagnement expert jusqu'à 2030. Ceux qui agissent aujourd'hui domineront demain.
+    </p>
+
+    <div class="tarif-grid">
+
+      <!-- Diagnostic Express -->
+      <div class="tarif-card" id="card-diagnostic">
+        <h3>
+  Diagnostic Express
+</h3>
+<span class="info-bulle-custom" tabindex="0" aria-label="Détails de l'offre" aria-describedby="info-diagnostic-express">
+  <i class="fas fa-question-circle"></i>
+  <span class="info-bulle-content" id="info-diagnostic-express" role="tooltip">
+    Rapport IA personnalisé (10 slides), 4h de recherche expert, appel explicatif 15 min<br>
+    <a href="https://drive.google.com/file/d/1woF9MkW5Wm3omWyevfceOSzpwWe2n7nk/preview" target="_blank" style="color:#2196f3; text-decoration:underline;">
+  Voir un exemple de rapport PDF
+</a>
+  </span>
+</span>
+        </h3>
+        <select aria-label="Taille de l'entreprise" id="select-diagnostic">
+          <option value="1">0–15 salariés (590 €)</option>
+          <option value="2">16–49 salariés (990 €)</option>
+          <option value="3">50–99 salariés (1 990 €)</option>
+          <option value="4">100–250 salariés (2 990 €)</option>
+          <option value="5">&gt;250 salariés (3 900 €)</option>
+        </select>
+        <div class="tarif-prix" id="prix-diagnostic">590 €</div>
+        <small class="mention-tva"></small>
+        <ul>
+          <li>Rapport IA personnalisé (10 slides)</li>
+          <li>4h de recherche expert</li>
+          <li>Appel explicatif 15 min</li>
+        </ul>
+        <p><strong>Bénéfices :</strong> +10% productivité en 72h</p>
+        <p><strong>Délai :</strong> 72h maximum</p>
+        <span class="pricing-badge orange">⚡ Livraison 72h</span>
+        <button class="cta-main" onclick="openPopup('Réservation – Diagnostic Express', 'select-diagnostic')">Réserver & Découvrir</button>
+
+        <div style="font-size:0.95rem;color:#00C9A7;margin-top:0.5rem;">
+          Rapport personnalisé livré sous 3 jours ouvrés
+        </div>
+      </div>
+
+      <!-- Feuille de Route Stratégique -->
+      <div class="tarif-card" id="card-strategie">
+        <h3>
+  Feuille de Route Stratégique
+</h3>
+<span class="info-bulle-custom" tabindex="0" aria-label="Détails de l'offre" aria-describedby="info-strategie">
+  <i class="fas fa-question-circle"></i>
+  <span class="info-bulle-content" id="info-strategie" role="tooltip">
+    Rapport IA approfondi (25–30 slides), 12h de recherche, 3 sujets prioritaires, roadmap visuelle, appel 20min<br>
+    <a href="https://drive.google.com/file/d/1TNf3-9BoJRORJkrsvbXQP6PSrYnPtvn3/view?usp=sharing" target="_blank" style="color:#2196f3; text-decoration:underline;">
+      Voir la présentation Feuille de Route (PDF)
+    </a>
+  </span>
+</span>
+
+        </h3>
+        <select aria-label="Taille de l'entreprise" id="select-strategie">
+          <option value="1">0–15 salariés (2 390 €)</option>
+          <option value="2">16–49 salariés (3 900 €)</option>
+          <option value="3">50–99 salariés (5 900 €)</option>
+          <option value="4">100–250 salariés (7 900 €)</option>
+          <option value="5">&gt;250 salariés (15 900 €)</option>
+        </select>
+        <div class="tarif-prix" id="prix-strategie">2 390 €</div>
+        <small class="mention-tva"></small>
+        <ul>
+          <li>Rapport IA approfondi (25–30 slides)</li>
+          <li>12h de recherche, 3 sujets prioritaires</li>
+          <li>Roadmap visuelle, appel 20 min</li>
+        </ul>
+        <p><strong>Bénéfices :</strong> +15% productivité globale</p>
+        <p><strong>Délai :</strong> 5-7 jours ouvrés</p>
+        <span class="pricing-badge vert">🟢 Best Value</span>
+        <button class="cta-main" onclick="openPopup('Réservation – Feuille de Route Stratégique', 'select-strategie')">Choisir ma route IA</button>
+        <div style="font-size:0.95rem;color:#FF6B35;margin-top:0.5rem;">
+          Coaching IA offert pour toute réservation ce mois-ci
+        </div>
+      </div>
+
+      <!-- Analyse IA Totale -->
+      <div class="tarif-card" id="card-analyse-totale">
+        <h3>
+  Analyse IA Totale
+</h3>
+<span class="info-bulle-custom" tabindex="0" aria-label="Détails de l'offre" aria-describedby="info-analyse">
+  <i class="fas fa-question-circle"></i>
+  <span class="info-bulle-content" id="info-analyse" role="tooltip">
+    Audit IA complet (40–45 slides), 30h de recherche, 5 sujets, roadmap avancée, appel 1h<br>
+    <a href="https://drive.google.com/file/d/115txXF3KykV55nitlCK9HqSqld2uMlYn/view?usp=sharing" target="_blank" style="color:#2196f3; text-decoration:underline;">
+      Voir la présentation Analyse IA Totale (PDF)
+    </a>
+  </span>
+</span>
+
+        </h3>
+        <select aria-label="Taille de l'entreprise" id="select-analyse-totale">
+          <option value="1">0–15 salariés (4 900 €)</option>
+          <option value="2">16–49 salariés (7 900 €)</option>
+          <option value="3">50–99 salariés (11 900 €)</option>
+          <option value="4">100–250 salariés (15 900 €)</option>
+          <option value="5">&gt;250 salariés (29 900 €)</option>
+        </select>
+        <div class="tarif-prix" id="prix-analyse-totale">4 900 €</div>
+        <small class="mention-tva"></small>
+        <ul>
+          <li>Audit IA complet (40–45 slides)</li>
+          <li>30h de recherche, 5 sujets, roadmap avancée</li>
+          <li>Appel 1h, accompagnement premium</li>
+        </ul>
+        <p><strong>Bénéfices :</strong> +25% performance opérationnelle</p>
+        <p><strong>Délai :</strong> 10 jours + accompagnement continu</p>
+        <span class="pricing-badge bleu">🔵 Assistance IA 24/7</span>
+        <button class="cta-main" onclick="openPopup('Réservation – Analyse IA Totale', 'select-analyse-totale')">Devenir Leader</button>
+        <div style="font-size:0.95rem;color:#1F2937;margin-top:0.5rem;">
+          Paiement 100% sécurisé – Données confidentielles
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+// Prix par segment pour chaque offre
+const tarifs = {
+  diagnostic: ["590 €", "990 €", "1 990 €", "2 990 €", "3 900 €"],
+  strategie: ["2 390 €", "3 900 €", "5 900 €", "7 900 €", "15 900 €"],
+  accompagnement: ["4 900 €", "7 900 €", "11 900 €", "15 900 €", "29 900 €"]
+};
+
+// Fonction utilitaire pour changer le prix affiché
+function brancherSelectPrix(selectId, prixId, offre) {
+  const select = document.getElementById(selectId);
+  const prix = document.getElementById(prixId);
+  if (!select || !prix) return;
+  select.addEventListener('change', function() {
+    prix.textContent = tarifs[offre][parseInt(this.value, 10) - 1];
+  });
+}
+
+// Brancher tous les sélecteurs
+brancherSelectPrix('select-diagnostic', 'prix-diagnostic', 'diagnostic');
+brancherSelectPrix('select-strategie', 'prix-strategie', 'strategie');
+brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagnement');
+</script>
+
+  <!-- ABONNEMENT DATA+ -->
+  <section>
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <h2 class="section-title" style="margin: 0;">
+          <i class="fas fa-sync"></i>
+          Abonnement Data+
+        </h2>
+        <button class="cta-main" type="button" onclick="openDataPlusInfo()">Découvrir</button>
+      </div>
+      <p class="mb-2">
+        Pour garantir la pertinence et l'actualisation de vos analyses, nous proposons une formule d'abonnement mensuel. Elle inclut la complétude, la vérification et le rafraîchissement automatique de vos données chaque mois. Cette solution vous assure un pilotage continu, fiable et conforme aux dernières mises réglementaires, sans effort de votre part.
+      </p>
+      <div class="tarif-grid">
+        <div class="tarif-card" id="card-data-1">
+          <h3>0–15 salariés</h3>
+          <div class="tarif-prix">79 €/mois</div>
+          <small>Non assujetti à la TVA, art. 293B CGI</small>
+          <ul>
+            <li>Mises à jour mensuelles</li>
+            <li>Accès à la base de données</li>
+            <li>Assistance par chat</li>
+          </ul>
+          <button class="cta-main" onclick="openSouscription('data')">Souscrire</button>
+        </div>
+        <div class="tarif-card" id="card-data-2">
+          <h3>16–49 salariés</h3>
+          <div class="tarif-prix">199 €/mois</div>
+          <small class="mention-tva"></small>
+<ul>
+
+            <li>Actualisation des données</li>
+            <li>Tableau de bord personnalisé</li>
+            <li>Support prioritaire</li>
+          </ul>
+          <button class="cta-main" onclick="openSouscription('data')">Souscrire</button>
+        </div>
+        <div class="tarif-card" id="card-data-3">
+          <h3>50–99 salariés</h3>
+          <div class="tarif-prix">360 €/mois</div>
+          <small class="mention-tva"></small>
+<ul>
+
+            <li>Mises à jour en temps réel</li>
+            <li>Dashboard avancé</li>
+            <li>Expert dédié</li>
+          </ul>
+          <button class="cta-main" onclick="openSouscription('data')">Souscrire</button>
+        </div>
+        <div class="tarif-card" id="card-data-4">
+          <h3>100+ salariés</h3>
+          <div class="tarif-prix">Prix sur devis</div>
+          <small class="mention-tva"></small>
+<ul>
+
+            <li>Données actualisées en temps réel</li>
+            <li>Dashboard sur-mesure</li>
+            <li>Équipe dédiée</li>
+          </ul>
+          <button class="cta-main" onclick="openSouscription('data-plus')">Nous contacter</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPUP DATA+ -->
+  <div id="popup-data-plus-info" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:10000;">
+    <div style="background:#fff; padding:2rem; border-radius:8px; max-width:400px; width:90%; box-shadow:0 4px 12px rgba(0,0,0,0.3); position:relative;">
+      <button onclick="closeDataPlusInfo()" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer;">×</button>
+      <h2>Abonnement Data+</h2>
+      <div class="data-plus-info">
+        <strong>Data+ : l’abonnement réservé aux industriels engagés dans la transformation 5.0</strong>
+        <p>Cette offre avancée s’adresse exclusivement aux clients ayant déjà bénéficié d’un Diagnostic, d’une Feuille de route ou d’une Analyse IA.</p>
+        <p>Nous créons pour vous un jumeau numérique sur-mesure, mis à jour chaque mois avec vos données réelles, pour un pilotage ultra-précis et une optimisation continue.</p>
+        <p>Dès que votre jumeau numérique est prêt, vous recevez une invitation personnalisée pour activer votre abonnement Data+.<br/><strong>Rejoignez les industriels qui anticipent, innovent et gardent une longueur d’avance.</strong></p>
+      </div>
+      <button onclick="closeDataPlusInfo()" class="cta-main" style="margin-top:1rem;">Fermer</button>
+    </div>
+  </div>
+  <!-- BÉNÉFICES -->
+  <section>
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-bolt"></i> Bénéfices Concrets &amp; Différenciants</h2>
+      <div class="benefices">
+        <div class="benefice">
+          <i class="fas fa-bolt"></i>
+          <h4>🚀 Productivité immédiate</h4>
+          <p>+15 % en 72h grâce à l'IA embarquée</p>
+        </div>
+        <div class="benefice">
+          <i class="fas fa-coins"></i>
+          <h4>💰 Coûts maîtrisés</h4>
+          <p>-20 % coûts maintenance via algorithmes prédictifs</p>
+        </div>
+        <div class="benefice">
+          <i class="fas fa-shield-alt"></i>
+          <h4>✅ Conformité totale</h4>
+          <p>100 % audit optimisé prédictif, AI Act)</p>
+        </div>
+        <div class="benefice">
+          <i class="fas fa-leaf"></i>
+          <h4>♻️ Éco-performance</h4>
+          <p>-40 % empreinte carbone avec solutions vertes</p>
+        </div>
+        <div class="benefice">
+          <i class="fas fa-chart-line"></i>
+          <h4>🏆 ROI garanti</h4>
+          <p>ROI x3 d'ici 2030</p>
+        </div>
+        <div class="benefice">
+          <i class="fas fa-shield-alt"></i>
+          <h4>🛡️ Sécurité augmentée</h4>
+          <p>99,5 % disponibilité machines</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RISQUES -->
+<section>
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-triangle-exclamation"></i> Ce que vous risquez à ne rien faire</h2>
+    <p class="mb-2">
+      D'ici 2027, 80 % des leaders industriels auront intégré l'IA. Ne prenez pas de retard.
+    </p>
+    <div class="risques">
+      <div class="risque">
+        <i class="fas fa-hourglass-end fa-2x"></i>
+        <h4>Perte de compétitivité</h4>
+        <p>Perdre 15 % de productivité/an face aux entreprises adoptant l'IA</p>
+      </div>
+      <div class="risque">
+        <i class="fas fa-bolt fa-2x"></i>
+        <h4>Pannes imprévues</h4>
+        <p>Coûts imprévus liés aux pannes non anticipées</p>
+      </div>
+      <div class="risque">
+        <i class="fas fa-user-slash fa-2x"></i>
+        <h4>Retard sur vos concurrents</h4>
+        <p>Vos concurrents prendront de l'avance stratégique</p>
+      </div>
+      <div class="risque">
+        <i class="fas fa-wind fa-2x"></i>
+        <h4>Mises réglementaires</h4>
+        <p>Non-conformité avec les nouvelles réglementations</p>
+      </div>
+      <div class="risque">
+        <i class="fas fa-coins fa-2x"></i>
+        <h4>Surcoûts cachés</h4>
+        <p>Coûts cachés liés à une infrastructure obsolète</p>
+      </div>
+      <div class="risque">
+        <i class="fas fa-skull-crossbones fa-2x"></i>
+        <h4>Obsolescence accélérée</h4>
+        <p>Perte de pertinence face à l'évolution technologique rapide</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIDENTIALITÉ & RAPPORT PDF -->
+<section>
+  <div class="container" style="text-align:center;">
+    <div class="badge" style="display:inline-block; background:var(--vert); color:#fff; border-radius:20px; padding:0.3rem 1rem; font-size:0.98rem; margin-bottom:1rem;">
+      <i class="fas fa-lock"></i> Données cryptées & hébergement sécurisé
+    </div>
+    <p class="confid" style="font-size:1.1rem; color:#333; margin-bottom:0.5rem;">
+      Vos données sont strictement confidentielles, elles ne seront jamais partagées.
+    </p>
+    <!-- Optionnel : Lien vers la politique de confidentialité -->
+    
+    <div style="margin-bottom:1.5rem;">
+      <h3>Notre engagement : sécurité, expertise, indépendance</h3>
+      <ul style="list-style:none; padding:0; margin:0 auto 1.2rem auto; max-width:400px; text-align:left;">
+        <li>🔒 <strong>Sécurité & confidentialité</strong> : Données cryptées, hébergement sécurisé, jamais partagées sans consentement.</li>
+        <li>✅ <strong>Conformité RGPD</strong> : Respect strict du RGPD pour une gestion transparente et responsable.</li>
+        <li>🤝 <strong>Accompagnement par des experts IA & métiers</strong> : Expérience en gestion, finance, analyse sectorielle, comptabilité.</li>
+        <li>🦎 <strong>Indépendance & approche proactive</strong> : Analyses personnalisées, fusion intelligente de vos données & IA internationale.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- APPEL À L'ACTION FINAL -->
+<section id="cta-final" style="text-align:center; padding:2em 1em; background:#f9f9f9; border-top:1px solid #ddd;">
+  <h3 style="font-weight:700; margin-bottom:0.5em; font-size:1.5em; color:#333;">
+    Et si la vraie surprise, c’était votre potentiel ?
+  </h3>
+  <button 
+  style="
+    background:#2196f3; 
+    color:#fff; 
+    border:none; 
+    padding:1em 2em; 
+    font-size:1.1em; 
+    border-radius:8px; 
+    cursor:pointer; 
+    box-shadow:0 4px 12px rgba(33,150,243,0.4); 
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.background='#1976d2'"
+  onmouseout="this.style.background='#2196f3'"
+  onclick="document.getElementById('popup-potentiel-ia').style.display='flex'">
+  Je veux voir ce que l’IA pense de mon entreprise
+</button>
+
+</section>
+
+  <!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p>© 2025 iSkyce - Tous droits réservés</p>
+        <div class="legal-link">
+  <a href="mentions-legales.html">Mentions légales</a> &nbsp;|&nbsp;
+  <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+</div>
+
+        <div class="footer-coords">
+          <p>
+            <strong>Michel Klein</strong><br/>
+        6 rue Schelmenwasen<br/>
+        67590 Schweighouse Sur Moder, France<br/>
+        Téléphone : +33 781 289 088<br/>
+        <a href="mailto:iSkyceman@gmail.com" class="contact-link" title="Envoyer un email à iSkyceman@gmail.com">Nous contacter</a><br/>
+        SIRET : 392 736 104 000 28<br/>
+        Statut : Entreprise Individuelle<br/>
+        Responsable de publication : Michel Klein<br/>
+        Hébergeur : Vercel Inc.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h3>Réseaux sociaux</h3>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+          <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<style>
+footer {
+  position: relative;
+  background: linear-gradient(180deg, #0A1F3D 0%, #1E3C72 100%);
+  color: #fff;
+  overflow: hidden;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+footer::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 40px;
+  background: linear-gradient(to right, #ff8400 0%, #19e68c 100%);
+  z-index: 1;
+}
+footer .container,
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.footer-grid > div {
+  margin-bottom: 1.2rem;
+}
+.footer-coords {
+  margin-top: 1rem;
+}
+.footer-social {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.footer-social a {
+  color: #fff;
+  transition: color 0.3s;
+}
+.footer-social a:hover,
+.footer-social a:focus {
+  color: #ff8400;
+}
+.legal-link span {
+  color: #ff8400;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+@media (max-width: 600px) {
+  .footer-grid > div {
+    margin-bottom: 0.7rem;
+  }
+  footer {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+}
+</style>
+
+   <!-- POPUP RÉSERVATION (pour tous les boutons offres) -->
+<div id="popup-reservation" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; justify-content:center; align-items:center;">
+  <div style="background:#fff; padding:2rem; border-radius:10px; max-width:450px; width:90%; position:relative;">
+    <button onclick="closePopup()" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.3rem; cursor:pointer;">&times;</button>
+    <h2 id="popup-title">Réservation – Diagnostic Express</h2>
+    <form id="form-reservation">
+      <input type="text" name="nom" placeholder="Nom et prénom *" required style="width:100%;margin-bottom:1rem;">
+      <input type="text" name="secteur" placeholder="Secteur d'activité *" required style="width:100%;margin-bottom:1rem;">
+      <input type="text" name="taille" placeholder="Taille de l'entreprise *" required style="width:100%;margin-bottom:1rem;">
+      <!-- Champ effectif pré-rempli par JS -->
+      <label for="effectif" style="font-weight:500;">Effectif</label>
+      <input type="text" id="effectif" name="effectif" readonly style="width:100%;margin-bottom:1rem;">
+      <input type="text" name="ca" placeholder="Chiffre d'affaires *" required style="width:100%;margin-bottom:1rem;">
+      <input type="text" name="siren" placeholder="SIREN ou SIRET *" required style="width:100%;margin-bottom:1rem;">
+      <input type="text" name="defi" placeholder="Défi principal *" required style="width:100%;margin-bottom:1rem;">
+      <textarea name="obs" placeholder="Observations complémentaires" style="width:100%;margin-bottom:1rem;"></textarea>
+      <input type="email" name="email" placeholder="Email professionnel *" required style="width:100%;margin-bottom:1rem;">
+      <button type="submit" style="background:#FF6B35;color:#fff;border:none;padding:0.7rem 2rem;border-radius:6px;cursor:pointer;">Ok, je réserve et je paie</button>
+      <!-- Le bouton retour sera ajouté dynamiquement par JS -->
+    </form>
+    <div id="popup-confirmation" style="display:none; margin-top:1.2rem; color:#00C9A7; font-weight:bold;"></div>
+  </div>
+</div>
+
+  <script>
+    // Prix dynamiques
+    const selectDiagnostic = document.getElementById('select-diagnostic');
+    const prixDiagnostic = document.getElementById('prix-diagnostic');
+    if (selectDiagnostic && prixDiagnostic) {
+      selectDiagnostic.addEventListener('change', function() {
+        if (this.value === '1') prixDiagnostic.textContent = '590 €';
+        else if (this.value === '2') prixDiagnostic.textContent = '990 €';
+        else if (this.value === '3') prixDiagnostic.textContent = '1 990 €';
+        else if (this.value === '4') prixDiagnostic.textContent = '2 990 €';
+        else if (this.value === '5') prixDiagnostic.textContent = '3 900 €';
+      });
+    }
+    const selectStrategie = document.getElementById('select-strategie');
+    const prixStrategie = document.getElementById('prix-strategie');
+    if (selectStrategie && prixStrategie) {
+      selectStrategie.addEventListener('change', function() {
+        if (this.value === '1') prixStrategie.textContent = '2 390 €';
+        else if (this.value === '2') prixStrategie.textContent = '3 900 €';
+        else if (this.value === '3') prixStrategie.textContent = '5 900 €';
+        else if (this.value === '4') prixStrategie.textContent = '7 900 €';
+        else if (this.value === '3') prixStrategie.textContent = '15 900 €';
+      });
+    }
+    const selectAnalyseTotale = document.getElementById('select-analyse-totale');
+const prixAnalyseTotale = document.getElementById('prix-analyse-totale');
+if (selectAnalyseTotale && prixAnalyseTotale) {
+  selectAnalyseTotale.addEventListener('change', function() {
+    if (this.value === '1') prixAnalyseTotale.textContent = '4 900 €';
+    else if (this.value === '2') prixAnalyseTotale.textContent = '7 900 €';
+    else if (this.value === '3') prixAnalyseTotale.textContent = '11 900 €';
+    else if (this.value === '4') prixAnalyseTotale.textContent = '15 900 €';
+    else if (this.value === '5') prixAnalyseTotale.textContent = '29 900 €';
+  });
+}
+
+    // Animations d'apparition
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+    // Modal mentions légales
+    function openModal() {
+      document.getElementById('modal-legal').classList.add('active');
+    }
+   function closeModal() {
+  var modal = document.getElementById('modal-legal');
+  modal.classList.remove('active');
+  modal.style.display = 'none';
+}
+    window.addEventListener('keydown', e => { if (e.key === "Escape") closeModal(); });
+    document.getElementById('modal-legal').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+
+    // Popup Data+
+    function openDataPlusInfo() {
+      document.getElementById('popup-data-plus-info').style.display = 'flex';
+    }
+    function closeDataPlusInfo() {
+      document.getElementById('popup-data-plus-info').style.display = 'none';
+    }
+
+    // Fonction popup centralisée pour toutes les offres
+function openPopup(titre, selectId) {
+  // Récupère la valeur sélectionnée dans le menu déroulant de l'offre concernée
+  const select = document.getElementById(selectId);
+  let effectifLabel = '';
+  let effectifValue = '';
+  if (select) {
+    const value = select.value;
+    effectifValue = value;
+    switch(value) {
+      case '1': effectifLabel = '0–15 salariés'; break;
+      case '2': effectifLabel = '16–49 salariés'; break;
+      case '3': effectifLabel = '50–99 salariés'; break;
+      case '4': effectifLabel = '100–250 salariés'; break;
+      case '5': effectifLabel = '>250 salariés'; break;
+      default: effectifLabel = '';
+    }
+    // Pré-remplit le champ effectif dans le formulaire
+    const inputEffectif = document.getElementById('effectif');
+    if (inputEffectif) {
+      inputEffectif.value = effectifLabel;
+      inputEffectif.readOnly = true;
+      // Stocke aussi la valeur brute pour le backend si besoin
+      inputEffectif.dataset.effectifValue = effectifValue;
+    }
+    document.getElementById('popup-title').textContent = titre + (effectifLabel ? ` (${effectifLabel})` : '');
+    // Stocke le nom de l'offre pour le backend
+    document.getElementById('form-reservation').dataset.offre = titre.replace('Réservation – ', '');
+  } else {
+    document.getElementById('popup-title').textContent = titre;
+    document.getElementById('form-reservation').dataset.offre = titre.replace('Réservation – ', '');
+  }
+  document.getElementById('popup-reservation').style.display = 'flex';
+  document.getElementById('form-reservation').style.display = 'block';
+  document.getElementById('popup-confirmation').style.display = 'none';
+
+  // Modifie le texte du bouton de validation
+  const submitBtn = document.querySelector('#form-reservation button[type="submit"]');
+  if (submitBtn) submitBtn.textContent = "Ok, je réserve et je paie";
+
+  // Ajoute le bouton retour s'il n'existe pas déjà
+  if (!document.getElementById('btn-retour')) {
+    const retourBtn = document.createElement('button');
+    retourBtn.type = "button";
+    retourBtn.id = "btn-retour";
+    retourBtn.className = "btn-retour";
+    retourBtn.innerHTML = "&#8592; Retour";
+    retourBtn.onclick = closePopup;
+    submitBtn.parentNode.insertBefore(retourBtn, submitBtn.nextSibling);
+  }
+}
+
+function closePopup() {
+  document.getElementById('popup-reservation').style.display = 'none';
+}
+
+// Gestion Stripe Checkout lors de la soumission du formulaire
+document.getElementById('form-reservation').onsubmit = async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  // Ajoute les infos d'offre et d'effectif pour le backend
+  formData.append('offre', this.dataset.offre || '');
+  const inputEffectif = document.getElementById('effectif');
+  if (inputEffectif && inputEffectif.dataset.effectifValue)
+    formData.append('effectif', inputEffectif.dataset.effectifValue);
+
+  // Appelle le backend pour créer la session Stripe
+  const response = await fetch('/create-stripe-session', {
+    method: 'POST',
+    body: formData
+  });
+
+  if (!response.ok) {
+    alert("Erreur lors de la création de la session de paiement.");
+    return;
+  }
+
+  const session = await response.json();
+
+  // Initialise Stripe.js avec ta clé publique
+  const stripe = Stripe('pk_test_TA_CLE_PUBLIQUE'); // Remplace par ta clé publique Stripe
+
+  // Redirige vers Stripe Checkout
+  const { error } = await stripe.redirectToCheckout({
+    sessionId: session.id
+  });
+
+  if (error) {
+    alert(error.message);
+  }
+};
+
+// Animation bouton PDF (inchangée)
+document.querySelectorAll('.btn-link').forEach(btn => {
+  btn.addEventListener('mouseover', function() {
+    this.style.background = '#FF6B35';
+  });
+  btn.addEventListener('mouseout', function() {
+    this.style.background = 'var(--bleu)';
+  });
+});
+
+  </script>
+<style>
+  .offre-modal-bg {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+.offre-modal-bg.active {
+    display: flex;
+}
+  .modal-intro {
+  margin-bottom: 1em;
+  font-size: 1.1rem;
+  color: #444;
+  text-align: center;
+}
+
+</style>
+<div id="offre-modal" class="offre-modal-bg">
+  <div class="modal-content">
+    <button id="close-offre-modal" class="modal-close" aria-label="Fermer">&times;</button>
+    <div id="modal-offre-details"></div>
+  </div>
+</div>
+<script>
+  // Variables globales
+  const offreDetails = {
+    "diagnostic-express": {
+      titre: "Diagnostic Express",
+      description: "Rapport IA personnalisé (10 slides/pages). 4h de recherche dédiée (analyse initiale SIREN, mini-jumeau numérique). Points forts/faibles, axes d'amélioration, prévisionnel ROI. Appel explicatif 15 min.",
+      exemple: "https://drive.google.com/file/d/1n0R7A_RkAgT9xDRjLl9qctwgmn41_4b3/preview"
+    },
+    "strategie": {
+      titre: "Feuille de Route Stratégique",
+      description: "Rapport IA approfondi (25–30 slides/pages). 12h de recherche dédiée (analyse avancée, 3 sujets prioritaires, roadmap visuelle). Accès dashboard de suivi, estimation de gains, prévisionnel ROI. Appel explicatif 20 min. Accompagnement long terme possible en option (succès fee).",
+      exemple: "https://drive.google.com/file/d/1TNf3-9BoJRORJkrsvbXQP6PSrYnPtvn3/view?usp=sharing"
+    },
+    "analyse": {
+      titre: "Analyse IA Totale",
+      description: "Audit IA complet (40-45 slides/pages). 30h de recherche dédiée (analyse sectorielle approfondie, 5 sujets prioritaires, benchmarking, roadmap avancée). Accès dashboard, suivi mensuel, mise en relation partenaires technologiques. Appel explicatif 1h.",
+      exemple: "https://drive.google.com/file/d/115txXF3KykV55nitlCK9HqSqld2uMlYn/view?usp=sharing"
+    }
+  };
+
+  const assujettiTVA = true; // true = assujetti, false = non assujetti
+  const mentionTVA = assujettiTVA
+    ? "TVA non applicable, art. 293B du CGI"
+    : "TVA incluse au taux en vigueur";
+  const offres = [
+    { nom: "Offre Basique", prix: 100 },
+    { nom: "Offre Premium", prix: 200 },
+    { nom: "Offre Pro", prix: 300 }
+  ];
+
+  function afficherOffresAvecMention(offres, mention) {
+    offres.forEach(offre => {
+      console.log(`${offre.nom} – ${offre.prix}€`);
+      console.log(mention);
+      console.log('---');
+    });
+  }
+  function isMobile() {
+    return window.matchMedia("(pointer: coarse)").matches;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('Boutons trouvés:', document.querySelectorAll('.offre-info-btn').length);
+    // Modal offres
+    document.querySelectorAll('.offre-info-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const key = btn.dataset.offre;
+        const data = offreDetails[key];
+        console.log('KEY:', key, 'DATA:', data);
+        if (data) {
+          document.getElementById('modal-offre-details').innerHTML = `
+            <h2>${data.titre}</h2>
+            <p>${data.description}</p>
+            <a href="${data.exemple}" target="_blank" rel="noopener" class="btn">Voir la présentation ${data.titre} (PDF)</a>
+          `;
+          document.getElementById('offre-modal').classList.add('active');
+        }
+      });
+    });
+
+    document.getElementById('close-offre-modal').onclick = function() {
+      document.getElementById('offre-modal').classList.remove('active');
+    };
+    document.getElementById('offre-modal').onclick = function(e) {
+      if (e.target === this) this.classList.remove('active');
+    };
+
+    // Gestion des infobulles
+document.querySelectorAll('.info-bulle-custom').forEach(function(bulle) {
+  bulle.addEventListener('mouseenter', function() {
+    this.classList.add('active');
+  });
+  bulle.addEventListener('mouseleave', function() {
+    this.classList.remove('active');
+  });
+  bulle.addEventListener('focus', function() {
+    this.classList.add('active');
+  });
+  bulle.addEventListener('blur', function() {
+    this.classList.remove('active');
+  });
+  bulle.addEventListener('click', function(e) {
+    // Ne bloque pas le clic sur un lien
+    if (e.target.tagName.toLowerCase() === 'a') return;
+    e.preventDefault();
+    e.stopPropagation();
+    document.querySelectorAll('.info-bulle-custom.active').forEach(function(other) {
+      if (other !== bulle) other.classList.remove('active');
+    });
+    this.classList.toggle('active');
+  });
+});
+
+// Gestion du clic global pour les infobulles et le modal
+document.addEventListener('click', function(e) {
+  const bulle = e.target.closest('.info-bulle-custom');
+  if (!bulle) {
+    document.querySelectorAll('.info-bulle-custom.active').forEach(b => b.classList.remove('active'));
+    return;
+  }
+  if (typeof isMobile === 'function' && isMobile()) {
+    document.getElementById('modal-offre-details').innerHTML = bulle.querySelector('.info-bulle-content').innerHTML;
+    document.getElementById('offre-modal').classList.add('active');
+  } else {
+    document.querySelectorAll('.info-bulle-custom.active').forEach(function(other) {
+      if (other !== bulle) other.classList.remove('active');
+    });
+    bulle.classList.toggle('active');
+  }
+  e.stopPropagation();
+});
+
+// Mise à jour dynamique de la mention TVA
+document.querySelectorAll('.mention-tva').forEach(el => {
+  el.textContent = mentionTVA;
+});
+
+// Affichage console (facultatif)
+afficherOffresAvecMention(offres, mentionTVA);
+
+</script>
+<!-- ...autres scripts éventuels... -->
+<script>
+  // Parallax dynamique sur le fond
+  window.addEventListener('scroll', function() {
+    const bg = document.querySelector('.hero-bg-parallax');
+    if (bg) {
+      let scrollY = window.scrollY || window.pageYOffset;
+      bg.style.transform = 'translateY(' + (scrollY * 0.4) + 'px)';
+    }
+  });
+
+  // Ajustement dynamique de la position des icônes pour ne jamais toucher le bandeau
+  function adjustFloatingIcons() {
+    const icons = document.querySelector('.floating-icons');
+    const bandeauHeight = 50; // même valeur que dans le CSS
+    if (icons) {
+      icons.style.bottom = (bandeauHeight + 20) + 'px'; // 20px de marge de sécurité
+    }
+  }
+  window.addEventListener('resize', adjustFloatingIcons);
+  window.addEventListener('DOMContentLoaded', adjustFloatingIcons);
+</script>
+<script>
+// Ouvre la pop-up
+document.getElementById('open-popup-ia').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('popup-potentiel-ia').style.display = 'flex';
+});
+// Ferme la pop-up
+document.getElementById('close-popup-ia').addEventListener('click', function() {
+  document.getElementById('popup-potentiel-ia').style.display = 'none';
+});
+// Ferme si clic en dehors du contenu
+document.getElementById('popup-potentiel-ia').addEventListener('click', function(e) {
+  if(e.target === this) {
+    this.style.display = 'none';
+  }
+});
+// Ferme avec la touche "Échap"
+document.addEventListener('keydown', function(e) {
+  if(e.key === "Escape") {
+    document.getElementById('popup-potentiel-ia').style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
