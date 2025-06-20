@@ -652,7 +652,7 @@ header p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-/* Bloc Notre Méthode avec animation de fond verticale */
+/* Bloc Notre Méthode avec animation de fond verticale et overlay bleu */
 .notre-methode-bg {
   position: relative;
   overflow: hidden;
@@ -668,12 +668,31 @@ header p {
     linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%) 0% 50% / 200% 200%,
     url('/images/bloc.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
-
-  /* Animation du gradient et de l'image de fond vers le haut */
   animation:
     gradientMove 10s ease-in-out infinite alternate,
     bgMoveUp 30s linear infinite;
   will-change: background-position;
+}
+
+/* Overlay bleu subtil pour renforcer la teinte et le contraste */
+.notre-methode-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(40, 100, 220, 0.16) 0%,
+    rgba(30, 80, 200, 0.16) 100%
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Pour que le contenu reste au-dessus de l'overlay */
+.notre-methode-bg > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Fallback PNG si WebP non supporté */
