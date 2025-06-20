@@ -652,7 +652,7 @@ header p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-/* Bloc Notre Méthode avec gradient animé type "Succès Fee" et image décorative */
+/* Bloc Notre Méthode avec gradient cohérent et image animée */
 .notre-methode-bg {
   position: relative;
   overflow: hidden;
@@ -661,48 +661,44 @@ header p {
   margin: 2rem 0;
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
   min-height: 320px;
-  color: var(--texte, #222);
+  color: #183153; /* Bleu foncé pour le texte, cohérent avec ton header */
 
-  /* Gradient animé façon Succès Fee + image décorative */
+  /* Gradient doux et cohérent avec le header */
   background:
-    linear-gradient(-45deg,
-      #6ee7f7 0%,     /* bleu clair */
-      #a5b4fc 25%,    /* bleu-violet */
-      #818cf8 50%,    /* violet */
-      #38bdf8 75%,    /* turquoise */
-      #e0e7ff 100%    /* blanc bleuté */
-    ) 0% 50% / 400% 400%,
+    linear-gradient(120deg,
+      #f5f9ff 0%,    /* blanc bleuté */
+      #e5edf1 50%,   /* bleu-gris très clair */
+      #96c2db 100%   /* bleu-gris doux */
+    ) 0% 50% / 200% 200%,
     url('/images/bloc.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 
+  /* Animation du gradient et de l'image de fond */
   animation:
-    gradientSuccess 18s ease-in-out infinite,
-    bgMoveUp 30s linear infinite;
+    gradientMove 12s ease-in-out infinite alternate,
+    bgMoveUp 36s linear infinite;
   will-change: background-position;
 }
 
 /* Fallback PNG si WebP non supporté */
 .no-webp .notre-methode-bg {
   background:
-    linear-gradient(-45deg,
-      #6ee7f7 0%,
-      #a5b4fc 25%,
-      #818cf8 50%,
-      #38bdf8 75%,
-      #e0e7ff 100%
-    ) 0% 50% / 400% 400%,
+    linear-gradient(120deg,
+      #f5f9ff 0%,
+      #e5edf1 50%,
+      #96c2db 100%
+    ) 0% 50% / 200% 200%,
     url('/images/bloc.png') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 }
 
-/* Animation du gradient façon Succès Fee */
-@keyframes gradientSuccess {
-  0% { background-position: 0% 50%, center bottom; }
-  50% { background-position: 100% 50%, center center; }
-  100% { background-position: 0% 50%, center top; }
+/* Animation du gradient horizontal */
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%, center bottom; }
+  100% { background-position: 100% 50%, center bottom; }
 }
 
-/* Animation verticale de l'image de fond */
+/* Animation verticale de l'image de fond (vers le haut) */
 @keyframes bgMoveUp {
   0%   { background-position: 0% 50%, center bottom; }
   100% { background-position: 100% 50%, center top; }
@@ -722,6 +718,7 @@ header p {
     font-size: 0.97rem;
   }
 }
+
 
   </style> 
 </head>
