@@ -652,7 +652,7 @@ header p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-/* Bloc Notre Méthode avec animation de fond verticale et image valorisée */
+/* Bloc Notre Méthode avec gradient animé type "Succès Fee" et image décorative */
 .notre-methode-bg {
   position: relative;
   overflow: hidden;
@@ -660,60 +660,58 @@ header p {
   padding: 2rem 1.5rem;
   margin: 2rem 0;
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
-  min-height: 320px; /* Assure une hauteur suffisante */
+  min-height: 320px;
   color: var(--texte, #222);
 
-  /* Dégradé animé + image de fond décorative */
+  /* Gradient animé façon Succès Fee + image décorative */
   background:
-    linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%) 0% 50% / 200% 200%,
+    linear-gradient(-45deg,
+      #6ee7f7 0%,     /* bleu clair */
+      #a5b4fc 25%,    /* bleu-violet */
+      #818cf8 50%,    /* violet */
+      #38bdf8 75%,    /* turquoise */
+      #e0e7ff 100%    /* blanc bleuté */
+    ) 0% 50% / 400% 400%,
     url('/images/bloc.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 
-  /* Animation du gradient horizontal et du déplacement vertical de l'image */
   animation:
-    gradientMove 10s ease-in-out infinite alternate,
+    gradientSuccess 18s ease-in-out infinite,
     bgMoveUp 30s linear infinite;
   will-change: background-position;
-
-  /* Amélioration de l'image : contraste, luminosité, saturation */
-  filter: contrast(1.25) brightness(1.13) saturate(1.18);
-}
-
-/* Overlay gradient léger en bas pour améliorer lisibilité */
-.notre-methode-bg::before {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0; height: 40%;
-  background: linear-gradient(to top, rgba(40,100,220,0.10) 0%, rgba(255,255,255,0) 100%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Contenu au-dessus de l’overlay */
-.notre-methode-bg > * {
-  position: relative;
-  z-index: 1;
 }
 
 /* Fallback PNG si WebP non supporté */
 .no-webp .notre-methode-bg {
   background:
-    linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%) 0% 50% / 200% 200%,
+    linear-gradient(-45deg,
+      #6ee7f7 0%,
+      #a5b4fc 25%,
+      #818cf8 50%,
+      #38bdf8 75%,
+      #e0e7ff 100%
+    ) 0% 50% / 400% 400%,
     url('/images/bloc.png') center bottom / cover no-repeat;
   background-blend-mode: lighten;
-  filter: contrast(1.25) brightness(1.13) saturate(1.18);
 }
 
-/* Animation du gradient horizontal */
-@keyframes gradientMove {
-  0%   { background-position: 0% 50%, center bottom; }
-  100% { background-position: 100% 50%, center bottom; }
+/* Animation du gradient façon Succès Fee */
+@keyframes gradientSuccess {
+  0% { background-position: 0% 50%, center bottom; }
+  50% { background-position: 100% 50%, center center; }
+  100% { background-position: 0% 50%, center top; }
 }
 
-/* Animation verticale de l'image de fond (vers le haut) */
+/* Animation verticale de l'image de fond */
 @keyframes bgMoveUp {
   0%   { background-position: 0% 50%, center bottom; }
   100% { background-position: 100% 50%, center top; }
+}
+
+/* Pour que le contenu reste au-dessus de tout */
+.notre-methode-bg > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Responsive : adaptation sur mobile */
