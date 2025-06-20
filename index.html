@@ -660,7 +660,7 @@ header p {
   padding: 2rem 1.5rem;
   margin: 2rem 0;
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
-  min-height: 320px;
+  min-height: 320px; /* Assure une hauteur suffisante */
   color: var(--texte, #222);
 
   /* Dégradé animé + image de fond décorative */
@@ -668,26 +668,28 @@ header p {
     linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%) 0% 50% / 200% 200%,
     url('/images/bloc.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
+
+  /* Animation du gradient horizontal et du déplacement vertical de l'image */
   animation:
     gradientMove 10s ease-in-out infinite alternate,
     bgMoveUp 30s linear infinite;
   will-change: background-position;
 
-  /* Amélioration de l'image de fond */
+  /* Amélioration de l'image : contraste, luminosité, saturation */
   filter: contrast(1.25) brightness(1.13) saturate(1.18);
 }
 
-/* Gradient léger en bas pour lisibilité, sans masquer l'image */
+/* Overlay gradient léger en bas pour améliorer lisibilité */
 .notre-methode-bg::before {
   content: "";
   position: absolute;
   left: 0; right: 0; bottom: 0; height: 40%;
-  background: linear-gradient(to top, rgba(40,100,220,0.10) 0%, rgba(255,255,255,0.0) 100%);
+  background: linear-gradient(to top, rgba(40,100,220,0.10) 0%, rgba(255,255,255,0) 100%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Pour que le contenu reste au-dessus de l'overlay */
+/* Contenu au-dessus de l’overlay */
 .notre-methode-bg > * {
   position: relative;
   z-index: 1;
