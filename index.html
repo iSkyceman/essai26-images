@@ -661,7 +661,8 @@ header p {
   margin: 2rem 0;
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
   min-height: 320px;
-  color: var(--texte);
+  color: var(--texte, #222);
+  /* Dégradé animé + image de fond décorative */
   background:
     linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%) 0% 50% / 200% 200%,
     url('/images/bloc.webp') center/cover no-repeat;
@@ -731,31 +732,28 @@ header p {
 </header>
 
   <!-- MÉTHODE + AUDIO + BOUTON POTENTIEL -->
-  <section>
-    <div class="container">
-      <h2 class="section-title"><i class="fas fa-handshake"></i> Notre Méthode</h2>
-      <!-- Insertion de l'image décorative juste après le titre -->
-    <img src="/images/bloc.webp" alt="Bloc décoratif" style="border:2px solid red;">
-
-      <p class="mb-2">
-        Nous croyons en un accompagnement sur-mesure, basé sur l'écoute, la confidentialité et la transparence. Chaque mission débute par une analyse approfondie de vos besoins, suivie de recommandations personnalisées et d’un suivi régulier. Notre équipe certifiée s’engage à vos côtés pour garantir la réussite de votre transformation vers l’Industrie 5.0, tout en assurant la sécurité et la confidentialité de vos données.
+  <section class="notre-methode-bg">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-handshake"></i> Notre Méthode</h2>
+    <p class="mb-2">
+      Nous croyons en un accompagnement sur-mesure, basé sur l'écoute, la confidentialité et la transparence. Chaque mission débute par une analyse approfondie de vos besoins, suivie de recommandations personnalisées et d’un suivi régulier. Notre équipe certifiée s’engage à vos côtés pour garantir la réussite de votre transformation vers l’Industrie 5.0, tout en assurant la sécurité et la confidentialité de vos données.
+    </p>
+    <div style="margin: 2em 0;">
+      <p style="font-weight: bold; font-size: 1.1em;">
+        🎧 Écoutez la synthèse audio de notre démarche :
       </p>
-      <div style="margin: 2em 0;">
-        <p style="font-weight: bold; font-size: 1.1em;">
-          🎧 Écoutez la synthèse audio de notre démarche :
-        </p>
-        <audio controls style="width: 100%; max-width: 500px;">
-          <source src="https://github.com/iSkyceman/podcast/raw/refs/heads/main/podcast.mp3" type="audio/mpeg">
-          Votre navigateur ne supporte pas la lecture audio.
-        </audio>
-        <div style="text-align:center; margin-top:2em;">
-          <button class="cta-main" onclick="document.getElementById('popup-potentiel-ia').style.display='flex'">
-            Découvrir mon potentiel
-          </button>
-        </div>
+      <audio controls style="width: 100%; max-width: 500px;">
+        <source src="https://github.com/iSkyceman/podcast/raw/refs/heads/main/podcast.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas la lecture audio.
+      </audio>
+      <div style="text-align:center; margin-top:2em;">
+        <button class="cta-main" onclick="document.getElementById('popup-potentiel-ia').style.display='flex'">
+          Découvrir mon potentiel
+        </button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- POPUP CALCULATEUR IA -->
 <div id="popup-potentiel-ia">
