@@ -652,6 +652,52 @@ header p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+/* Bloc Notre Méthode avec animation de fond améliorée */
+.notre-methode-bg {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
+  min-height: 320px;
+  color: var(--texte);
+  background:
+    linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%) 0% 50% / 200% 200%,
+    url('/images/bloc.webp') center/cover no-repeat;
+  background-blend-mode: lighten;
+  animation: gradientMove 10s ease-in-out infinite alternate, bgScroll 40s linear infinite;
+  will-change: background-position;
+}
+
+/* Fallback PNG si WebP non supporté */
+.no-webp .notre-methode-bg {
+  background:
+    linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%) 0% 50% / 200% 200%,
+    url('/images/bloc.png') center/cover no-repeat;
+  background-blend-mode: lighten;
+}
+
+/* Animation du gradient */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%, center; }
+  100% { background-position: 100% 50%, center; }
+}
+
+/* Animation du déplacement de l’image de fond */
+@keyframes bgScroll {
+  0% { background-position: 0% 50%, 50% 50%; }
+  100% { background-position: 100% 50%, 53% 53%; }
+}
+
+/* Responsive : adaptation sur mobile */
+@media (max-width: 600px) {
+  .notre-methode-bg {
+    padding: 1.2rem 0.5rem;
+    min-height: 220px;
+    font-size: 0.97rem;
+  }
+}
 
   </style> 
 </head>
@@ -688,6 +734,9 @@ header p {
   <section>
     <div class="container">
       <h2 class="section-title"><i class="fas fa-handshake"></i> Notre Méthode</h2>
+      <!-- Insertion de l'image décorative juste après le titre -->
+    <img src="/images/bloc.webp" alt="Bloc décoratif" style="border:2px solid red;">
+
       <p class="mb-2">
         Nous croyons en un accompagnement sur-mesure, basé sur l'écoute, la confidentialité et la transparence. Chaque mission débute par une analyse approfondie de vos besoins, suivie de recommandations personnalisées et d’un suivi régulier. Notre équipe certifiée s’engage à vos côtés pour garantir la réussite de votre transformation vers l’Industrie 5.0, tout en assurant la sécurité et la confidentialité de vos données.
       </p>
@@ -2047,6 +2096,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
-
+<script>
+window.addEventListener('scroll', function() {
+  const section = document.querySelector('.notre-methode-bg');
+  if(section) {
+    let offset = window.scrollY;
+    section.style.backgroundPosition = `0% 50%, 50% ${50 + offset * 0.03}%`;
+  }
+});
+</script>
 </body>
 </html>
