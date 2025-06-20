@@ -652,7 +652,7 @@ header p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-/* Bloc Notre Méthode avec gradient cohérent et image animée */
+/* Bloc Notre Méthode avec gradient animé cohérent et image décorative */
 .notre-methode-bg {
   position: relative;
   overflow: hidden;
@@ -663,17 +663,18 @@ header p {
   min-height: 320px;
   color: #183153; /* Bleu foncé pour le texte, cohérent avec ton header */
 
-  /* Gradient doux et cohérent avec le header */
+  /* Gradient animé avec début plus marqué, fin douce */
   background:
     linear-gradient(120deg,
-      #f5f9ff 0%,    /* blanc bleuté */
-      #e5edf1 50%,   /* bleu-gris très clair */
+      #d9e6f2 0%,    /* bleu clair un peu plus marqué */
+      #f5f9ff 30%,   /* blanc bleuté */
+      #e5edf1 65%,   /* bleu-gris très clair */
       #96c2db 100%   /* bleu-gris doux */
     ) 0% 50% / 200% 200%,
     url('/images/bloc.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 
-  /* Animation du gradient et de l'image de fond */
+  /* Animation du gradient horizontal et image animée verticalement */
   animation:
     gradientMove 12s ease-in-out infinite alternate,
     bgMoveUp 36s linear infinite;
@@ -684,8 +685,9 @@ header p {
 .no-webp .notre-methode-bg {
   background:
     linear-gradient(120deg,
-      #f5f9ff 0%,
-      #e5edf1 50%,
+      #d9e6f2 0%,
+      #f5f9ff 30%,
+      #e5edf1 65%,
       #96c2db 100%
     ) 0% 50% / 200% 200%,
     url('/images/bloc.png') center bottom / cover no-repeat;
@@ -704,13 +706,13 @@ header p {
   100% { background-position: 100% 50%, center top; }
 }
 
-/* Pour que le contenu reste au-dessus de tout */
+/* Contenu au-dessus */
 .notre-methode-bg > * {
   position: relative;
   z-index: 1;
 }
 
-/* Responsive : adaptation sur mobile */
+/* Responsive */
 @media (max-width: 600px) {
   .notre-methode-bg {
     padding: 1.2rem 0.5rem;
@@ -718,7 +720,6 @@ header p {
     font-size: 0.97rem;
   }
 }
-
 
   </style> 
 </head>
