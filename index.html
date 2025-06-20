@@ -592,37 +592,50 @@ header p {
   }
 }
 
-/* Personnalisation du bloc Succès fee */
+/* Bloc Succès Fee harmonisé avec Notre Méthode */
 .succes-fee {
   position: relative;
   overflow: hidden;
-  /* Superposition : l'image de fond EN DESSOUS, le gradient animé AU-DESSUS */
-  background:
-    linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%),
-    url('/images/bloc.webp');
-  background-size: 200% 200%, cover;
-  background-position: 0% 50%, center;
-  animation: gradientMove 10s ease-in-out infinite alternate;
-  border-left: 5px solid var(--primary, #0a1f3d);
+  border-radius: 12px;
   padding: 2rem 1.5rem;
   margin: 2rem 0;
-  border-radius: 12px;
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
-  min-height: 320px; /* pour garantir la visibilité de l'image */
+  min-height: 320px;
+  color: #183153; /* Bleu foncé pour le texte, cohérent avec le header */
+
+  /* Gradient doux cohérent + image décorative */
+  background:
+    linear-gradient(120deg,
+      #f5f9ff 0%,    /* blanc bleuté */
+      #e5edf1 50%,   /* bleu-gris très clair */
+      #96c2db 100%   /* bleu-gris doux */
+    ) 0% 50% / 200% 200%,
+    url('/images/bloc.webp') center/cover no-repeat;
+  background-blend-mode: lighten;
+
+  /* Animation du gradient */
+  animation: gradientMove 12s ease-in-out infinite alternate;
+  will-change: background-position;
+
+  /* Bordure à gauche pour la touche d'identité */
+  border-left: 5px solid var(--primary, #0a1f3d);
 }
 
-/* Fallback PNG si WebP non supporté (nécessite Modernizr ou équivalent) */
+/* Fallback PNG si WebP non supporté */
 .no-webp .succes-fee {
   background:
-    linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%),
-    url('/images/bloc.png');
-  background-size: 200% 200%, cover;
-  background-position: 0% 50%, center;
+    linear-gradient(120deg,
+      #f5f9ff 0%,
+      #e5edf1 50%,
+      #96c2db 100%
+    ) 0% 50% / 200% 200%,
+    url('/images/bloc.png') center/cover no-repeat;
+  background-blend-mode: lighten;
 }
 
-/* Animation du gradient */
+/* Animation du gradient horizontal */
 @keyframes gradientMove {
-  0% { background-position: 0% 50%, center; }
+  0%   { background-position: 0% 50%, center; }
   100% { background-position: 100% 50%, center; }
 }
 
@@ -652,6 +665,16 @@ header p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
+/* Responsive : adaptation sur mobile */
+@media (max-width: 600px) {
+  .succes-fee {
+    padding: 1.2rem 0.5rem;
+    min-height: 220px;
+    font-size: 0.97rem;
+  }
+}
+
 /* Bloc Notre Méthode avec gradient cohérent et image animée */
 .notre-methode-bg {
   position: relative;
