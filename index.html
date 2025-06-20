@@ -652,7 +652,7 @@ header p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-/* Bloc Notre Méthode avec animation de fond améliorée */
+/* Bloc Notre Méthode avec animation de fond verticale */
 .notre-methode-bg {
   position: relative;
   overflow: hidden;
@@ -662,12 +662,17 @@ header p {
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
   min-height: 320px;
   color: var(--texte, #222);
+
   /* Dégradé animé + image de fond décorative */
   background:
     linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%) 0% 50% / 200% 200%,
-    url('/images/bloc.webp') center/cover no-repeat;
+    url('/images/bloc.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
-  animation: gradientMove 10s ease-in-out infinite alternate, bgScroll 40s linear infinite;
+
+  /* Animation du gradient et de l'image de fond vers le haut */
+  animation:
+    gradientMove 10s ease-in-out infinite alternate,
+    bgMoveUp 30s linear infinite;
   will-change: background-position;
 }
 
@@ -675,20 +680,20 @@ header p {
 .no-webp .notre-methode-bg {
   background:
     linear-gradient(120deg, var(--main-bg, #f5f9ff) 0%, var(--accent-bg, #e0e7ff) 100%) 0% 50% / 200% 200%,
-    url('/images/bloc.png') center/cover no-repeat;
+    url('/images/bloc.png') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 }
 
-/* Animation du gradient */
+/* Animation du gradient horizontal */
 @keyframes gradientMove {
-  0% { background-position: 0% 50%, center; }
-  100% { background-position: 100% 50%, center; }
+  0%   { background-position: 0% 50%, center bottom; }
+  100% { background-position: 100% 50%, center bottom; }
 }
 
-/* Animation du déplacement de l’image de fond */
-@keyframes bgScroll {
-  0% { background-position: 0% 50%, 50% 50%; }
-  100% { background-position: 100% 50%, 53% 53%; }
+/* Animation verticale de l'image de fond (vers le haut) */
+@keyframes bgMoveUp {
+  0%   { background-position: 0% 50%, center bottom; }
+  100% { background-position: 100% 50%, center top; }
 }
 
 /* Responsive : adaptation sur mobile */
