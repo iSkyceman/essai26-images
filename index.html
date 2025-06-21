@@ -592,8 +592,20 @@ header p {
   }
 }
 
-/* Bloc Succès Fee harmonisé avec Notre Méthode */
-.succes-fee {
+:root {
+  --primary: #0a1f3d;
+  --main-bg: #f5f9ff;
+  --accent-bg: #e5edf1;
+  --soft-blue: #96c2db;
+  --texte: #183153;
+  --text: #223;
+}
+
+/* Blocs principaux harmonisés */
+.bloc-section,
+.notre-methode-bg,
+.succes-fee,
+.donnees-securisees {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
@@ -601,33 +613,43 @@ header p {
   margin: 2rem 0;
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
   min-height: 320px;
-  color: #183153; /* Bleu foncé pour le texte, cohérent avec le header */
+  color: var(--texte);
 
-  /* Gradient doux cohérent + image décorative */
   background:
     linear-gradient(120deg,
-      #f5f9ff 0%,    /* blanc bleuté */
-      #e5edf1 50%,   /* bleu-gris très clair */
-      #96c2db 100%   /* bleu-gris doux */
+      var(--main-bg) 0%,
+      var(--accent-bg) 50%,
+      var(--soft-blue) 100%
+    ) 0% 50% / 200% 200%;
+  background-blend-mode: lighten;
+
+  animation: gradientMove 12s ease-in-out infinite alternate;
+  will-change: background-position;
+}
+
+/* Image décorative optionnelle par bloc */
+.bloc-section.has-image,
+.notre-methode-bg,
+.succes-fee {
+  background:
+    linear-gradient(120deg,
+      var(--main-bg) 0%,
+      var(--accent-bg) 50%,
+      var(--soft-blue) 100%
     ) 0% 50% / 200% 200%,
     url('/images/bloc.webp') center/cover no-repeat;
   background-blend-mode: lighten;
-
-  /* Animation du gradient */
-  animation: gradientMove 12s ease-in-out infinite alternate;
-  will-change: background-position;
-
-  /* Bordure à gauche pour la touche d'identité */
-  border-left: 5px solid var(--primary, #0a1f3d);
 }
 
 /* Fallback PNG si WebP non supporté */
+.no-webp .bloc-section.has-image,
+.no-webp .notre-methode-bg,
 .no-webp .succes-fee {
   background:
     linear-gradient(120deg,
-      #f5f9ff 0%,
-      #e5edf1 50%,
-      #96c2db 100%
+      var(--main-bg) 0%,
+      var(--accent-bg) 50%,
+      var(--soft-blue) 100%
     ) 0% 50% / 200% 200%,
     url('/images/bloc.png') center/cover no-repeat;
   background-blend-mode: lighten;
@@ -639,109 +661,96 @@ header p {
   100% { background-position: 100% 50%, center; }
 }
 
-/* SVG décoratif en overlay */
-.succes-fee-lines {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Texte au-dessus du fond animé */
+/* Titres et textes */
+.bloc-section h2,
+.notre-methode-bg h3,
 .succes-fee h3,
-.succes-fee p {
-  position: relative;
-  z-index: 1;
-}
-
-.succes-fee h3 {
-  color: var(--primary, #0a1f3d);
+.donnees-securisees h3 {
+  color: var(--primary);
   margin-bottom: 1rem;
   font-size: 1.4rem;
+  font-weight: 600;
 }
 
-.succes-fee p {
-  color: var(--text, #223);
+.bloc-section p,
+.notre-methode-bg p,
+.succes-fee p,
+.donnees-securisees p,
+.bloc-section li,
+.donnees-securisees li {
+  color: var(--text);
   font-size: 1.1rem;
   line-height: 1.6;
+  margin-bottom: 0.8rem;
 }
 
-/* Responsive : adaptation sur mobile */
+/* Listes à puces personnalisées */
+.bloc-section ul,
+.donnees-securisees ul {
+  list-style: none;
+  padding-left: 0;
+}
+.donnees-securisees li::before {
+  content: "🔒";
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+/* Bordure identité pour Succès Fee */
+.succes-fee {
+  border-left: 5px solid var(--primary);
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-  .succes-fee {
+  .bloc-section,
+  .notre-methode-bg,
+  .succes-fee,
+  .donnees-securisees {
     padding: 1.2rem 0.5rem;
     min-height: 220px;
     font-size: 0.97rem;
   }
+  .bloc-section h2,
+  .notre-methode-bg h3,
+  .succes-fee h3,
+  .donnees-securisees h3 {
+    font-size: 1.2rem;
+  }
 }
 
-/* Bloc Notre Méthode avec gradient cohérent et image animée */
-.notre-methode-bg {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  margin: 2rem 0;
-  box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
-  min-height: 320px;
-  color: #183153; /* Bleu foncé pour le texte, cohérent avec ton header */
-
-  /* Gradient doux et cohérent avec le header */
-  background:
-    linear-gradient(120deg,
-      #f5f9ff 0%,    /* blanc bleuté */
-      #e5edf1 50%,   /* bleu-gris très clair */
-      #96c2db 100%   /* bleu-gris doux */
-    ) 0% 50% / 200% 200%,
-    url('/images/bloc.webp') center bottom / cover no-repeat;
-  background-blend-mode: lighten;
-
-  /* Animation du gradient et de l'image de fond */
-  animation:
-    gradientMove 12s ease-in-out infinite alternate,
-    bgMoveUp 36s linear infinite;
-  will-change: background-position;
+/* Lien email stylé (confidentialité) */
+a.email-link {
+  color: var(--primary);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+a.email-link:hover {
+  color: #38bdf8;
 }
 
-/* Fallback PNG si WebP non supporté */
-.no-webp .notre-methode-bg {
-  background:
-    linear-gradient(120deg,
-      #f5f9ff 0%,
-      #e5edf1 50%,
-      #96c2db 100%
-    ) 0% 50% / 200% 200%,
-    url('/images/bloc.png') center bottom / cover no-repeat;
-  background-blend-mode: lighten;
+/* Podcast & PDF liens */
+a.podcast-link, a.pdf-link {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--soft-blue);
+  transition: color 0.2s, border-color 0.2s;
+}
+a.podcast-link:hover, a.pdf-link:hover {
+  color: #38bdf8;
+  border-color: #38bdf8;
 }
 
-/* Animation du gradient horizontal */
-@keyframes gradientMove {
-  0%   { background-position: 0% 50%, center bottom; }
-  100% { background-position: 100% 50%, center bottom; }
-}
-
-/* Animation verticale de l'image de fond (vers le haut) */
-@keyframes bgMoveUp {
-  0%   { background-position: 0% 50%, center bottom; }
-  100% { background-position: 100% 50%, center top; }
-}
-
-/* Pour que le contenu reste au-dessus de tout */
-.notre-methode-bg > * {
+/* Pour que le contenu reste au-dessus du fond animé */
+.bloc-section > *,
+.notre-methode-bg > *,
+.succes-fee > *,
+.donnees-securisees > * {
   position: relative;
   z-index: 1;
 }
-
-/* Responsive : adaptation sur mobile */
-@media (max-width: 600px) {
-  .notre-methode-bg {
-    padding: 1.2rem 0.5rem;
-    min-height: 220px;
-    font-size: 0.97rem;
-  }
-}
-
 
   </style> 
 </head>
