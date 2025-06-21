@@ -601,10 +601,74 @@ header p {
   --text: #223;
 }
 
-/* Blocs principaux harmonisés */
-.bloc-section,
-.notre-methode-bg,
-.succes-fee,
+/* Bloc Notre Méthode : image statique, gradient harmonisé */
+.notre-methode-bg {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
+  min-height: 320px;
+  color: var(--texte);
+  background:
+    linear-gradient(120deg,
+      var(--main-bg) 0%,
+      var(--accent-bg) 50%,
+      var(--soft-blue) 100%
+    ) 0% 50% / 200% 200%,
+    url('/images/bloc.webp') center bottom / cover no-repeat;
+  background-blend-mode: lighten;
+}
+.no-webp .notre-methode-bg {
+  background:
+    linear-gradient(120deg,
+      var(--main-bg) 0%,
+      var(--accent-bg) 50%,
+      var(--soft-blue) 100%
+    ) 0% 50% / 200% 200%,
+    url('/images/bloc.png') center bottom / cover no-repeat;
+  background-blend-mode: lighten;
+}
+
+/* Bloc Succès Fee : image personnalisée, animation verticale */
+.succes-fee {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
+  min-height: 320px;
+  color: var(--texte);
+  border-left: 5px solid var(--primary);
+
+  background:
+    linear-gradient(120deg,
+      var(--main-bg) 0%,
+      var(--accent-bg) 50%,
+      var(--soft-blue) 100%
+    ) 0% 50% / 200% 200%,
+    url('/images/bloc7.webp') center bottom / cover no-repeat;
+  background-blend-mode: lighten;
+
+  animation:
+    gradientMove 12s ease-in-out infinite alternate,
+    bgMoveUp 36s linear infinite;
+  will-change: background-position;
+}
+.no-webp .succes-fee {
+  background:
+    linear-gradient(120deg,
+      var(--main-bg) 0%,
+      var(--accent-bg) 50%,
+      var(--soft-blue) 100%
+    ) 0% 50% / 200% 200%,
+    url('/images/bloc7.png') center bottom / cover no-repeat;
+  background-blend-mode: lighten;
+}
+
+/* Bloc Données cryptées & hébergement sécurisé : animation + image dédiée */
 .donnees-securisees {
   position: relative;
   overflow: hidden;
@@ -620,49 +684,38 @@ header p {
       var(--main-bg) 0%,
       var(--accent-bg) 50%,
       var(--soft-blue) 100%
-    ) 0% 50% / 200% 200%;
+    ) 0% 50% / 200% 200%,
+    url('/images/bloc8.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 
-  animation: gradientMove 12s ease-in-out infinite alternate;
+  animation:
+    gradientMove 12s ease-in-out infinite alternate,
+    bgMoveUp 36s linear infinite;
   will-change: background-position;
 }
-
-/* Image décorative optionnelle par bloc */
-.bloc-section.has-image,
-.notre-methode-bg,
-.succes-fee {
+.no-webp .donnees-securisees {
   background:
     linear-gradient(120deg,
       var(--main-bg) 0%,
       var(--accent-bg) 50%,
       var(--soft-blue) 100%
     ) 0% 50% / 200% 200%,
-    url('/images/bloc.webp') center/cover no-repeat;
-  background-blend-mode: lighten;
-}
-
-/* Fallback PNG si WebP non supporté */
-.no-webp .bloc-section.has-image,
-.no-webp .notre-methode-bg,
-.no-webp .succes-fee {
-  background:
-    linear-gradient(120deg,
-      var(--main-bg) 0%,
-      var(--accent-bg) 50%,
-      var(--soft-blue) 100%
-    ) 0% 50% / 200% 200%,
-    url('/images/bloc.png') center/cover no-repeat;
+    url('/images/bloc8.png') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 }
 
 /* Animation du gradient horizontal */
 @keyframes gradientMove {
-  0%   { background-position: 0% 50%, center; }
-  100% { background-position: 100% 50%, center; }
+  0%   { background-position: 0% 50%, center bottom; }
+  100% { background-position: 100% 50%, center bottom; }
+}
+/* Animation verticale de l'image de fond */
+@keyframes bgMoveUp {
+  0%   { background-position: 0% 50%, center bottom; }
+  100% { background-position: 100% 50%, center top; }
 }
 
-/* Titres et textes */
-.bloc-section h2,
+/* Titres et contenus */
 .notre-methode-bg h3,
 .succes-fee h3,
 .donnees-securisees h3 {
@@ -671,12 +724,9 @@ header p {
   font-size: 1.4rem;
   font-weight: 600;
 }
-
-.bloc-section p,
 .notre-methode-bg p,
 .succes-fee p,
 .donnees-securisees p,
-.bloc-section li,
 .donnees-securisees li {
   color: var(--text);
   font-size: 1.1rem;
@@ -685,7 +735,6 @@ header p {
 }
 
 /* Listes à puces personnalisées */
-.bloc-section ul,
 .donnees-securisees ul {
   list-style: none;
   padding-left: 0;
@@ -696,14 +745,8 @@ header p {
   display: inline-block;
 }
 
-/* Bordure identité pour Succès Fee */
-.succes-fee {
-  border-left: 5px solid var(--primary);
-}
-
 /* Responsive */
 @media (max-width: 600px) {
-  .bloc-section,
   .notre-methode-bg,
   .succes-fee,
   .donnees-securisees {
@@ -711,7 +754,6 @@ header p {
     min-height: 220px;
     font-size: 0.97rem;
   }
-  .bloc-section h2,
   .notre-methode-bg h3,
   .succes-fee h3,
   .donnees-securisees h3 {
@@ -719,32 +761,7 @@ header p {
   }
 }
 
-/* Lien email stylé (confidentialité) */
-a.email-link {
-  color: var(--primary);
-  text-decoration: underline;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-a.email-link:hover {
-  color: #38bdf8;
-}
-
-/* Podcast & PDF liens */
-a.podcast-link, a.pdf-link {
-  color: var(--primary);
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 1px dashed var(--soft-blue);
-  transition: color 0.2s, border-color 0.2s;
-}
-a.podcast-link:hover, a.pdf-link:hover {
-  color: #38bdf8;
-  border-color: #38bdf8;
-}
-
 /* Pour que le contenu reste au-dessus du fond animé */
-.bloc-section > *,
 .notre-methode-bg > *,
 .succes-fee > *,
 .donnees-securisees > * {
