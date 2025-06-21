@@ -1645,7 +1645,7 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
     </p>
     <div style="margin-bottom:1.5rem;">
       <h3>Notre engagement : sécurité, expertise, indépendance</h3>
-      <ul style="list-style:none; padding:0; margin:0 auto 1.2rem auto; max-width:400px; text-align:left;">
+      <ul class="donnees-list">
         <li>🔒 <strong>Sécurité & confidentialité</strong> : Données cryptées, hébergement sécurisé, jamais partagées sans consentement.</li>
         <li>✅ <strong>Conformité RGPD</strong> : Respect strict du RGPD pour une gestion transparente et responsable.</li>
         <li>🤝 <strong>Accompagnement par des experts IA & métiers</strong> : Expérience en gestion, finance, analyse sectorielle, comptabilité.</li>
@@ -1784,9 +1784,40 @@ footer .container,
   }
   .footer-social {
     justify-content: center;
+@media (max-width: 700px) {
+  .footer-grid {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-social {
+    justify-content: center;
   }
 }
 
+/* === AJOUTE ICI TON CODE POUR LE BLOC DONNÉES SÉCURISÉES === */
+.donnees-securisees ul.donnees-list,
+.donnees-securisees ul.donnees-list li {
+  text-align: left !important;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.donnees-securisees ul.donnees-list {
+  max-width: 400px;
+  margin: 0 0 1.2rem 0;
+}
+
+@media (max-width: 700px) {
+  .donnees-securisees ul.donnees-list,
+  .donnees-securisees ul.donnees-list li {
+    text-align: center !important;
+  }
+  .donnees-securisees ul.donnees-list {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 </style>
 
    <!-- POPUP RÉSERVATION (pour tous les boutons offres) -->
