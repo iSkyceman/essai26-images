@@ -591,7 +591,6 @@ header p {
     max-width: 90vw;
   }
 }
-
 :root {
   --primary: #0a1f3d;
   --main-bg: #f5f9ff;
@@ -601,7 +600,7 @@ header p {
   --text: #223;
 }
 
-/* Bloc Notre Méthode : image statique, gradient harmonisé */
+/* Bloc Notre Méthode : gradient doux, image statique */
 .notre-methode-bg {
   position: relative;
   overflow: hidden;
@@ -613,9 +612,9 @@ header p {
   color: var(--texte);
   background:
     linear-gradient(120deg,
-      var(--main-bg) 0%,
-      var(--accent-bg) 50%,
-      var(--soft-blue) 100%
+      #f5f9ff 0%,
+      #e5edf1 50%,
+      #96c2db 100%
     ) 0% 50% / 200% 200%,
     url('/images/bloc.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
@@ -623,15 +622,15 @@ header p {
 .no-webp .notre-methode-bg {
   background:
     linear-gradient(120deg,
-      var(--main-bg) 0%,
-      var(--accent-bg) 50%,
-      var(--soft-blue) 100%
+      #f5f9ff 0%,
+      #e5edf1 50%,
+      #96c2db 100%
     ) 0% 50% / 200% 200%,
     url('/images/bloc.png') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 }
 
-/* Bloc Succès Fee : image personnalisée, animation verticale */
+/* Bloc Succès Fee : gradient doux, image personnalisée, animation gradient */
 .succes-fee {
   position: relative;
   overflow: hidden;
@@ -640,35 +639,33 @@ header p {
   margin: 2rem 0;
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
   min-height: 320px;
-  color: var(--texte);
+  color: #183153;
   border-left: 5px solid var(--primary);
 
   background:
     linear-gradient(120deg,
-      var(--main-bg) 0%,
-      var(--accent-bg) 50%,
-      var(--soft-blue) 100%
+      #f5f9ff 0%,
+      #e5edf1 50%,
+      #96c2db 100%
     ) 0% 50% / 200% 200%,
     url('/images/bloc7.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 
-  animation:
-    gradientMove 12s ease-in-out infinite alternate,
-    bgMoveUp 36s linear infinite;
+  animation: gradientMove 12s ease-in-out infinite alternate;
   will-change: background-position;
 }
 .no-webp .succes-fee {
   background:
     linear-gradient(120deg,
-      var(--main-bg) 0%,
-      var(--accent-bg) 50%,
-      var(--soft-blue) 100%
+      #f5f9ff 0%,
+      #e5edf1 50%,
+      #96c2db 100%
     ) 0% 50% / 200% 200%,
     url('/images/bloc7.png') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 }
 
-/* Bloc Données cryptées & hébergement sécurisé : animation + image dédiée */
+/* Bloc Données cryptées & hébergement sécurisé : gradient doux, image dédiée, animation gradient + image */
 .donnees-securisees {
   position: relative;
   overflow: hidden;
@@ -681,9 +678,9 @@ header p {
 
   background:
     linear-gradient(120deg,
-      var(--main-bg) 0%,
-      var(--accent-bg) 50%,
-      var(--soft-blue) 100%
+      #f5f9ff 0%,
+      #e5edf1 50%,
+      #96c2db 100%
     ) 0% 50% / 200% 200%,
     url('/images/bloc8.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
@@ -696,9 +693,9 @@ header p {
 .no-webp .donnees-securisees {
   background:
     linear-gradient(120deg,
-      var(--main-bg) 0%,
-      var(--accent-bg) 50%,
-      var(--soft-blue) 100%
+      #f5f9ff 0%,
+      #e5edf1 50%,
+      #96c2db 100%
     ) 0% 50% / 200% 200%,
     url('/images/bloc8.png') center bottom / cover no-repeat;
   background-blend-mode: lighten;
