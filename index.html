@@ -452,7 +452,7 @@ header p {
   padding: 2.5rem 2rem 2rem 2rem;
   max-width: 430px;
   margin: 2rem auto 2.5rem auto;
-  text-align: center;
+  text-align: left; /* <-- aligné à gauche par défaut */
   box-shadow: 0 8px 32px rgba(10,31,61,0.18);
   overflow: hidden;
 }
@@ -767,6 +767,29 @@ header p {
   .succes-fee h3,
   .donnees-securisees h3 {
     font-size: 1.2rem;
+  }
+}
+.donnees-securisees {
+  text-align: left;
+}
+
+/* Sur mobile (moins de 700px), tu peux centrer si tu préfères */
+@media (max-width: 700px) {
+  .donnees-securisees {
+    text-align: center;
+  }
+}
+.mentions-legales {
+  text-align: left;
+}
+
+/* Centrer sur mobile */
+@media (max-width: 700px) {
+  .mentions-legales {
+    text-align: center;
+  }
+  .mentions-legales .social-icons {
+    justify-content: center;
   }
 }
 
