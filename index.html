@@ -600,7 +600,7 @@ header p {
   --text: #223;
 }
 
-/* Bloc Notre Méthode : gradient doux, image statique */
+/* Bloc Notre Méthode */
 .notre-methode-bg {
   position: relative;
   overflow: hidden;
@@ -609,7 +609,7 @@ header p {
   margin: 2rem 0;
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
   min-height: 320px;
-  color: var(--texte);
+  color: #183153;
   background:
     linear-gradient(120deg,
       #f5f9ff 0%,
@@ -618,6 +618,10 @@ header p {
     ) 0% 50% / 200% 200%,
     url('/images/bloc.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
+  animation:
+    gradientMove 12s ease-in-out infinite alternate,
+    bgMoveUp 36s linear infinite;
+  will-change: background-position;
 }
 .no-webp .notre-methode-bg {
   background:
@@ -630,7 +634,7 @@ header p {
   background-blend-mode: lighten;
 }
 
-/* Bloc Succès Fee : gradient doux, image personnalisée, animation gradient */
+/* Bloc Succès Fee */
 .succes-fee {
   position: relative;
   overflow: hidden;
@@ -640,8 +644,6 @@ header p {
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
   min-height: 320px;
   color: #183153;
-  border-left: 5px solid var(--primary);
-
   background:
     linear-gradient(120deg,
       #f5f9ff 0%,
@@ -650,9 +652,11 @@ header p {
     ) 0% 50% / 200% 200%,
     url('/images/bloc7.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
-
-  animation: gradientMove 12s ease-in-out infinite alternate;
+  animation:
+    gradientMove 12s ease-in-out infinite alternate,
+    bgMoveUp 36s linear infinite;
   will-change: background-position;
+  border-left: 5px solid var(--primary, #0a1f3d);
 }
 .no-webp .succes-fee {
   background:
@@ -665,7 +669,7 @@ header p {
   background-blend-mode: lighten;
 }
 
-/* Bloc Données cryptées & hébergement sécurisé : gradient doux, image dédiée, animation gradient + image */
+/* Bloc Données cryptées & hébergement sécurisé */
 .donnees-securisees {
   position: relative;
   overflow: hidden;
@@ -674,8 +678,7 @@ header p {
   margin: 2rem 0;
   box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
   min-height: 320px;
-  color: var(--texte);
-
+  color: #183153;
   background:
     linear-gradient(120deg,
       #f5f9ff 0%,
@@ -684,7 +687,6 @@ header p {
     ) 0% 50% / 200% 200%,
     url('/images/bloc8.webp') center bottom / cover no-repeat;
   background-blend-mode: lighten;
-
   animation:
     gradientMove 12s ease-in-out infinite alternate,
     bgMoveUp 36s linear infinite;
@@ -712,30 +714,40 @@ header p {
   100% { background-position: 100% 50%, center top; }
 }
 
-/* Titres et contenus */
-.notre-methode-bg h3,
-.succes-fee h3,
-.donnees-securisees h3 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-.notre-methode-bg p,
-.succes-fee p,
-.donnees-securisees p,
-.donnees-securisees li {
-  color: var(--text);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 0.8rem;
+/* Overlay décoratif possible pour chaque bloc (optionnel) */
+.succes-fee-lines,
+.notre-methode-bg-lines,
+.donnees-securisees-lines {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Listes à puces personnalisées */
-.donnees-securisees ul {
-  list-style: none;
-  padding-left: 0;
+/* Texte au-dessus du fond animé */
+.succes-fee h3, .succes-fee p,
+.notre-methode-bg h3, .notre-methode-bg p,
+.donnees-securisees h3, .donnees-securisees p {
+  position: relative;
+  z-index: 1;
 }
+.succes-fee h3,
+.notre-methode-bg h3,
+.donnees-securisees h3 {
+  color: var(--primary, #0a1f3d);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+.succes-fee p,
+.notre-methode-bg p,
+.donnees-securisees p {
+  color: var(--text, #223);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Listes à puces personnalisées pour sécurité */
+.donnees-securisees ul { list-style: none; padding-left: 0; }
 .donnees-securisees li::before {
   content: "🔒";
   margin-right: 0.5rem;
@@ -756,14 +768,6 @@ header p {
   .donnees-securisees h3 {
     font-size: 1.2rem;
   }
-}
-
-/* Pour que le contenu reste au-dessus du fond animé */
-.notre-methode-bg > *,
-.succes-fee > *,
-.donnees-securisees > * {
-  position: relative;
-  z-index: 1;
 }
 
   </style> 
