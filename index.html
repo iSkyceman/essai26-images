@@ -1681,27 +1681,26 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
 </section>
 
   <!-- FOOTER -->
-<footer>
+<footer class="mentions-legales-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <p>© 2025 iSkyce - Tous droits réservés</p>
         <div class="legal-link">
-  <a href="mentions-legales.html">Mentions légales</a> &nbsp;|&nbsp;
-  <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
-</div>
-
+          <a href="mentions-legales.html">Mentions légales</a> &nbsp;|&nbsp;
+          <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+        </div>
         <div class="footer-coords">
           <p>
             <strong>Michel Klein</strong><br/>
-        6 rue Schelmenwasen<br/>
-        67590 Schweighouse Sur Moder, France<br/>
-        Téléphone : +33 781 289 088<br/>
-        <a href="mailto:iSkyceman@gmail.com" class="contact-link" title="Envoyer un email à iSkyceman@gmail.com">Nous contacter</a><br/>
-        SIRET : 392 736 104 000 28<br/>
-        Statut : Entreprise Individuelle<br/>
-        Responsable de publication : Michel Klein<br/>
-        Hébergeur : Vercel Inc.
+            6 rue Schelmenwasen<br/>
+            67590 Schweighouse Sur Moder, France<br/>
+            Téléphone : +33 781 289 088<br/>
+            <a href="mailto:iSkyceman@gmail.com" class="contact-link" title="Envoyer un email à iSkyceman@gmail.com">Nous contacter</a><br/>
+            SIRET : 392 736 104 000 28<br/>
+            Statut : Entreprise Individuelle<br/>
+            Responsable de publication : Michel Klein<br/>
+            Hébergeur : Vercel Inc.
           </p>
         </div>
       </div>
@@ -1715,16 +1714,25 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
     </div>
   </div>
 </footer>
-<style>
-footer {
+
+.mentions-legales-footer {
   position: relative;
-  background: linear-gradient(180deg, #0A1F3D 0%, #1E3C72 100%);
+  background:
+    image-set(
+      url('/images/bloc10.webp') type('image/webp'),
+      url('/images/bloc10.png') type('image/png')
+    ),
+    linear-gradient(180deg, #0A1F3D 0%, #1E3C72 100%);
+  background-size: cover;
+  background-position: center 60%;
   color: #fff;
   overflow: hidden;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+  transition: background-position 0.2s;
+  will-change: background-position;
 }
-footer::after {
+.mentions-legales-footer::after {
   content: "";
   display: block;
   position: absolute;
@@ -1733,35 +1741,35 @@ footer::after {
   background: linear-gradient(to right, #ff8400 0%, #19e68c 100%);
   z-index: 1;
 }
-footer .container,
-.footer-grid {
+.mentions-legales-footer .container,
+.mentions-legales-footer .footer-grid {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;   /* alignement à gauche */
+  align-items: flex-start;
   text-align: left;
   position: relative;
   z-index: 2;
 }
-.footer-grid > div {
+.mentions-legales-footer .footer-grid > div {
   margin-bottom: 1.2rem;
 }
-.footer-coords {
+.mentions-legales-footer .footer-coords {
   margin-top: 1rem;
 }
-.footer-social {
+.mentions-legales-footer .footer-social {
   display: flex;
   gap: 1.2rem;
   justify-content: center;
 }
-.footer-social a {
+.mentions-legales-footer .footer-social a {
   color: #fff;
   transition: color 0.3s;
 }
-.footer-social a:hover,
-.footer-social a:focus {
+.mentions-legales-footer .footer-social a:hover,
+.mentions-legales-footer .footer-social a:focus {
   color: #ff8400;
 }
-.legal-link span {
+.mentions-legales-footer .legal-link span {
   color: #ff8400;
   font-weight: bold;
   text-decoration: underline;
@@ -1769,55 +1777,24 @@ footer .container,
   display: inline-block;
 }
 @media (max-width: 600px) {
-  .footer-grid > div {
+  .mentions-legales-footer .footer-grid > div {
     margin-bottom: 0.7rem;
   }
-  footer {
+  .mentions-legales-footer {
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
   }
 }
-  @media (max-width: 700px) {
-  .footer-grid {
-    align-items: center;
-    text-align: center;
-  }
-  .footer-social {
-    justify-content: center;
 @media (max-width: 700px) {
-  .footer-grid {
+  .mentions-legales-footer .footer-grid {
     align-items: center;
     text-align: center;
   }
-  .footer-social {
+  .mentions-legales-footer .footer-social {
     justify-content: center;
   }
 }
 
-/* === AJOUTE ICI TON CODE POUR LE BLOC DONNÉES SÉCURISÉES === */
-.donnees-securisees ul.donnees-list,
-.donnees-securisees ul.donnees-list li {
-  text-align: left !important;
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.donnees-securisees ul.donnees-list {
-  max-width: 400px;
-  margin: 0 0 1.2rem 0;
-}
-
-@media (max-width: 700px) {
-  .donnees-securisees ul.donnees-list,
-  .donnees-securisees ul.donnees-list li {
-    text-align: center !important;
-  }
-  .donnees-securisees ul.donnees-list {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 </style>
 
    <!-- POPUP RÉSERVATION (pour tous les boutons offres) -->
@@ -2234,5 +2211,18 @@ window.addEventListener('scroll', function() {
   }
 });
 </script>
+  <script>
+document.addEventListener('scroll', function() {
+  const footer = document.querySelector('.mentions-legales-footer');
+  if (!footer) return;
+  const scrollY = window.scrollY || window.pageYOffset;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = docHeight > 0 ? scrollY / docHeight : 0;
+  // Inverse : l'image monte quand on descend
+  const bgPosY = 60 - (scrollPercent * 30); // Ajuste 30 pour l’intensité
+  footer.style.backgroundPosition = `center ${bgPosY}%`;
+});
+</script>
+
 </body>
 </html>
