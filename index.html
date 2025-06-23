@@ -1794,6 +1794,14 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
     justify-content: center;
   }
 }
+@keyframes moveBackground {
+  0% { background-position: center 60%; }
+  100% { background-position: center 10%; }
+}
+
+.mentions-legales-footer {
+  animation: moveBackground 10s linear infinite alternate;
+}
 
 </style>
 
