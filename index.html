@@ -2207,6 +2207,7 @@ document.addEventListener('scroll', function() {
 });
 </script>
 <script>
+// Liste des fonctionnalités par tranche
 const features = {
   "0-15": [
     "Mises à jour mensuelles",
@@ -2246,6 +2247,9 @@ const stripeLinks = {
 
 let selectedTranche = "";
 
+// À remplacer par la vraie valeur dynamique dans ton système (login, espace client, etc.)
+const clientId = "12345"; // Exemple statique, à rendre dynamique en prod
+
 document.getElementById('data-plus-select').addEventListener('change', function() {
   const val = this.value;
   selectedTranche = val;
@@ -2263,7 +2267,9 @@ document.getElementById('data-plus-select').addEventListener('change', function(
 
 document.getElementById('btn-souscrire-data-plus').addEventListener('click', function() {
   if (selectedTranche && stripeLinks[selectedTranche]) {
-    window.location.href = stripeLinks[selectedTranche];
+    // Ajoute l'ID client dans l'URL Stripe (client_reference_id)
+    const url = stripeLinks[selectedTranche] + '?client_reference_id=' + encodeURIComponent(clientId);
+    window.location.href = url;
   } else {
     alert("Merci de sélectionner une formule.");
   }
