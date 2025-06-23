@@ -1473,86 +1473,54 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
   </p>
 </section>
 
-
-  <!-- ABONNEMENT DATA+ -->
-  <section>
-    <div class="container">
-      <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-        <h2 class="section-title" style="margin: 0;">
-          <i class="fas fa-sync"></i>
-          Abonnement Data+
-        </h2>
-        <button class="cta-main" type="button" onclick="openDataPlusInfo()">Découvrir</button>
-      </div>
-      <p class="mb-2">
-        Pour garantir la pertinence et l'actualisation de vos analyses, nous proposons une formule d'abonnement mensuel. Elle inclut la complétude, la vérification et le rafraîchissement automatique de vos données chaque mois. Cette solution vous assure un pilotage continu, fiable et conforme aux dernières mises réglementaires, sans effort de votre part.
-      </p>
-      <div class="tarif-grid">
-        <div class="tarif-card" id="card-data-1">
-          <h3>0–15 salariés</h3>
-          <div class="tarif-prix">79 €/mois</div>
-          <small>Non assujetti à la TVA, art. 293B CGI</small>
-          <ul>
-            <li>Mises à jour mensuelles</li>
-            <li>Accès à la base de données</li>
-            <li>Assistance par chat</li>
-          </ul>
-          <button class="cta-main" onclick="openSouscription('data')">Souscrire</button>
-        </div>
-        <div class="tarif-card" id="card-data-2">
-          <h3>16–49 salariés</h3>
-          <div class="tarif-prix">199 €/mois</div>
-          <small class="mention-tva"></small>
-<ul>
-
-            <li>Actualisation des données</li>
-            <li>Tableau de bord personnalisé</li>
-            <li>Support prioritaire</li>
-          </ul>
-          <button class="cta-main" onclick="openSouscription('data')">Souscrire</button>
-        </div>
-        <div class="tarif-card" id="card-data-3">
-          <h3>50–99 salariés</h3>
-          <div class="tarif-prix">360 €/mois</div>
-          <small class="mention-tva"></small>
-<ul>
-
-            <li>Mises à jour en temps réel</li>
-            <li>Dashboard avancé</li>
-            <li>Expert dédié</li>
-          </ul>
-          <button class="cta-main" onclick="openSouscription('data')">Souscrire</button>
-        </div>
-        <div class="tarif-card" id="card-data-4">
-          <h3>100+ salariés</h3>
-          <div class="tarif-prix">Prix sur devis</div>
-          <small class="mention-tva"></small>
-<ul>
-
-            <li>Données actualisées en temps réel</li>
-            <li>Dashboard sur-mesure</li>
-            <li>Équipe dédiée</li>
-          </ul>
-          <button class="cta-main" onclick="openSouscription('data-plus')">Nous contacter</button>
-        </div>
-      </div>
+<!-- ABONNEMENT DATA+ -->
+<section>
+  <div class="container">
+    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+      <h2 class="section-title" style="margin: 0;">
+        <i class="fas fa-sync"></i>
+        Abonnement Data+
+      </h2>
+      <button class="cta-main" type="button" onclick="openDataPlusInfo()">Découvrir</button>
     </div>
-  </section>
-
-  <!-- POPUP DATA+ -->
-  <div id="popup-data-plus-info" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:10000;">
-    <div style="background:#fff; padding:2rem; border-radius:8px; max-width:400px; width:90%; box-shadow:0 4px 12px rgba(0,0,0,0.3); position:relative;">
-      <button onclick="closeDataPlusInfo()" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer;">×</button>
-      <h2>Abonnement Data+</h2>
-      <div class="data-plus-info">
-        <strong>Data+ : l’abonnement réservé aux industriels engagés dans la transformation 5.0</strong>
-        <p>Cette offre avancée s’adresse exclusivement aux clients ayant déjà bénéficié d’un Diagnostic, d’une Feuille de route ou d’une Analyse IA.</p>
-        <p>Nous créons pour vous un jumeau numérique sur-mesure, mis à jour chaque mois avec vos données réelles, pour un pilotage ultra-précis et une optimisation continue.</p>
-        <p>Dès que votre jumeau numérique est prêt, vous recevez une invitation personnalisée pour activer votre abonnement Data+.<br/><strong>Rejoignez les industriels qui anticipent, innovent et gardent une longueur d’avance.</strong></p>
-      </div>
-      <button onclick="closeDataPlusInfo()" class="cta-main" style="margin-top:1rem;">Fermer</button>
+    <p class="mb-2">
+      Pour garantir la pertinence et l'actualisation de vos analyses, nous proposons une formule d'abonnement mensuel. Elle inclut la complétude, la vérification et le rafraîchissement automatique de vos données chaque mois. Cette solution vous assure un pilotage continu, fiable et conforme aux dernières mises réglementaires, sans effort de votre part.
+    </p>
+    
+    <!-- NOUVEAU BLOC AVEC MENU DÉROULANT -->
+    <div class="bloc-data-plus" style="margin:2rem 0; text-align:center;">
+      <label for="data-plus-select"><strong>Choisissez votre formule Data+</strong></label>
+      <select id="data-plus-select" name="data-plus" style="width:100%;max-width:400px;margin:1rem auto;display:block;">
+        <option value="" disabled selected>Tranche de salariés</option>
+        <option value="0-15">0–15 salariés : 79 €/mois</option>
+        <option value="16-49">16–49 salariés : 199 €/mois</option>
+        <option value="50-99">50–99 salariés : 360 €/mois</option>
+        <option value="100-249">100–249 salariés : 690 €/mois</option>
+        <option value="250+">250 salariés et + : 995 €/mois</option>
+      </select>
+      <a href="contrat-type-data-plus.pdf" target="_blank" title="Voir le contrat type" style="margin-left:8px;vertical-align:middle;display:inline-block;">
+        <span style="font-size:1.2em;cursor:pointer;">&#x2753;</span>
+        <span style="font-size:0.95em;">Contrat type</span>
+      </a>
     </div>
   </div>
+</section>
+
+<!-- POPUP DATA+ -->
+<div id="popup-data-plus-info" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:10000;">
+  <div style="background:#fff; padding:2rem; border-radius:8px; max-width:400px; width:90%; box-shadow:0 4px 12px rgba(0,0,0,0.3); position:relative;">
+    <button onclick="closeDataPlusInfo()" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer;">×</button>
+    <h2>Abonnement Data+</h2>
+    <div class="data-plus-info">
+      <strong>Data+ : l’abonnement réservé aux industriels engagés dans la transformation 5.0</strong>
+      <p>Cette offre avancée s’adresse exclusivement aux clients ayant déjà bénéficié d’un Diagnostic, d’une Feuille de route ou d’une Analyse IA.</p>
+      <p>Nous créons pour vous un jumeau numérique sur-mesure, mis à jour chaque mois avec vos données réelles, pour un pilotage ultra-précis et une optimisation continue.</p>
+      <p>Dès que votre jumeau numérique est prêt, vous recevez une invitation personnalisée pour activer votre abonnement Data+.<br/><strong>Rejoignez les industriels qui anticipent, innovent et gardent une longueur d’avance.</strong></p>
+    </div>
+    <button onclick="closeDataPlusInfo()" class="cta-main" style="margin-top:1rem;">Fermer</button>
+  </div>
+</div>
+
   <!-- BÉNÉFICES -->
   <section>
     <div class="container">
