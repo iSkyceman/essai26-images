@@ -2235,8 +2235,20 @@ const features = {
   ]
 };
 
+// Remplace les URLs ci-dessous par tes vrais liens Stripe Payment Link
+const stripeLinks = {
+  "0-15": "https://buy.stripe.com/test_0-15-salaries",
+  "16-49": "https://buy.stripe.com/test_16-49-salaries",
+  "50-99": "https://buy.stripe.com/test_50-99-salaries",
+  "100-249": "https://buy.stripe.com/test_100-249-salaries",
+  "250+": "https://buy.stripe.com/test_250plus-salaries"
+};
+
+let selectedTranche = "";
+
 document.getElementById('data-plus-select').addEventListener('change', function() {
   const val = this.value;
+  selectedTranche = val;
   const featDiv = document.getElementById('data-plus-features');
   if (features[val]) {
     featDiv.innerHTML = '<ul style="margin:0 auto;max-width:350px;text-align:left;">' +
@@ -2246,6 +2258,14 @@ document.getElementById('data-plus-select').addEventListener('change', function(
   } else {
     featDiv.innerHTML = '';
     document.getElementById('btn-souscrire-data-plus').disabled = true;
+  }
+});
+
+document.getElementById('btn-souscrire-data-plus').addEventListener('click', function() {
+  if (selectedTranche && stripeLinks[selectedTranche]) {
+    window.location.href = stripeLinks[selectedTranche];
+  } else {
+    alert("Merci de sélectionner une formule.");
   }
 });
 </script>
