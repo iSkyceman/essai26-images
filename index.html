@@ -867,6 +867,11 @@ h1, h2, h3, p {
   font-size: 2.5rem;
   color: #2563eb;
 }
+.schema-note {
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  color: #0a1f3d;
+}
 @media (max-width: 600px) {
   .schema-flow {
     flex-direction: column;
@@ -876,7 +881,8 @@ h1, h2, h3, p {
     transform: rotate(90deg);
     font-size: 2rem;
   }
-}    
+}
+
   </style> 
 </head>
 <body>
@@ -1552,28 +1558,31 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
       <animate attributeName="stroke-dashoffset" values="140;0;140" dur="3s" repeatCount="indefinite"/>
     </line>
   </svg>
-  <h3>Payé à la performance : votre réussite, notre rémunération</h3>
+  <h3>Option complémentaire : Accompagnement à la performance</h3>
 <p>
-  Un accompagnement opérationnel qui aligne nos intérêts.<br>
-  Pour les dirigeants qui veulent des résultats mesurables, nous proposons :
-  <ul>
-    <li>Un suivi 100% personnalisé</li>
-    <li>Implémentation concrète des recommandations stratégiques</li>
-    <li>Pilotage conjoint avec vos équipes</li>
-  </ul>
-  Un modèle financier sans risque :
-  <ul>
-    <li>Rémunération partiellement liée à l'atteinte de vos KPI</li>
-    <li>Seulement 30% à l'engagement, le solde sur résultats</li>
-  </ul>
-  Une garantie en 3 points :
-  <ul>
-    <li>Objectifs définis ensemble en amont</li>
-    <li>Reporting transparent chaque mois</li>
-    <li>Clause de sortie sans pénalité</li>
-  </ul>
-  <b>Nous partageons votre risque : si vous ne gagnez pas, nous ne gagnons pas.</b>
+Après votre Feuille de route ou Analyse IA Totale, vous pouvez choisir notre accompagnement opérationnel « payé à la performance ».<br>
+Ce service optionnel aligne nos intérêts : vous bénéficiez d’un suivi personnalisé pour la mise en œuvre de vos recommandations stratégiques, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
+<b>Vous restez libre : cette option n’est proposée qu’aux clients engagés dans une démarche de transformation IA, sans aucune obligation.</b>
 </p>
+<!-- Schéma visuel ici -->
+<div class="schema-remuneration">
+  <div class="schema-title">Option complémentaire : votre investissement en 2 étapes</div>
+  <div class="schema-flow">
+    <div class="schema-step">
+      <div class="schema-percentage">30%<br><span>à la signature</span></div>
+      <div class="schema-desc">Couvre les coûts initiaux de lancement de la mission</div>
+    </div>
+    <div class="schema-arrow">→</div>
+    <div class="schema-step">
+      <div class="schema-percentage">70%<br><span>aux résultats</span></div>
+      <div class="schema-desc">Payé uniquement si les objectifs définis ensemble sont atteints</div>
+    </div>
+  </div>
+  <div class="schema-note">
+    <b>Ce service est proposé uniquement après une Feuille de route ou une Analyse IA Totale, selon vos besoins.</b>
+  </div>
+</div>
+
 <!-- Schéma visuel à insérer ici si besoin -->
 <div class="schema-remuneration">
     <div class="schema-title">Votre investissement</div>
