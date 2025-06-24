@@ -264,6 +264,8 @@ header p {
   header h1 { font-size: 1.5rem; }
   .cta-main { font-size: 1.1rem; padding: 0.8rem 1.5rem; }
 }
+
+
     /* Popup IA */
     #popup-potentiel-ia {
       display: none;
@@ -444,15 +446,6 @@ header p {
   align-items: center;      /* centre verticalement si nécessaire */
   margin-top: 2rem;
 }
-  .benefices {
-  background: #fff;   /* ou une autre couleur neutre */
-  border-radius: 14px;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 2px 12px rgba(10,31,61,0.06);
-  position: relative;
-  z-index: 1;
-}
-  
 /* MENTIONS LEGALES avec fond dégradé linéaire bleu foncé -> bleu clair */
 .mentions-legales {
   position: relative;
@@ -751,7 +744,7 @@ header p {
 .succes-fee p,
 .notre-methode-bg p,
 .donnees-securisees p {
-  color: var(--texte, #223);
+  color: var(--text, #223);
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -825,81 +818,6 @@ header p {
 h1, h2, h3, p {
   overflow-wrap: break-word;
   word-break: break-word;
-}
-.schema-remuneration {
-  background: #f8fafc;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  margin: 2rem 0;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(10,31,61,0.05);
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.schema-title {
-  font-weight: bold;
-  color: #0a1f3d;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-.schema-flow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-.schema-step {
-  background: #fff;
-  border-radius: 0.7rem;
-  padding: 1rem 1.2rem;
-  box-shadow: 0 1px 4px rgba(10,31,61,0.04);
-  min-width: 110px;
-}
-.schema-percentage {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2563eb;
-}
-.schema-percentage span {
-  display: block;
-  font-size: 0.95rem;
-  color: #0a1f3d;
-  font-weight: normal;
-}
-.schema-desc {
-  font-size: 0.95rem;
-  color: #223;
-  margin-top: 0.4rem;
-}
-.schema-arrow {
-  font-size: 2.5rem;
-  color: #2563eb;
-}
-.schema-note {
-  margin-top: 1.2rem;
-  font-size: 1rem;
-  color: #0a1f3d;
-}
-@media (max-width: 600px) {
-  .schema-flow {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .schema-arrow {
-    transform: rotate(90deg);
-    font-size: 2rem;
-  }
-}
-.abonnement-data, .risques {
-  background: #fff; /* ou autre couleur neutre */
-  animation: none !important;
-  background-image: none !important;
-  background-blend-mode: normal !important;
-}
-.succes-fee {
-  border-left: 5px solid var(--primary, #0a1f3d);
-  /* ... */
 }
 
   </style> 
@@ -1577,33 +1495,13 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
       <animate attributeName="stroke-dashoffset" values="140;0;140" dur="3s" repeatCount="indefinite"/>
     </line>
   </svg>
-  <section class="succes-fee">
-  <h3>Option complémentaire : Accompagnement à la performance</h3>
+  <h3>Accompagnement à la mise en œuvre – Succès fee</h3>
   <p>
-    Après votre Feuille de route ou Analyse IA Totale, vous pouvez choisir notre accompagnement opérationnel « payé à la performance ».<br>
-    Ce service optionnel aligne nos intérêts : vous bénéficiez d’un suivi personnalisé pour la mise en œuvre de vos recommandations stratégiques, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
-    <b>Vous restez libre : cette option n’est proposée qu’aux clients engagés dans une démarche de transformation IA, sans aucune obligation.</b>
+    Pour les clients qui souhaitent aller plus loin, nous proposons un accompagnement personnalisé à la mise en œuvre de vos recommandations stratégiques.<br>
+    Notre modèle “succès fee” vous permet de bénéficier d’un suivi opérationnel, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
+    Un engagement gagnant-gagnant, pour maximiser la valeur créée pour votre entreprise.
   </p>
-
-  <div class="schema-remuneration">
-    <div class="schema-title">Option complémentaire : votre investissement en 2 étapes</div>
-    <div class="schema-flow">
-      <div class="schema-step">
-        <div class="schema-percentage">30%<br><span>à la signature</span></div>
-        <div class="schema-desc">Couvre les coûts initiaux de lancement de la mission</div>
-      </div>
-      <div class="schema-arrow">→</div>
-      <div class="schema-step">
-        <div class="schema-percentage">70%<br><span>aux résultats</span></div>
-        <div class="schema-desc">Payé uniquement si les objectifs définis ensemble sont atteints</div>
-      </div>
-    </div>
-    <div class="schema-note">
-      <b>Ce service est proposé uniquement après une Feuille de route ou une Analyse IA Totale, selon vos besoins.</b>
-    </div>
-  </div>
 </section>
-
 
   <!-- ABONNEMENT DATA+ -->
 <section>
