@@ -890,33 +890,59 @@ h1, h2, h3, p {
   font-size: 1.3em;
   margin-top: 0.05em;
 }
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+@keyframes pulse {
+  0% { transform: scale(1);}
+  50% { transform: scale(1.05);}
+  100% { transform: scale(1);}
+}
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
 
   </style> 
 </head>
 <body>
 
- <header class="hero">
-  <div class="hero-bg-parallax"></div>
-  <div class="hero-content px-4 sm:px-6 lg:px-8">
-    <picture>
+ <header class="hero relative overflow-hidden">
+  <!-- Overlay sombre pour lisibilité -->
+  <div class="absolute inset-0 bg-black opacity-30 z-0"></div>
+  <!-- Effet parallaxe conservé -->
+  <div class="hero-bg-parallax absolute inset-0 z-0"></div>
+  <div class="hero-content relative z-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+    <!-- Branding/logo -->
+    <picture class="mb-6">
       <source srcset="images/logo-iskyce-industrie-5.0.webp" type="image/webp">
-      <img src="images/logo-iskyce-industrie-5.0.png" alt="Logo iSkyce industrie 5.0" class="hero-logo" loading="eager">
+      <img src="images/logo-iskyce-industrie-5.0.png" alt="Logo iSkyce industrie 5.0" class="hero-logo w-32 sm:w-40 lg:w-48" loading="eager">
     </picture>
-    <h1>+15% de performance, -20% de coûts, 40% de réduction CO₂ : l’intelligence artificielle au service de votre entreprise</h1>
-    <p>Obtenez une analyse IA personnalisée, optimisée et rapide, adaptée à votre secteur. Résultats en 72h pour prendre une longueur d’avance.</p>
-
-    <div class="cta-row">
-      <a href="#" class="cta-main" id="open-popup-ia">
-        Commencer l'analyse IA
-        <i class="fas fa-arrow-right"></i>
+    <!-- Slogan impactant -->
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-white drop-shadow-md leading-tight mb-4">
+      Transformez votre entreprise<br>
+      <span class="text-blue-300">avec l’IA humaine</span>
+    </h1>
+    <!-- Sous-texte concis -->
+    <p class="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+      +15% de performance, -20% de coûts, 40% de réduction CO₂.<br>
+      Analyse IA personnalisée, résultats en 72h. Prenez une longueur d’avance.
+    </p>
+    <!-- CTA principal animé -->
+    <div class="cta-row flex flex-col sm:flex-row items-center gap-4">
+      <a href="#" class="cta-main bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-full animate-pulse shadow-lg transition-all duration-200" id="open-popup-ia">
+        Audit gratuit – 30 min
+        <i class="fas fa-arrow-right ml-2"></i>
       </a>
-
-      <div class="cta-icons">
-        <span class="icon-card-mini">
+      <div class="cta-icons flex gap-3 mt-3 sm:mt-0">
+        <span class="icon-card-mini flex items-center gap-2 bg-white/80 text-blue-900 rounded px-3 py-2 shadow card-hover">
           <i class="fas fa-certificate"></i>
-          <span>Audit Prédictif </span>
+          <span>Audit Prédictif</span>
         </span>
-        <span class="icon-card-mini">
+        <span class="icon-card-mini flex items-center gap-2 bg-white/80 text-blue-900 rounded px-3 py-2 shadow card-hover">
           <i class="fas fa-chart-line"></i>
           <span>ROI x3</span>
         </span>
