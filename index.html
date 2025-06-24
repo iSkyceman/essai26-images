@@ -819,71 +819,7 @@ h1, h2, h3, p {
   overflow-wrap: break-word;
   word-break: break-word;
 }
-.benefices, .risques, .abonnement-data {
-  background: #fff;
-  animation: none;
-  background-image: none;
-}
-.succes-fee-mini-schema {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.2rem;
-  margin: 0.8rem 0 0.2rem 0;
-  font-size: 1.05rem;
-  opacity: 0.92;
-}
-.succes-fee-step {
-  background: #f7fafd;
-  border-radius: 8px;
-  padding: 0.5em 0.9em;
-  box-shadow: 0 1px 4px rgba(10,31,61,0.04);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 70px;
-}
-.succes-fee-step i {
-  font-size: 1.1em;
-  margin-bottom: 0.15em;
-}
-.succes-fee-arrow {
-  font-size: 1.4em;
-  color: #2563eb;
-  margin: 0 0.25em;
-}
-.succes-fee-step small {
-  font-size: 0.93em;
-  color: #223;
-  font-weight: normal;
-}
 
-/* Encart étude de cas */
-.succes-fee-case-study {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7em;
-  background: #f5faff;
-  border-left: 4px solid #2563eb;
-  border-radius: 8px;
-  padding: 0.7em 1em;
-  margin: 1.1em 0 0.2em 0;
-  font-size: 1.04rem;
-  box-shadow: 0 1px 4px rgba(10,31,61,0.04);
-}
-.case-study-icon {
-  font-size: 1.3em;
-  margin-top: 0.05em;
-}
- .succes-fee {
-  position: relative;
-  overflow: hidden; /* <-- clé pour contenir l’animation */
-  /* ... autres styles ... */
-}
-.succes-fee-lines {
-  overflow: hidden;
-}
- 
   </style> 
 </head>
 <body>
@@ -1541,7 +1477,7 @@ brancherSelectPrix('select-strategie', 'prix-strategie', 'strategie');
 brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagnement');
 </script>
 <section class="succes-fee">
-  <!-- SVG décoratif animé en fond -->
+  <!-- SVG décoratif animé en fond : lignes qui se forment et se déforment -->
   <svg class="succes-fee-lines" width="100%" height="100%" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
     <!-- Ligne horizontale animée -->
     <line x1="50" y1="50" x2="550" y2="50" stroke="#0a1f3d" stroke-width="3" stroke-opacity="0.12"
@@ -1559,51 +1495,12 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
       <animate attributeName="stroke-dashoffset" values="140;0;140" dur="3s" repeatCount="indefinite"/>
     </line>
   </svg>
-  <section class="succes-fee">
-  <!-- SVG décoratif animé en fond -->
-  <svg class="succes-fee-lines" width="100%" height="100%" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <!-- Ligne horizontale animée -->
-    <line x1="50" y1="50" x2="550" y2="50" stroke="#0a1f3d" stroke-width="3" stroke-opacity="0.12"
-      style="stroke-dasharray: 500; stroke-dashoffset: 500;">
-      <animate attributeName="stroke-dashoffset" values="500;0;500" dur="3.5s" repeatCount="indefinite"/>
-    </line>
-    <!-- Ligne diagonale animée -->
-    <line x1="100" y1="150" x2="500" y2="80" stroke="#0a1f3d" stroke-width="2" stroke-opacity="0.10"
-      style="stroke-dasharray: 420; stroke-dashoffset: 420;">
-      <animate attributeName="stroke-dashoffset" values="420;0;420" dur="4s" repeatCount="indefinite"/>
-    </line>
-    <!-- Ligne verticale animée -->
-    <line x1="300" y1="30" x2="300" y2="170" stroke="#0a1f3d" stroke-width="2" stroke-opacity="0.08"
-      style="stroke-dasharray: 140; stroke-dashoffset: 140;">
-      <animate attributeName="stroke-dashoffset" values="140;0;140" dur="3s" repeatCount="indefinite"/>
-    </line>
-  </svg>
-  <h3>Option complémentaire : Accompagnement à la mise en œuvre – Succès fee</h3>
+  <h3>Accompagnement à la mise en œuvre – Succès fee</h3>
   <p>
-    Après votre Feuille de route ou Analyse IA Totale, vous pouvez choisir notre accompagnement opérationnel « payé à la performance ».<br>
-    Ce service optionnel aligne nos intérêts : vous bénéficiez d’un suivi personnalisé pour la mise en œuvre de vos recommandations stratégiques, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
-    <b>Vous restez libre : cette option n’est proposée qu’aux clients engagés dans une démarche de transformation IA, sans aucune obligation.</b>
+    Pour les clients qui souhaitent aller plus loin, nous proposons un accompagnement personnalisé à la mise en œuvre de vos recommandations stratégiques.<br>
+    Notre modèle “succès fee” vous permet de bénéficier d’un suivi opérationnel, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
+    Un engagement gagnant-gagnant, pour maximiser la valeur créée pour votre entreprise.
   </p>
-  <!-- Mini schéma discret -->
-  <div class="succes-fee-mini-schema">
-    <span class="succes-fee-step">
-      <i aria-hidden="true">💡</i>
-      30%<br><small>à la signature</small>
-    </span>
-    <span class="succes-fee-arrow">→</span>
-    <span class="succes-fee-step">
-      <i aria-hidden="true">🎯</i>
-      70%<br><small>si objectifs atteints</small>
-    </span>
-  </div>
-  <!-- Encart étude de cas concis -->
-  <div class="succes-fee-case-study">
-    <span class="case-study-icon" aria-hidden="true">📈</span>
-    <span>
-      <b>Étude de cas :</b>
-      "Un industriel a augmenté sa productivité de <b>+18%</b> et économisé <b>50 000 €</b> en 6 mois grâce à notre accompagnement succès fee."
-    </span>
-  </div>
 </section>
 
   <!-- ABONNEMENT DATA+ -->
