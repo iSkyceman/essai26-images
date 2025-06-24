@@ -817,6 +817,66 @@ h1, h2, h3, p {
   overflow-wrap: break-word;
   word-break: break-word;
 }
+.schema-remuneration {
+  background: #f8fafc;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(10,31,61,0.05);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.schema-title {
+  font-weight: bold;
+  color: #0a1f3d;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.schema-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.schema-step {
+  background: #fff;
+  border-radius: 0.7rem;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 1px 4px rgba(10,31,61,0.04);
+  min-width: 110px;
+}
+.schema-percentage {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+.schema-percentage span {
+  display: block;
+  font-size: 0.95rem;
+  color: #0a1f3d;
+  font-weight: normal;
+}
+.schema-desc {
+  font-size: 0.95rem;
+  color: #223;
+  margin-top: 0.4rem;
+}
+.schema-arrow {
+  font-size: 2.5rem;
+  color: #2563eb;
+}
+@media (max-width: 600px) {
+  .schema-flow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .schema-arrow {
+    transform: rotate(90deg);
+    font-size: 2rem;
+  }
+}    
   </style> 
 </head>
 <body>
@@ -1492,13 +1552,63 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
       <animate attributeName="stroke-dashoffset" values="140;0;140" dur="3s" repeatCount="indefinite"/>
     </line>
   </svg>
-  <h3>Accompagnement à la mise en œuvre – Succès fee</h3>
-  <p>
-    Pour les clients qui souhaitent aller plus loin, nous proposons un accompagnement personnalisé à la mise en œuvre de vos recommandations stratégiques.<br>
-    Notre modèle “succès fee” vous permet de bénéficier d’un suivi opérationnel, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
-    Un engagement gagnant-gagnant, pour maximiser la valeur créée pour votre entreprise.
-  </p>
+  <h3>Payé à la performance : votre réussite, notre rémunération</h3>
+<p>
+  Un accompagnement opérationnel qui aligne nos intérêts.<br>
+  Pour les dirigeants qui veulent des résultats mesurables, nous proposons :
+  <ul>
+    <li>Un suivi 100% personnalisé</li>
+    <li>Implémentation concrète des recommandations stratégiques</li>
+    <li>Pilotage conjoint avec vos équipes</li>
+  </ul>
+  Un modèle financier sans risque :
+  <ul>
+    <li>Rémunération partiellement liée à l'atteinte de vos KPI</li>
+    <li>Seulement 30% à l'engagement, le solde sur résultats</li>
+  </ul>
+  Une garantie en 3 points :
+  <ul>
+    <li>Objectifs définis ensemble en amont</li>
+    <li>Reporting transparent chaque mois</li>
+    <li>Clause de sortie sans pénalité</li>
+  </ul>
+  <b>Nous partageons votre risque : si vous ne gagnez pas, nous ne gagnons pas.</b>
+</p>
+<!-- Schéma visuel à insérer ici si besoin -->
+<div class="schema-remuneration">
+    <div class="schema-title">Votre investissement</div>
+    <div class="schema-flow">
+      <div class="schema-step">
+        <div class="schema-percentage">30%<br><span>à la signature</span></div>
+        <div class="schema-desc">Couvre nos coûts initiaux</div>
+      </div>
+      <div class="schema-arrow">→</div>
+      <div class="schema-step">
+        <div class="schema-percentage">70%<br><span>aux résultats</span></div>
+        <div class="schema-desc">Vous payez seulement si ça marche</div>
+      </div>
+    </div>
+  </div>
 </section>
+Pourquoi ici ?
+
+C’est la suite logique de ton argumentaire : le schéma vient illustrer visuellement ce que tu viens d’expliquer dans le texte.
+
+Cela facilite la compréhension immédiate pour les visiteurs qui scannent la page.
+
+N’oublie pas d’ajouter le CSS associé dans ta feuille de style pour que le schéma s’affiche correctement.
+
+En résumé :
+Place le bloc juste après ton contenu explicatif “Payé à la performance”, dans la même section.
+Cela maximise l’impact pédagogique et la clarté de ton offre.
+
+Questions liées
+Où dois-je placer ce schéma pour qu'il soit le plus clair dans ma page de rémunération
+Faut-il intégrer ce schéma avant ou après la description des modalités de paiement
+Comment insérer ce code pour qu'il s'intègre harmonieusement avec mes autres sections
+Est-il préférable de mettre ce schéma en haut de la page pour capter l'attention
+Quel emplacement favoriserais-tu pour maximiser la compréhension du processus par mes visiteurs
+
 
   <!-- ABONNEMENT DATA+ -->
 <section>
