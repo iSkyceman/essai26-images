@@ -819,6 +819,11 @@ h1, h2, h3, p {
   overflow-wrap: break-word;
   word-break: break-word;
 }
+.benefices, .risques, .abonnement-data {
+  background: #fff;
+  animation: none;
+  background-image: none;
+}
 
   </style> 
 </head>
@@ -1477,31 +1482,18 @@ brancherSelectPrix('select-strategie', 'prix-strategie', 'strategie');
 brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagnement');
 </script>
 <section class="succes-fee">
-  <!-- SVG décoratif animé en fond : lignes qui se forment et se déforment -->
+  <!-- SVG décoratif animé en fond -->
   <svg class="succes-fee-lines" width="100%" height="100%" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <!-- Ligne horizontale animée -->
-    <line x1="50" y1="50" x2="550" y2="50" stroke="#0a1f3d" stroke-width="3" stroke-opacity="0.12"
-      style="stroke-dasharray: 500; stroke-dashoffset: 500;">
-      <animate attributeName="stroke-dashoffset" values="500;0;500" dur="3.5s" repeatCount="indefinite"/>
-    </line>
-    <!-- Ligne diagonale animée -->
-    <line x1="100" y1="150" x2="500" y2="80" stroke="#0a1f3d" stroke-width="2" stroke-opacity="0.10"
-      style="stroke-dasharray: 420; stroke-dashoffset: 420;">
-      <animate attributeName="stroke-dashoffset" values="420;0;420" dur="4s" repeatCount="indefinite"/>
-    </line>
-    <!-- Ligne verticale animée -->
-    <line x1="300" y1="30" x2="300" y2="170" stroke="#0a1f3d" stroke-width="2" stroke-opacity="0.08"
-      style="stroke-dasharray: 140; stroke-dashoffset: 140;">
-      <animate attributeName="stroke-dashoffset" values="140;0;140" dur="3s" repeatCount="indefinite"/>
-    </line>
+    <!-- ... lignes animées ... -->
   </svg>
-  <h3>Accompagnement à la mise en œuvre – Succès fee</h3>
+  <h3>Option complémentaire : Accompagnement à la mise en œuvre – Succès fee</h3>
   <p>
-    Pour les clients qui souhaitent aller plus loin, nous proposons un accompagnement personnalisé à la mise en œuvre de vos recommandations stratégiques.<br>
-    Notre modèle “succès fee” vous permet de bénéficier d’un suivi opérationnel, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
-    Un engagement gagnant-gagnant, pour maximiser la valeur créée pour votre entreprise.
+    Après votre Feuille de route ou Analyse IA Totale, vous pouvez choisir notre accompagnement opérationnel « payé à la performance ».<br>
+    Ce service optionnel aligne nos intérêts : vous bénéficiez d’un suivi personnalisé pour la mise en œuvre de vos recommandations stratégiques, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
+    <b>Vous restez libre : cette option n’est proposée qu’aux clients engagés dans une démarche de transformation IA, sans aucune obligation.</b>
   </p>
 </section>
+
 
   <!-- ABONNEMENT DATA+ -->
 <section>
