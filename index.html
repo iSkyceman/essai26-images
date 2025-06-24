@@ -819,6 +819,61 @@ h1, h2, h3, p {
   overflow-wrap: break-word;
   word-break: break-word;
 }
+.succes-fee {
+  position: relative;
+  overflow: hidden;
+  background: #f7fafd;
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(10,31,61,0.04);
+  padding: 2em 1.5em 1.5em 1.5em;
+  margin-bottom: 2em;
+}
+.succes-fee-lines {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.succes-fee h3,
+.succes-fee p,
+.succes-fee-mini-schema {
+  position: relative;
+  z-index: 1;
+}
+.succes-fee-mini-schema {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 0.8rem 0 0.2rem 0;
+  font-size: 1.05rem;
+  opacity: 0.92;
+}
+.succes-fee-step {
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.5em 0.9em;
+  box-shadow: 0 1px 4px rgba(10,31,61,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+}
+.succes-fee-step i {
+  font-size: 1.1em;
+  margin-bottom: 0.15em;
+}
+.succes-fee-arrow {
+  font-size: 1.4em;
+  color: #2563eb;
+  margin: 0 0.25em;
+}
+.succes-fee-step small {
+  font-size: 0.93em;
+  color: #223;
+  font-weight: normal;
+}
 
   </style> 
 </head>
@@ -1477,7 +1532,7 @@ brancherSelectPrix('select-strategie', 'prix-strategie', 'strategie');
 brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagnement');
 </script>
 <section class="succes-fee">
-  <!-- SVG décoratif animé en fond : lignes qui se forment et se déforment -->
+  <!-- SVG décoratif animé en fond -->
   <svg class="succes-fee-lines" width="100%" height="100%" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
     <!-- Ligne horizontale animée -->
     <line x1="50" y1="50" x2="550" y2="50" stroke="#0a1f3d" stroke-width="3" stroke-opacity="0.12"
@@ -1495,12 +1550,24 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
       <animate attributeName="stroke-dashoffset" values="140;0;140" dur="3s" repeatCount="indefinite"/>
     </line>
   </svg>
-  <h3>Accompagnement à la mise en œuvre – Succès fee</h3>
+  <h3>Option complémentaire : Accompagnement à la mise en œuvre – Succès fee</h3>
   <p>
-    Pour les clients qui souhaitent aller plus loin, nous proposons un accompagnement personnalisé à la mise en œuvre de vos recommandations stratégiques.<br>
-    Notre modèle “succès fee” vous permet de bénéficier d’un suivi opérationnel, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
-    Un engagement gagnant-gagnant, pour maximiser la valeur créée pour votre entreprise.
+    Après votre Feuille de route ou Analyse IA Totale, vous pouvez choisir notre accompagnement opérationnel « payé à la performance ».<br>
+    Ce service optionnel aligne nos intérêts : vous bénéficiez d’un suivi personnalisé pour la mise en œuvre de vos recommandations stratégiques, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
+    <b>Vous restez libre : cette option n’est proposée qu’aux clients engagés dans une démarche de transformation IA, sans aucune obligation.</b>
   </p>
+  <!-- Mini schéma pédagogique -->
+  <div class="succes-fee-mini-schema">
+    <span class="succes-fee-step">
+      <i aria-hidden="true">💡</i>
+      30%<br><small>à la signature</small>
+    </span>
+    <span class="succes-fee-arrow">→</span>
+    <span class="succes-fee-step">
+      <i aria-hidden="true">🎯</i>
+      70%<br><small>si objectifs atteints</small>
+    </span>
+  </div>
 </section>
 
   <!-- ABONNEMENT DATA+ -->
