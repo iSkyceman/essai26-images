@@ -99,12 +99,12 @@ header.hero::before {
   z-index: 4;
   max-width: 650px;
   text-align: left;
-  margin-top: -40px;
-  padding-top: 0;
+  margin-top: -40px; /* remonte le contenu de 20px */
+  padding-top: 0;     /* supprime le padding */
 }
 @media (max-width: 768px) {
   .hero-content {
-    top: -15px;
+    top: -15px; /* moins de remontée sur mobile */
   }
 }
 .hero-logo {
@@ -118,10 +118,8 @@ header.hero::before {
   animation: fadeInUp 1s forwards 0.1s;
 }
 
-/* === TYPOGRAPHIE FLUIDE ET RESPONSIVE === */
 header h1 {
-  font-size: clamp(1.5rem, 6vw, 3.2rem);
-  line-height: 1.1;
+  font-size: 2.2rem;
   margin: 0 0 1rem 0;
   text-align: left;
   opacity: 0;
@@ -130,9 +128,9 @@ header h1 {
 }
 
 header p {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  line-height: 1.4;
+  font-size: 1.3rem;
   margin-bottom: 2.5rem;
+  line-height: 1.6;
   max-width: 600px;
   text-align: left;
   opacity: 0;
@@ -153,8 +151,8 @@ header p {
   background: var(--orange);
   color: #fff;
   border: none;
-  padding: clamp(0.7rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -259,12 +257,10 @@ header p {
     justify-content: flex-start;
   }
 }
-/* Plus besoin de forcer la taille ici grâce à clamp() */
 @media (max-width: 600px) {
-  /* header h1 { font-size: 1.5rem; }
-     .cta-main { font-size: 1.1rem; padding: 0.8rem 1.5rem; } */
+  header h1 { font-size: 1.5rem; }
+  .cta-main { font-size: 1.1rem; padding: 0.8rem 1.5rem; }
 }
-
     /* Popup IA */
     #popup-potentiel-ia {
       display: none;
