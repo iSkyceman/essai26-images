@@ -77,7 +77,10 @@ header.hero {
   z-index: 1;
   background:
     linear-gradient(90deg, rgba(10, 31, 61, 0.92) 0%, rgba(10, 31, 61, 0.7) 100%),
-    url('images/usine.png') center/cover no-repeat;
+    image-set(
+      url('images/usine.webp') type('image/webp'),
+      url('images/usine.png') type('image/png')
+    ) center/cover no-repeat;
   will-change: transform;
   transition: transform 0.2s cubic-bezier(.4,0,.2,1);
 }
@@ -798,15 +801,18 @@ header p {
  <header class="hero">
   <div class="hero-bg-parallax"></div>
   <div class="hero-content">
-    <img src="images/logo-iskyce-industrie-5.0.png" alt="Logo iSkyce industrie 5.0" class="hero-logo">
+    <picture>
+      <source srcset="images/logo-iskyce-industrie-5.0.webp" type="image/webp">
+      <img src="images/logo-iskyce-industrie-5.0.png" alt="Logo iSkyce industrie 5.0" class="hero-logo" loading="eager">
+    </picture>
     <h1>+15% de performance, -20% de coûts, 40% de réduction CO₂ : l’intelligence artificielle au service de votre entreprise</h1>
-<p>Obtenez une analyse IA personnalisée, optimisée et rapide, adaptée à votre secteur. Résultats en 72h pour prendre une longueur d’avance.</p>
+    <p>Obtenez une analyse IA personnalisée, optimisée et rapide, adaptée à votre secteur. Résultats en 72h pour prendre une longueur d’avance.</p>
 
     <div class="cta-row">
       <a href="#" class="cta-main" id="open-popup-ia">
-  Commencer l'analyse IA
-  <i class="fas fa-arrow-right"></i>
-</a>
+        Commencer l'analyse IA
+        <i class="fas fa-arrow-right"></i>
+      </a>
 
       <div class="cta-icons">
         <span class="icon-card-mini">
