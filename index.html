@@ -803,7 +803,20 @@ header p {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.12), 0 0 0 3px var(--orange, #FF6B35);
   outline: none;
 }
-
+/* Améliorations Mobile & Accessibilité */
+@media (max-width: 600px) {
+  section, .mentions-legales, footer {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}
+.texte-bleu {
+  color: #2563EB; /* Bleu accessible */
+}
+h1, h2, h3, p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
   </style> 
 </head>
 <body>
