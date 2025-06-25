@@ -854,13 +854,14 @@ h1, h2, h3, p {
   font-weight: normal;
 }
 
-/* Témoignages côte à côte, largeur harmonisée avec l'étude de cas */
+/* Témoignages pleine largeur, harmonisés avec l'étude de cas */
 .succes-fee-testimonials-row {
   display: flex;
+  flex-direction: row;
   gap: 2rem;
   justify-content: center;
   align-items: stretch;
-  margin: 2.5rem auto 1.5rem auto;
+  margin: 2rem auto 1rem auto;
   max-width: 900px;
   width: 100%;
   position: relative;
@@ -869,30 +870,26 @@ h1, h2, h3, p {
 .succes-fee-testimonial {
   display: flex;
   align-items: flex-start;
-  gap: 1.4rem;
+  gap: 1.2rem;
   background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 2px 14px rgba(10,31,61,0.08);
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(10,31,61,0.06);
   padding: 1.2em 2em;
   min-width: 0;
   flex: 1 1 0;
-  transition: box-shadow 0.3s;
-  max-width: 430px;
-}
-.succes-fee-testimonial:hover {
-  box-shadow: 0 6px 28px rgba(10,31,61,0.12);
+  max-width: 100%;
 }
 .succes-fee-avatar {
-  width: 68px;
-  height: 68px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #e2e8f0;
   background: #f7fafc;
-  box-shadow: 0 2px 10px rgba(10,31,61,0.07);
+  box-shadow: 0 2px 8px rgba(10,31,61,0.06);
   flex-shrink: 0;
   display: block;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
 }
 .succes-fee-testimonial-text {
   font-size: 1.08rem;
@@ -901,9 +898,9 @@ h1, h2, h3, p {
   line-height: 1.6;
 }
 .succes-fee-testimonial-text .font-bold {
-  font-weight: 700;
+  font-weight: bold;
   color: #2563eb;
-  margin-top: 0.25em;
+  margin-top: 0.2em;
 }
 
 /* Étude de cas */
@@ -915,17 +912,17 @@ h1, h2, h3, p {
   border-left: 4px solid #2563eb;
   border-radius: 8px;
   padding: 0.7em 1em;
-  margin: 1.2em auto 0.3em auto;
-  font-size: 1.06rem;
-  box-shadow: 0 1px 5px rgba(10,31,61,0.05);
+  margin: 1.1em auto 0.2em auto;
+  font-size: 1.04rem;
+  box-shadow: 0 1px 4px rgba(10,31,61,0.04);
   position: relative;
   z-index: 1;
   max-width: 900px;
   width: 100%;
 }
 .case-study-icon {
-  font-size: 2.1em;
-  margin-right: 0.6em;
+  font-size: 2em;
+  margin-right: 0.5em;
   color: #2563eb;
 }
 
@@ -938,7 +935,6 @@ h1, h2, h3, p {
     padding-right: 0.5rem;
   }
   .succes-fee-testimonial {
-    max-width: 100%;
     padding: 1em 1em;
   }
 }
@@ -949,7 +945,6 @@ h1, h2, h3, p {
     align-items: stretch;
   }
   .succes-fee-testimonial {
-    max-width: 100%;
     padding: 0.8em 0.7em;
   }
   .succes-fee-avatar {
