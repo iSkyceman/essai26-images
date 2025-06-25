@@ -65,11 +65,11 @@ img { max-width: 100%; height: auto; display: block; }
 /* === HEADER HERO === */
 header.hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 65vh; /* Moins haut que 100vh pour un effet moins massif */
   display: flex;
   align-items: flex-start;
   color: white;
-  padding: 2rem 10vw 0 10vw; /* Utilise vw pour une adaptation sur très grands écrans */
+  padding: 2rem 10vw 0 10vw;
   overflow: hidden;
 }
 
@@ -102,7 +102,7 @@ header.hero::before {
 .hero-content {
   position: relative;
   z-index: 4;
-  max-width: 900px; /* Largeur accrue pour écrans larges */
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
   text-align: left;
@@ -120,6 +120,10 @@ header.hero::before {
   }
 }
 @media (max-width: 768px) {
+  header.hero {
+    min-height: 45vh;
+    padding-top: 1.2rem;
+  }
   .hero-content {
     top: -15px;
     max-width: 100vw;
@@ -130,7 +134,7 @@ header.hero::before {
 
 /* Logo responsive et animé */
 .hero-logo {
-  width: clamp(120px, 14vw, 170px); /* Responsive, min 120px, max 170px */
+  width: clamp(120px, 14vw, 170px);
   display: block;
   margin-left: 0;
   margin-right: auto;
@@ -142,7 +146,7 @@ header.hero::before {
 
 /* Titre responsive et animé */
 header h1 {
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(2rem, 4vw, 3.2rem); /* Plus fluide et lisible sur grands écrans */
   margin: 0 0 1rem 0;
   text-align: left;
   opacity: 0;
@@ -152,7 +156,7 @@ header h1 {
 
 /* Paragraphe responsive et animé */
 header p {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: clamp(1.1rem, 2vw, 1.6rem); /* Adaptatif sur tous les écrans */
   margin-bottom: 2.5rem;
   line-height: 1.6;
   max-width: 800px;
@@ -184,7 +188,7 @@ header p {
   color: #fff;
   border: none;
   padding: 1rem 2.5rem;
-  font-size: 1.3rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem); /* Responsive */
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -233,7 +237,7 @@ header p {
   background: rgba(255,255,255,0.13);
   border-radius: 16px;
   padding: 0.5rem 1.1rem;
-  font-size: 0.92rem;
+  font-size: clamp(0.85rem, 1.1vw, 0.92rem); /* Responsive */
   font-weight: 600;
   color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -265,20 +269,22 @@ header p {
 @media (max-width: 768px) {
   header.hero {
     padding: 0 5vw;
+    min-height: 45vh;
+    padding-top: 1.2rem;
   }
   .hero-content {
     padding-top: 40px;
     padding-bottom: 40px;
-    text-align: center;
+    text-align: left !important;
   }
   .hero-logo {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0 !important;
+    margin-right: auto !important;
   }
   header h1,
   header p,
   .cta-main {
-    text-align: center;
+    text-align: left !important;
   }
   .cta-row {
     flex-direction: column;
@@ -286,22 +292,15 @@ header p {
     gap: 0.7rem;
   }
   .cta-icons {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 @media (max-width: 600px) {
   header h1 { font-size: 1.2rem; }
   .cta-main { font-size: 1rem; padding: 0.8rem 1.2rem; height: 48px; }
 }
-header.hero {
-  min-height: 65vh; /* Ajuste selon ton ressenti */
-}
-@media (max-width: 768px) {
-  header.hero {
-    min-height: 45vh;
-    padding-top: 1.2rem;
-  }
-}
+
+/* Forcer l'alignement à gauche partout */
 .hero-content,
 .hero-logo,
 header h1,
@@ -311,7 +310,7 @@ header p {
   margin-right: auto !important;
 }
 
-    /* Popup IA */
+   /* Popup IA */
 #popup-potentiel-ia {
   display: none;
   position: fixed;
@@ -341,13 +340,14 @@ header p {
 .popup-ia-content h2 {
   margin-bottom: 1rem;
   color: var(--bleu);
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem); /* Responsive */
   text-align: center;
 }
 .popup-ia-content label {
   display: block;
   margin: 0.7rem 0 0.2rem 0;
   font-weight: 600;
+  font-size: clamp(0.98rem, 1.2vw, 1.1rem); /* Responsive */
 }
 .popup-ia-content input,
 .popup-ia-content select,
@@ -357,7 +357,7 @@ header p {
   border-radius: 6px;
   border: 1px solid #ccc;
   margin-bottom: 0.6rem;
-  font-size: 1rem;
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem); /* Responsive */
 }
 .popup-ia-content button {
   background: var(--bleu);
@@ -365,7 +365,7 @@ header p {
   border: none;
   padding: 0.7rem 2rem;
   border-radius: 6px;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.5vw, 1.1rem); /* Responsive */
   cursor: pointer;
   margin-top: 1rem;
   transition: background 0.2s;
@@ -377,8 +377,8 @@ header p {
 }
 .popup-ia-close {
   position: absolute;
-  top: 12px;       /* place la croix à 12px du haut */
-  right: 12px;     /* place la croix à 12px de la droite */
+  top: 12px;
+  right: 12px;
   background: none;
   border: none;
   font-size: 2rem;
@@ -419,24 +419,24 @@ header p {
 .tarif-card h3 {
   margin: 0 0 0.5rem 0;
   color: var(--orange);
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem); /* Responsive */
 }
 .tarif-card .tarif-prix {
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 2.5vw, 2rem); /* Responsive */
   font-weight: bold;
   color: var(--bleu);
   margin: 1rem 0 0.5rem 0;
 }
 .tarif-card small {
   color: #555;
-  font-size: 0.95rem;
+  font-size: clamp(0.9rem, 1vw, 0.95rem); /* Responsive */
 }
 .tarif-card select {
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: 1rem;
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem); /* Responsive */
   background: #fff;
   width: 100%;
 }
@@ -464,7 +464,7 @@ header p {
   transform: translateY(-4px) scale(1.03);
 }
 .benefice i, .risque i {
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem); /* Responsive */
   margin-bottom: 0.7rem;
   color: var(--orange);
 }
@@ -472,13 +472,13 @@ header p {
   color: #e53935;
 }
 .benefice h4, .risque h4 {
-  font-size: 1.15rem;
+  font-size: clamp(1.05rem, 2vw, 1.35rem); /* Responsive */
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--bleu);
 }
 .benefice p, .risque p {
-  font-size: 1rem;
+  font-size: clamp(0.98rem, 1.2vw, 1.1rem); /* Responsive */
   color: #444;
   margin: 0;
 }
@@ -545,12 +545,12 @@ header p {
 
 .mentions-legales .legal-section p {
   margin: 0;
-  font-size: 1rem;
+  font-size: clamp(0.98rem, 1.1vw, 1rem); /* Responsive */
 }
 
 .mentions-legales .legal-section h3 {
   margin-bottom: 0.2rem;
-  font-size: 1.08rem;
+  font-size: clamp(1rem, 1.2vw, 1.08rem); /* Responsive */
 }
 
 /* Style pour le lien orange */
@@ -581,7 +581,7 @@ header p {
   height: 1.5em;
   text-align: center;
   line-height: 1.5em;
-  font-size: 1em;
+  font-size: clamp(0.95em, 1vw, 1.05em); /* Responsive */
   cursor: pointer;
   border: 1px solid #b3d2f3;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -607,7 +607,7 @@ header p {
   height: 1.3em;
   text-align: center;
   line-height: 1.3em;
-  font-size: 1em;
+  font-size: clamp(0.95em, 1vw, 1.05em); /* Responsive */
   transition: background 0.2s;
 }
 
@@ -632,7 +632,7 @@ header p {
   padding: 1em;
   box-shadow: 0 2px 8px #0002;
   z-index: 100;
-  font-size: 0.98em;
+  font-size: clamp(0.93em, 1vw, 0.98em); /* Responsive */
   text-align: left;
 }
 
@@ -656,6 +656,7 @@ header p {
   }
 }
 
+/* Variables supplémentaires */
 :root {
   --primary: #0a1f3d;
   --main-bg: #f5f9ff;
@@ -745,6 +746,8 @@ header p {
 .donnees-securisees h3, .donnees-securisees p {
   position: relative;
   z-index: 1;
+  /* Typo responsive */
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
 }
 
 /* Listes à puces personnalisées pour sécurité */
@@ -767,7 +770,7 @@ header p {
   .notre-methode-bg h3,
   .succes-fee h3,
   .donnees-securisees h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 }
 @media (max-width: 700px) {
@@ -807,7 +810,8 @@ header p {
 h1, h2, h3, p {
   overflow-wrap: break-word;
   word-break: break-word;
-} 
+}
+
 /* Bloc Succès Fee */
 .succes-fee {
   position: relative;
@@ -838,13 +842,13 @@ h1, h2, h3, p {
 .succes-fee h2 {
   color: var(--primary, #0a1f3d);
   margin-bottom: 1rem;
-  font-size: 1.4rem;
+  font-size: clamp(1.15rem, 2vw, 1.6rem); /* Responsive */
   position: relative;
   z-index: 1;
 }
 .succes-fee p {
   color: var(--text, #223);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.3vw, 1.15rem); /* Responsive */
   line-height: 1.6;
   position: relative;
   z-index: 1;
@@ -862,7 +866,7 @@ h1, h2, h3, p {
   justify-content: center;
   gap: 1.2rem;
   margin: 0.8rem 0 0.2rem 0;
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem); /* Responsive */
   opacity: 0.92;
   position: relative;
   z-index: 1;
@@ -887,7 +891,7 @@ h1, h2, h3, p {
   margin: 0 0.25em;
 }
 .succes-fee-step small {
-  font-size: 0.93em;
+  font-size: clamp(0.88em, 1vw, 0.93em); /* Responsive */
   color: #223;
   font-weight: normal;
 }
@@ -937,7 +941,7 @@ h1, h2, h3, p {
 }
 
 .succes-fee-testimonial-text {
-  font-size: 1rem;
+  font-size: clamp(0.97rem, 1.1vw, 1rem); /* Responsive */
   color: #1a202c;
   min-width: 0;
 }
@@ -957,13 +961,14 @@ h1, h2, h3, p {
   border-radius: 8px;
   padding: 0.7em 1em;
   margin: 1.1em 0 0.2em 0;
-  font-size: 1.04rem;
+  font-size: clamp(0.98rem, 1.1vw, 1.04rem); /* Responsive */
   box-shadow: 0 1px 4px rgba(10,31,61,0.04);
   position: relative;
   z-index: 1;
 }
 .case-study-icon {
-  font-size: 2em;
+  font-size: 1.3em;
+  margin-top: 0.05em;
   margin-right: 0.5em;
   color: #2563eb;
 }
@@ -1001,12 +1006,6 @@ h1, h2, h3, p {
 @keyframes bgMoveUp {
   0% { background-position-y: 100%; }
   100% { background-position-y: 0%; }
-}
-
-/* Icône étude de cas */
-.case-study-icon {
-  font-size: 1.3em;
-  margin-top: 0.05em;
 }
 
 /* Carte avec effet hover */
