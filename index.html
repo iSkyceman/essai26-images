@@ -636,43 +636,7 @@ header p {
     url('/images/bloc.png') center bottom / cover no-repeat;
   background-blend-mode: lighten;
 }
-
-/* Bloc Succès Fee */
-.succes-fee {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  margin: 2rem 0;
-  box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
-  min-height: 320px;
-  color: #183153;
-  background:
-    linear-gradient(120deg,
-      #f5f9ff 0%,
-      #e5edf1 50%,
-      #96c2db 100%
-    ) 0% 50% / 200% 200%,
-    url('/images/bloc7.webp') center bottom / cover no-repeat;
-  background-blend-mode: lighten;
-  animation:
-    gradientMove 12s ease-in-out infinite alternate,
-    bgMoveUp 36s linear infinite;
-  will-change: background-position;
-  border-left: 5px solid var(--primary, #0a1f3d);
-}
-.no-webp .succes-fee {
-  background:
-    linear-gradient(120deg,
-      #f5f9ff 0%,
-      #e5edf1 50%,
-      #96c2db 100%
-    ) 0% 50% / 200% 200%,
-    url('/images/bloc7.png') center bottom / cover no-repeat;
-  background-blend-mode: lighten;
-}
-
-/* Bloc Données cryptées & hébergement sécurisé */
+    /* Bloc Données cryptées & hébergement sécurisé */
 .donnees-securisees {
   position: relative;
   overflow: hidden;
@@ -734,21 +698,6 @@ header p {
   position: relative;
   z-index: 1;
 }
-.succes-fee h3,
-.notre-methode-bg h3,
-.donnees-securisees h3 {
-  color: var(--primary, #0a1f3d);
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-}
-.succes-fee p,
-.notre-methode-bg p,
-.donnees-securisees p {
-  color: var(--text, #223);
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
 /* Listes à puces personnalisées pour sécurité */
 .donnees-securisees ul { list-style: none; padding-left: 0; }
 .donnees-securisees li::before {
@@ -819,14 +768,32 @@ h1, h2, h3, p {
   overflow-wrap: break-word;
   word-break: break-word;
 }
+/* Bloc Succès Fee - Optimisé */
 .succes-fee {
   position: relative;
   overflow: hidden;
-  background: #f7fafd;
   border-radius: 12px;
-  box-shadow: 0 1px 8px rgba(10,31,61,0.04);
-  padding: 2em 1.5em 1.5em 1.5em;
-  margin-bottom: 2em;
+  padding: 2rem 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 12px rgba(10, 31, 61, 0.08);
+  min-height: 320px;
+  color: #183153;
+  background:
+    linear-gradient(120deg, #f5f9ff 0%, #e5edf1 50%, #96c2db 100%) 0% 50% / 200% 200%,
+    url('/images/bloc7.webp') center bottom / cover no-repeat;
+  background-blend-mode: lighten;
+  animation:
+    gradientMove 12s ease-in-out infinite alternate,
+    bgMoveUp 36s linear infinite;
+  will-change: background-position;
+  border-left: 5px solid var(--primary, #0a1f3d);
+  z-index: 1;
+}
+.no-webp .succes-fee {
+  background:
+    linear-gradient(120deg, #f5f9ff 0%, #e5edf1 50%, #96c2db 100%) 0% 50% / 200% 200%,
+    url('/images/bloc7.png') center bottom / cover no-repeat;
+  background-blend-mode: lighten;
 }
 .succes-fee-lines {
   position: absolute;
@@ -835,20 +802,39 @@ h1, h2, h3, p {
   pointer-events: none;
   overflow: hidden;
 }
-.succes-fee h3,
-.succes-fee p,
-.succes-fee-mini-schema {
+.succes-fee h2 {
+  color: var(--primary, #0a1f3d);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
   position: relative;
   z-index: 1;
 }
-.succes-fee-mini-schema {
+.succes-fee p {
+  color: var(--text, #223);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+.succes-fee-steps-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0 0 0;
+  position: relative;
+  z-index: 1;
+}
+.succes-fee-step-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.2rem;
-  margin: 0.8rem 0 0.2rem 0;
-  font-size: 1.05rem;
-  opacity: 0.92;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+.succes-fee-mini-schema {
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 .succes-fee-step {
   background: #fff;
@@ -859,20 +845,57 @@ h1, h2, h3, p {
   flex-direction: column;
   align-items: center;
   min-width: 70px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  gap: 0.2em;
 }
 .succes-fee-step i {
   font-size: 1.1em;
   margin-bottom: 0.15em;
+}
+.succes-fee-step .nowrap {
+  white-space: nowrap;
+  display: inline-block;
+}
+.succes-fee-step small {
+  font-size: 0.93em;
+  color: #223;
+  font-weight: normal;
+  margin-left: 0.2em;
 }
 .succes-fee-arrow {
   font-size: 1.4em;
   color: #2563eb;
   margin: 0 0.25em;
 }
-.succes-fee-step small {
-  font-size: 0.93em;
-  color: #223;
-  font-weight: normal;
+.succes-fee-testimonial {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(10,31,61,0.06);
+  padding: 0.7em 1em;
+}
+.succes-fee-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+  background: #f7fafc;
+  box-shadow: 0 2px 8px rgba(10,31,61,0.06);
+  flex-shrink: 0;
+}
+.succes-fee-testimonial-text {
+  font-size: 1rem;
+  color: #1a202c;
+}
+.succes-fee-testimonial-text .font-bold {
+  font-weight: bold;
+  color: #2563eb;
+  margin-top: 0.2em;
 }
 .succes-fee-case-study {
   display: flex;
@@ -885,6 +908,51 @@ h1, h2, h3, p {
   margin: 1.1em 0 0.2em 0;
   font-size: 1.04rem;
   box-shadow: 0 1px 4px rgba(10,31,61,0.04);
+  position: relative;
+  z-index: 1;
+}
+.case-study-icon {
+  font-size: 2em;
+  margin-right: 0.5em;
+  color: #2563eb;
+}
+@media (max-width: 900px) {
+  .succes-fee-step-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .succes-fee-mini-schema {
+    min-width: 0;
+  }
+  .succes-fee-testimonial {
+    max-width: 100%;
+  }
+  .succes-fee-step .nowrap {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    display: inline-block;
+  }
+}
+@media (max-width: 600px) {
+  .succes-fee {
+    padding: 1.2rem 0.5rem;
+  }
+  .succes-fee-testimonial {
+    padding: 0.5em 0.7em;
+  }
+  .succes-fee-avatar {
+    width: 52px;
+    height: 52px;
+  }
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+@keyframes bgMoveUp {
+  0% { background-position-y: 100%; }
+  100% { background-position-y: 0%; }
 }
 .case-study-icon {
   font-size: 1.3em;
@@ -1573,20 +1641,17 @@ brancherSelectPrix('select-diagnostic', 'prix-diagnostic', 'diagnostic');
 brancherSelectPrix('select-strategie', 'prix-strategie', 'strategie');
 brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagnement');
 </script>
-<section class="succes-fee px-4 sm:px-6 lg:px-8">
+<section class="succes-fee px-4 sm:px-6 lg:px-8 relative">
   <!-- SVG décoratif animé en fond -->
-  <svg class="succes-fee-lines" width="100%" height="100%" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <!-- Ligne horizontale animée -->
+  <svg class="succes-fee-lines absolute left-0 top-0 w-full h-full pointer-events-none" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
     <line x1="50" y1="50" x2="550" y2="50" stroke="#0a1f3d" stroke-width="3" stroke-opacity="0.12"
       style="stroke-dasharray: 500; stroke-dashoffset: 500;">
       <animate attributeName="stroke-dashoffset" values="500;0;500" dur="3.5s" repeatCount="indefinite"/>
     </line>
-    <!-- Ligne diagonale animée -->
     <line x1="100" y1="150" x2="500" y2="80" stroke="#0a1f3d" stroke-width="2" stroke-opacity="0.10"
       style="stroke-dasharray: 420; stroke-dashoffset: 420;">
       <animate attributeName="stroke-dashoffset" values="420;0;420" dur="4s" repeatCount="indefinite"/>
     </line>
-    <!-- Ligne verticale animée -->
     <line x1="300" y1="30" x2="300" y2="170" stroke="#0a1f3d" stroke-width="2" stroke-opacity="0.08"
       style="stroke-dasharray: 140; stroke-dashoffset: 140;">
       <animate attributeName="stroke-dashoffset" values="140;0;140" dur="3s" repeatCount="indefinite"/>
@@ -1598,21 +1663,42 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
     Ce service optionnel aligne nos intérêts : vous bénéficiez d’un suivi personnalisé pour la mise en œuvre de vos recommandations stratégiques, avec une part de rémunération indexée sur l’atteinte des résultats définis ensemble.<br>
     <b>Vous restez libre : cette option n’est proposée qu’aux clients engagés dans une démarche de transformation IA, sans aucune obligation.</b>
   </p>
-  <!-- Mini schéma pédagogique -->
-  <div class="succes-fee-mini-schema">
-    <span class="succes-fee-step">
-      <i aria-hidden="true">💡</i>
-      30%<br><small>à la signature</small>
-    </span>
-    <span class="succes-fee-arrow">→</span>
-    <span class="succes-fee-step">
-      <i aria-hidden="true">🎯</i>
-      70%<br><small>si objectifs atteints</small>
-    </span>
+  <!-- Bloc schéma + témoignage -->
+  <div class="succes-fee-steps-wrapper">
+    <div class="succes-fee-step-row">
+      <div class="succes-fee-mini-schema">
+        <span class="succes-fee-step">
+          <i aria-hidden="true">💡</i>
+          <span class="nowrap">30% <small>à la signature</small></span>
+        </span>
+      </div>
+      <div class="succes-fee-testimonial">
+        <img src="bloc23.webp" alt="Pierre L." class="succes-fee-avatar" width="64" height="64" loading="lazy">
+        <div class="succes-fee-testimonial-text">
+          <p class="italic mb-1">“L’équipe a su comprendre nos enjeux et adapter l’IA à nos process, sans jamais survendre les résultats. Nous avons avancé ensemble, étape par étape.”</p>
+          <p class="font-bold">Pierre L., CEO, Industrie</p>
+        </div>
+      </div>
+    </div>
+    <div class="succes-fee-step-row">
+      <div class="succes-fee-mini-schema">
+        <span class="succes-fee-step">
+          <i aria-hidden="true">🎯</i>
+          <span class="nowrap">70% <small>si objectifs atteints</small></span>
+        </span>
+      </div>
+      <div class="succes-fee-testimonial">
+        <img src="bloc22.webp" alt="Sophie M." class="succes-fee-avatar" width="64" height="64" loading="lazy">
+        <div class="succes-fee-testimonial-text">
+          <p class="italic mb-1">“Un accompagnement pragmatique, une vraie écoute, et des résultats concrets dès les premières semaines.”</p>
+          <p class="font-bold">Sophie M., Responsable Opérations, Services</p>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- Encart étude de cas -->
-  <div class="succes-fee-case-study">
-    <span class="case-study-icon" aria-hidden="true">📈</span>
+  <div class="succes-fee-case-study mt-6 flex items-center gap-3 bg-blue-50 rounded-lg p-4 shadow-sm">
+    <span class="case-study-icon text-2xl" aria-hidden="true">📈</span>
     <span>
       <b>Étude de cas :</b>
       “Un client industriel a augmenté sa productivité de <b>+18 %</b> et économisé <b>50 000 €</b> en 6 mois grâce à notre accompagnement succès fee.”
