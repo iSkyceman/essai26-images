@@ -3,7 +3,7 @@
 <head>
   <!-- Encodage et responsive -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO : titre clair, mot-clé principal en début, max 60 caractères -->
   <title>Industrie 5.0 : Audit IA & Transformation - iSkyce Michel Klein</title>
@@ -37,7 +37,7 @@
   <meta name="twitter:description" content="Audit et transformation Industrie 5.0 : +15% productivité, -20% coûts, -40% CO₂. Feuille de route stratégique personnalisée." />
   <meta name="twitter:image" content="/images/og-image.jpg" /> <!-- Remplace par ton image -->
 
-  <!-- Place ici ton <style> ou lien vers ton CSS optimisé -->
+  <!-- Feuille de style personnalisée (si besoin) -->
   <style>
 :root {
   --bleu: #0A1F3D;
@@ -65,11 +65,11 @@ img { max-width: 100%; height: auto; display: block; }
 /* === HEADER HERO === */
 header.hero {
   position: relative;
-  min-height: 65vh;
+  min-height: 100vh;
   display: flex;
   align-items: flex-start;
   color: white;
-  padding: 2rem 10vw 0 10vw;
+  padding: 2rem 10vw 0 10vw; /* Utilise vw pour une adaptation sur très grands écrans */
   overflow: hidden;
 }
 
@@ -102,7 +102,7 @@ header.hero::before {
 .hero-content {
   position: relative;
   z-index: 4;
-  max-width: 900px;
+  max-width: 900px; /* Largeur accrue pour écrans larges */
   width: 100%;
   margin: 0 auto;
   text-align: left;
@@ -120,10 +120,6 @@ header.hero::before {
   }
 }
 @media (max-width: 768px) {
-  header.hero {
-    min-height: 45vh;
-    padding-top: 1.2rem;
-  }
   .hero-content {
     top: -15px;
     max-width: 100vw;
@@ -134,7 +130,7 @@ header.hero::before {
 
 /* Logo responsive et animé */
 .hero-logo {
-  width: clamp(120px, 14vw, 220px); /* max augmenté pour 27"+ */
+  width: clamp(120px, 14vw, 170px); /* Responsive, min 120px, max 170px */
   display: block;
   margin-left: 0;
   margin-right: auto;
@@ -146,7 +142,7 @@ header.hero::before {
 
 /* Titre responsive et animé */
 header h1 {
-  font-size: clamp(2.2rem, 5vw, 4.2rem); /* max augmenté pour très grands écrans */
+  font-size: clamp(2rem, 4vw, 2.8rem);
   margin: 0 0 1rem 0;
   text-align: left;
   opacity: 0;
@@ -156,7 +152,7 @@ header h1 {
 
 /* Paragraphe responsive et animé */
 header p {
-  font-size: clamp(1.1rem, 2.5vw, 2.2rem); /* max augmenté pour très grands écrans */
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   margin-bottom: 2.5rem;
   line-height: 1.6;
   max-width: 800px;
@@ -174,17 +170,6 @@ header p {
   }
 }
 
-/* XXL : Pour écrans très larges (27 pouces et +) */
-@media (min-width: 2000px) {
-  html { font-size: 120%; }
-  header h1 { font-size: 5vw; }
-  header p { font-size: 2.5vw; }
-  .hero-logo { width: clamp(160px, 18vw, 300px); }
-}
-@media (min-width: 3000px) {
-  html { font-size: 140%; }
-}
-
 /* === CTA ROW : bouton + mini-icônes === */
 .cta-row {
   display: flex;
@@ -199,7 +184,7 @@ header p {
   color: #fff;
   border: none;
   padding: 1rem 2.5rem;
-  font-size: clamp(1.05rem, 2vw, 2rem); /* max augmenté */
+  font-size: 1.3rem;
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -248,7 +233,7 @@ header p {
   background: rgba(255,255,255,0.13);
   border-radius: 16px;
   padding: 0.5rem 1.1rem;
-  font-size: clamp(0.85rem, 1.5vw, 1.3rem); /* max augmenté */
+  font-size: 0.92rem;
   font-weight: 600;
   color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -280,22 +265,20 @@ header p {
 @media (max-width: 768px) {
   header.hero {
     padding: 0 5vw;
-    min-height: 45vh;
-    padding-top: 1.2rem;
   }
   .hero-content {
     padding-top: 40px;
     padding-bottom: 40px;
-    text-align: left !important;
+    text-align: center;
   }
   .hero-logo {
-    margin-left: 0 !important;
-    margin-right: auto !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   header h1,
   header p,
   .cta-main {
-    text-align: left !important;
+    text-align: center;
   }
   .cta-row {
     flex-direction: column;
@@ -303,25 +286,22 @@ header p {
     gap: 0.7rem;
   }
   .cta-icons {
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 @media (max-width: 600px) {
   header h1 { font-size: 1.2rem; }
   .cta-main { font-size: 1rem; padding: 0.8rem 1.2rem; height: 48px; }
 }
-
-/* XXL : Pour écrans très larges (27 pouces et +) */
-@media (min-width: 2000px) {
-  .cta-main { font-size: 2.5vw; }
-  .icon-card-mini { font-size: 2vw; }
+header.hero {
+  min-height: 65vh; /* Ajuste selon ton ressenti */
 }
-@media (min-width: 3000px) {
-  .cta-main { font-size: 3vw; }
-  .icon-card-mini { font-size: 2.2vw; }
+@media (max-width: 768px) {
+  header.hero {
+    min-height: 45vh;
+    padding-top: 1.2rem;
+  }
 }
-
-/* Forcer l'alignement à gauche partout */
 .hero-content,
 .hero-logo,
 header h1,
@@ -331,7 +311,7 @@ header p {
   margin-right: auto !important;
 }
 
-   /* Popup IA */
+    /* Popup IA */
 #popup-potentiel-ia {
   display: none;
   position: fixed;
@@ -361,14 +341,13 @@ header p {
 .popup-ia-content h2 {
   margin-bottom: 1rem;
   color: var(--bleu);
-  font-size: clamp(1.3rem, 3vw, 2.2rem); /* max augmenté */
+  font-size: 1.3rem;
   text-align: center;
 }
 .popup-ia-content label {
   display: block;
   margin: 0.7rem 0 0.2rem 0;
   font-weight: 600;
-  font-size: clamp(1rem, 1.7vw, 1.4rem); /* max augmenté */
 }
 .popup-ia-content input,
 .popup-ia-content select,
@@ -378,7 +357,7 @@ header p {
   border-radius: 6px;
   border: 1px solid #ccc;
   margin-bottom: 0.6rem;
-  font-size: clamp(1rem, 1.5vw, 1.3rem); /* max augmenté */
+  font-size: 1rem;
 }
 .popup-ia-content button {
   background: var(--bleu);
@@ -386,7 +365,7 @@ header p {
   border: none;
   padding: 0.7rem 2rem;
   border-radius: 6px;
-  font-size: clamp(1.1rem, 2vw, 1.5rem); /* max augmenté */
+  font-size: 1.1rem;
   cursor: pointer;
   margin-top: 1rem;
   transition: background 0.2s;
@@ -398,8 +377,8 @@ header p {
 }
 .popup-ia-close {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 12px;       /* place la croix à 12px du haut */
+  right: 12px;     /* place la croix à 12px de la droite */
   background: none;
   border: none;
   font-size: 2rem;
@@ -440,24 +419,24 @@ header p {
 .tarif-card h3 {
   margin: 0 0 0.5rem 0;
   color: var(--orange);
-  font-size: clamp(1.2rem, 2.5vw, 2rem); /* max augmenté */
+  font-size: 1.3rem;
 }
 .tarif-card .tarif-prix {
-  font-size: clamp(1.5rem, 3vw, 2.6rem); /* max augmenté */
+  font-size: 2rem;
   font-weight: bold;
   color: var(--bleu);
   margin: 1rem 0 0.5rem 0;
 }
 .tarif-card small {
   color: #555;
-  font-size: clamp(1rem, 1.3vw, 1.2rem); /* max augmenté */
+  font-size: 0.95rem;
 }
 .tarif-card select {
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: clamp(1rem, 1.5vw, 1.3rem); /* max augmenté */
+  font-size: 1rem;
   background: #fff;
   width: 100%;
 }
@@ -485,7 +464,7 @@ header p {
   transform: translateY(-4px) scale(1.03);
 }
 .benefice i, .risque i {
-  font-size: clamp(1.6rem, 2.8vw, 3.2rem); /* max augmenté */
+  font-size: 2.2rem;
   margin-bottom: 0.7rem;
   color: var(--orange);
 }
@@ -493,13 +472,13 @@ header p {
   color: #e53935;
 }
 .benefice h4, .risque h4 {
-  font-size: clamp(1.1rem, 2vw, 1.65rem); /* max augmenté */
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--bleu);
 }
 .benefice p, .risque p {
-  font-size: clamp(1rem, 1.5vw, 1.3rem); /* max augmenté */
+  font-size: 1rem;
   color: #444;
   margin: 0;
 }
@@ -521,38 +500,6 @@ header p {
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-}
-
-/* XXL : Pour écrans très larges (27 pouces et +) */
-@media (min-width: 2000px) {
-  .popup-ia-content h2 { font-size: 3vw; }
-  .popup-ia-content label { font-size: 2vw; }
-  .popup-ia-content input,
-  .popup-ia-content select,
-  .popup-ia-content textarea { font-size: 2vw; }
-  .popup-ia-content button { font-size: 2.2vw; }
-  .tarif-card h3 { font-size: 2.7vw; }
-  .tarif-card .tarif-prix { font-size: 3.5vw; }
-  .tarif-card small { font-size: 1.8vw; }
-  .tarif-card select { font-size: 2vw; }
-  .benefice i, .risque i { font-size: 3.5vw; }
-  .benefice h4, .risque h4 { font-size: 2.2vw; }
-  .benefice p, .risque p { font-size: 1.7vw; }
-}
-@media (min-width: 3000px) {
-  .popup-ia-content h2 { font-size: 4vw; }
-  .popup-ia-content label { font-size: 3vw; }
-  .popup-ia-content input,
-  .popup-ia-content select,
-  .popup-ia-content textarea { font-size: 3vw; }
-  .popup-ia-content button { font-size: 3vw; }
-  .tarif-card h3 { font-size: 3.5vw; }
-  .tarif-card .tarif-prix { font-size: 4vw; }
-  .tarif-card small { font-size: 2.7vw; }
-  .tarif-card select { font-size: 3vw; }
-  .benefice i, .risque i { font-size: 4vw; }
-  .benefice h4, .risque h4 { font-size: 3vw; }
-  .benefice p, .risque p { font-size: 2.5vw; }
 }
 
 /* MENTIONS LEGALES avec fond dégradé linéaire bleu foncé -> bleu clair */
@@ -598,12 +545,12 @@ header p {
 
 .mentions-legales .legal-section p {
   margin: 0;
-  font-size: clamp(1.05rem, 1.5vw, 1.3rem); /* max augmenté */
+  font-size: 1rem;
 }
 
 .mentions-legales .legal-section h3 {
   margin-bottom: 0.2rem;
-  font-size: clamp(1.1rem, 2vw, 1.65rem); /* max augmenté */
+  font-size: 1.08rem;
 }
 
 /* Style pour le lien orange */
@@ -634,7 +581,7 @@ header p {
   height: 1.5em;
   text-align: center;
   line-height: 1.5em;
-  font-size: clamp(1.05em, 1.5vw, 1.3em); /* max augmenté */
+  font-size: 1em;
   cursor: pointer;
   border: 1px solid #b3d2f3;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -660,7 +607,7 @@ header p {
   height: 1.3em;
   text-align: center;
   line-height: 1.3em;
-  font-size: clamp(1.05em, 1.5vw, 1.3em); /* max augmenté */
+  font-size: 1em;
   transition: background 0.2s;
 }
 
@@ -685,7 +632,7 @@ header p {
   padding: 1em;
   box-shadow: 0 2px 8px #0002;
   z-index: 100;
-  font-size: clamp(1em, 1.3vw, 1.2em); /* max augmenté */
+  font-size: 0.98em;
   text-align: left;
 }
 
@@ -709,21 +656,6 @@ header p {
   }
 }
 
-/* XXL : Pour écrans très larges (27 pouces et +) */
-@media (min-width: 2000px) {
-  .mentions-legales .legal-section p { font-size: 2vw; }
-  .mentions-legales .legal-section h3 { font-size: 2.2vw; }
-  .info-bulle, .info-bulle-custom { font-size: 2vw; }
-  .info-bulle-content { font-size: 1.7vw; }
-}
-@media (min-width: 3000px) {
-  .mentions-legales .legal-section p { font-size: 2.7vw; }
-  .mentions-legales .legal-section h3 { font-size: 3vw; }
-  .info-bulle, .info-bulle-custom { font-size: 2.5vw; }
-  .info-bulle-content { font-size: 2vw; }
-}
-
-/* Variables supplémentaires */
 :root {
   --primary: #0a1f3d;
   --main-bg: #f5f9ff;
@@ -813,8 +745,6 @@ header p {
 .donnees-securisees h3, .donnees-securisees p {
   position: relative;
   z-index: 1;
-  /* Typo responsive */
-  font-size: clamp(1.1rem, 2vw, 1.7rem); /* max augmenté */
 }
 
 /* Listes à puces personnalisées pour sécurité */
@@ -837,7 +767,7 @@ header p {
   .notre-methode-bg h3,
   .succes-fee h3,
   .donnees-securisees h3 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 }
 @media (max-width: 700px) {
@@ -877,30 +807,7 @@ header p {
 h1, h2, h3, p {
   overflow-wrap: break-word;
   word-break: break-word;
-}
-
-/* XXL : Pour écrans très larges (27 pouces et +) */
-@media (min-width: 2000px) {
-  .notre-methode-bg h3,
-  .succes-fee h3,
-  .donnees-securisees h3,
-  .notre-methode-bg p,
-  .succes-fee p,
-  .donnees-securisees p {
-    font-size: 2.5vw;
-  }
-}
-@media (min-width: 3000px) {
-  .notre-methode-bg h3,
-  .succes-fee h3,
-  .donnees-securisees h3,
-  .notre-methode-bg p,
-  .succes-fee p,
-  .donnees-securisees p {
-    font-size: 3vw;
-  }
-}
-
+} 
 /* Bloc Succès Fee */
 .succes-fee {
   position: relative;
@@ -931,13 +838,13 @@ h1, h2, h3, p {
 .succes-fee h2 {
   color: var(--primary, #0a1f3d);
   margin-bottom: 1rem;
-  font-size: clamp(1.5rem, 3.5vw, 2.7rem); /* max augmenté */
+  font-size: 1.4rem;
   position: relative;
   z-index: 1;
 }
 .succes-fee p {
   color: var(--text, #223);
-  font-size: clamp(1.15rem, 2vw, 2rem); /* max augmenté */
+  font-size: 1.1rem;
   line-height: 1.6;
   position: relative;
   z-index: 1;
@@ -955,7 +862,7 @@ h1, h2, h3, p {
   justify-content: center;
   gap: 1.2rem;
   margin: 0.8rem 0 0.2rem 0;
-  font-size: clamp(1.05rem, 1.5vw, 1.5rem); /* max augmenté */
+  font-size: 1.05rem;
   opacity: 0.92;
   position: relative;
   z-index: 1;
@@ -971,16 +878,16 @@ h1, h2, h3, p {
   min-width: 70px;
 }
 .succes-fee-step i {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-bottom: 0.15em;
 }
 .succes-fee-arrow {
-  font-size: 1.7em;
+  font-size: 1.4em;
   color: #2563eb;
   margin: 0 0.25em;
 }
 .succes-fee-step small {
-  font-size: clamp(1em, 1.2vw, 1.2em); /* max augmenté */
+  font-size: 0.93em;
   color: #223;
   font-weight: normal;
 }
@@ -1030,7 +937,7 @@ h1, h2, h3, p {
 }
 
 .succes-fee-testimonial-text {
-  font-size: clamp(1.1rem, 1.7vw, 1.4rem); /* max augmenté */
+  font-size: 1rem;
   color: #1a202c;
   min-width: 0;
 }
@@ -1050,14 +957,13 @@ h1, h2, h3, p {
   border-radius: 8px;
   padding: 0.7em 1em;
   margin: 1.1em 0 0.2em 0;
-  font-size: clamp(1.1rem, 1.7vw, 1.4rem); /* max augmenté */
+  font-size: 1.04rem;
   box-shadow: 0 1px 4px rgba(10,31,61,0.04);
   position: relative;
   z-index: 1;
 }
 .case-study-icon {
   font-size: 2em;
-  margin-top: 0.05em;
   margin-right: 0.5em;
   color: #2563eb;
 }
@@ -1097,6 +1003,12 @@ h1, h2, h3, p {
   100% { background-position-y: 0%; }
 }
 
+/* Icône étude de cas */
+.case-study-icon {
+  font-size: 1.3em;
+  margin-top: 0.05em;
+}
+
 /* Carte avec effet hover */
 .card-hover {
   transition: all 0.3s ease;
@@ -1114,24 +1026,6 @@ h1, h2, h3, p {
 }
 .animate-pulse {
   animation: pulse 2s infinite;
-}
-
-/* XXL : Pour écrans très larges (27 pouces et +) */
-@media (min-width: 2000px) {
-  .succes-fee h2 { font-size: 4vw; }
-  .succes-fee p { font-size: 2.7vw; }
-  .succes-fee-mini-schema { font-size: 2.5vw; }
-  .succes-fee-step small { font-size: 2vw; }
-  .succes-fee-testimonial-text { font-size: 2.5vw; }
-  .succes-fee-case-study { font-size: 2.5vw; }
-}
-@media (min-width: 3000px) {
-  .succes-fee h2 { font-size: 5vw; }
-  .succes-fee p { font-size: 3.5vw; }
-  .succes-fee-mini-schema { font-size: 3vw; }
-  .succes-fee-step small { font-size: 2.5vw; }
-  .succes-fee-testimonial-text { font-size: 3vw; }
-  .succes-fee-case-study { font-size: 3vw; }
 }
 
   </style> 
