@@ -854,13 +854,13 @@ h1, h2, h3, p {
   font-weight: normal;
 }
 
-/* Témoignages côte à côte, larges et aérés */
+/* Témoignages côte à côte, plus larges et équilibrés */
 .succes-fee-testimonials-row {
   display: flex;
-  gap: 2.5rem;
+  gap: 3rem;
   justify-content: center;
   align-items: stretch;
-  margin: 2.2rem 0 1.2rem 0;
+  margin: 2.5rem 0 1.5rem 0;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
@@ -868,41 +868,41 @@ h1, h2, h3, p {
 .succes-fee-testimonial {
   display: flex;
   align-items: flex-start;
-  gap: 1.3rem;
+  gap: 1.4rem;
   background: #fff;
   border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(10,31,61,0.07);
-  padding: 1.2em 2em;
-  max-width: 540px;
+  box-shadow: 0 2px 14px rgba(10,31,61,0.08);
+  padding: 1.3em 2.5em;
+  max-width: 620px;
   min-width: 0;
-  flex: 1 1 420px;
-  transition: box-shadow 0.2s;
+  flex: 1 1 500px;
+  transition: box-shadow 0.3s ease;
 }
 .succes-fee-testimonial:hover {
-  box-shadow: 0 4px 24px rgba(10,31,61,0.10);
+  box-shadow: 0 6px 28px rgba(10,31,61,0.12);
 }
 .succes-fee-avatar {
-  width: 68px;
-  height: 68px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #e2e8f0;
   background: #f7fafc;
-  box-shadow: 0 2px 8px rgba(10,31,61,0.06);
+  box-shadow: 0 2px 10px rgba(10,31,61,0.07);
   flex-shrink: 0;
   display: block;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
 }
 .succes-fee-testimonial-text {
-  font-size: 1.06rem;
+  font-size: 1.1rem;
   color: #1a202c;
   min-width: 0;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 .succes-fee-testimonial-text .font-bold {
-  font-weight: bold;
+  font-weight: 700;
   color: #2563eb;
-  margin-top: 0.2em;
+  margin-top: 0.25em;
 }
 
 /* Étude de cas */
@@ -914,15 +914,15 @@ h1, h2, h3, p {
   border-left: 4px solid #2563eb;
   border-radius: 8px;
   padding: 0.7em 1em;
-  margin: 1.1em 0 0.2em 0;
-  font-size: 1.04rem;
-  box-shadow: 0 1px 4px rgba(10,31,61,0.04);
+  margin: 1.2em 0 0.3em 0;
+  font-size: 1.06rem;
+  box-shadow: 0 1px 5px rgba(10,31,61,0.05);
   position: relative;
   z-index: 1;
 }
 .case-study-icon {
-  font-size: 2em;
-  margin-right: 0.5em;
+  font-size: 2.1em;
+  margin-right: 0.6em;
   color: #2563eb;
 }
 
@@ -930,27 +930,35 @@ h1, h2, h3, p {
 @media (max-width: 1100px) {
   .succes-fee-testimonials-row {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.8rem;
     align-items: stretch;
   }
   .succes-fee-testimonial {
     max-width: 100%;
     flex: 1 1 100%;
+    padding: 1em 1.2em;
+  }
+  .succes-fee-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  .succes-fee-testimonial-text {
+    font-size: 1rem;
   }
 }
 @media (max-width: 700px) {
   .succes-fee {
-    padding: 1.2rem 0.5rem;
+    padding: 1.2rem 0.8rem;
   }
   .succes-fee-testimonial {
-    padding: 0.8em 0.7em;
+    padding: 0.8em 1em;
   }
   .succes-fee-avatar {
     width: 52px;
     height: 52px;
   }
   .succes-fee-testimonial-text {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -963,7 +971,6 @@ h1, h2, h3, p {
   0% { background-position-y: 100%; }
   100% { background-position-y: 0%; }
 }
-
 
 .case-study-icon {
   font-size: 1.3em;
