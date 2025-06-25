@@ -293,6 +293,23 @@ header p {
   header h1 { font-size: 1.2rem; }
   .cta-main { font-size: 1rem; padding: 0.8rem 1.2rem; height: 48px; }
 }
+header.hero {
+  min-height: 65vh; /* Ajuste selon ton ressenti */
+}
+@media (max-width: 768px) {
+  header.hero {
+    min-height: 45vh;
+    padding-top: 1.2rem;
+  }
+}
+.hero-content,
+.hero-logo,
+header h1,
+header p {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
 
     /* Popup IA */
 #popup-potentiel-ia {
