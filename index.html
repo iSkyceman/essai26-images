@@ -854,13 +854,13 @@ h1, h2, h3, p {
   font-weight: normal;
 }
 
-/* Témoignages côte à côte */
+/* Témoignages côte à côte, larges et aérés */
 .succes-fee-testimonials-row {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   justify-content: center;
   align-items: stretch;
-  margin: 2rem 0 1rem 0;
+  margin: 2.2rem 0 1.2rem 0;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
@@ -868,18 +868,22 @@ h1, h2, h3, p {
 .succes-fee-testimonial {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.3rem;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 6px rgba(10,31,61,0.06);
-  padding: 0.7em 1em;
-  max-width: 380px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(10,31,61,0.07);
+  padding: 1.2em 2em;
+  max-width: 540px;
   min-width: 0;
-  flex: 1 1 320px;
+  flex: 1 1 420px;
+  transition: box-shadow 0.2s;
+}
+.succes-fee-testimonial:hover {
+  box-shadow: 0 4px 24px rgba(10,31,61,0.10);
 }
 .succes-fee-avatar {
-  width: 64px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #e2e8f0;
@@ -890,9 +894,10 @@ h1, h2, h3, p {
   aspect-ratio: 1/1;
 }
 .succes-fee-testimonial-text {
-  font-size: 1rem;
+  font-size: 1.06rem;
   color: #1a202c;
   min-width: 0;
+  line-height: 1.55;
 }
 .succes-fee-testimonial-text .font-bold {
   font-weight: bold;
@@ -922,10 +927,10 @@ h1, h2, h3, p {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .succes-fee-testimonials-row {
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.5rem;
     align-items: stretch;
   }
   .succes-fee-testimonial {
@@ -933,16 +938,19 @@ h1, h2, h3, p {
     flex: 1 1 100%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .succes-fee {
     padding: 1.2rem 0.5rem;
   }
   .succes-fee-testimonial {
-    padding: 0.5em 0.7em;
+    padding: 0.8em 0.7em;
   }
   .succes-fee-avatar {
     width: 52px;
     height: 52px;
+  }
+  .succes-fee-testimonial-text {
+    font-size: 0.98rem;
   }
 }
 
@@ -955,6 +963,7 @@ h1, h2, h3, p {
   0% { background-position-y: 100%; }
   100% { background-position-y: 0%; }
 }
+
 
 .case-study-icon {
   font-size: 1.3em;
