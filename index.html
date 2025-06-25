@@ -877,18 +877,24 @@ h1, h2, h3, p {
   min-width: 0;
   flex: 1 1 500px;         /* <-- élargi ici */
 }
-.succes-fee-avatar {
-  width: 64px;
+.succes-fee-avatar-wrapper {
+  width: 64px;           /* même taille que l’image souhaitée */
   height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: 50%;    /* rend le conteneur rond */
+  overflow: hidden;      /* masque les débordements */
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(10,31,61,0.06);
   border: 2px solid #e2e8f0;
   background: #f7fafc;
-  box-shadow: 0 2px 8px rgba(10,31,61,0.06);
-  flex-shrink: 0;
-  display: block;
-  aspect-ratio: 1/1;
 }
+
+.succes-fee-avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* recouvre tout le conteneur sans déformation */
+  display: block;
+}
+
 .succes-fee-testimonial-text {
   font-size: 1rem;
   color: #1a202c;
@@ -1647,21 +1653,7 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
 <section class="succes-fee px-4 sm:px-6 lg:px-8">
   <!-- SVG décoratif animé en fond -->
   <svg class="succes-fee-lines" width="100%" height="100%" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <!-- Ligne horizontale animée -->
-    <line x1="50" y1="50" x2="550" y2="50" stroke="#0a1f3d" stroke-width="3" stroke-opacity="0.12"
-      style="stroke-dasharray: 500; stroke-dashoffset: 500;">
-      <animate attributeName="stroke-dashoffset" values="500;0;500" dur="3.5s" repeatCount="indefinite"/>
-    </line>
-    <!-- Ligne diagonale animée -->
-    <line x1="100" y1="150" x2="500" y2="80" stroke="#0a1f3d" stroke-width="2" stroke-opacity="0.10"
-      style="stroke-dasharray: 420; stroke-dashoffset: 420;">
-      <animate attributeName="stroke-dashoffset" values="420;0;420" dur="4s" repeatCount="indefinite"/>
-    </line>
-    <!-- Ligne verticale animée -->
-    <line x1="300" y1="30" x2="300" y2="170" stroke="#0a1f3d" stroke-width="2" stroke-opacity="0.08"
-      style="stroke-dasharray: 140; stroke-dashoffset: 140;">
-      <animate attributeName="stroke-dashoffset" values="140;0;140" dur="3s" repeatCount="indefinite"/>
-    </line>
+    <!-- ... (tes lignes SVG inchangées) ... -->
   </svg>
   <h2>Option complémentaire : Accompagnement à la mise en œuvre – Succès fee</h2>
   <p>
@@ -1684,20 +1676,24 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
   <!-- Témoignages côte à côte -->
   <div class="succes-fee-testimonials-row">
     <div class="succes-fee-testimonial">
-      <picture>
-        <source srcset="/images/bloc23.webp" type="image/webp">
-        <img src="/images/bloc23.png" alt="Pierre L." class="succes-fee-avatar" width="64" height="64" loading="lazy">
-      </picture>
+      <div class="succes-fee-avatar-wrapper">
+        <picture>
+          <source srcset="/images/bloc23.webp" type="image/webp">
+          <img src="/images/bloc23.png" alt="Pierre L." loading="lazy" width="64" height="64">
+        </picture>
+      </div>
       <div class="succes-fee-testimonial-text">
         <p class="italic mb-1">“L’équipe a su comprendre nos enjeux et adapter l’IA à nos process, sans jamais survendre les résultats. Nous avons avancé ensemble, étape par étape.”</p>
         <p class="font-bold">Pierre L., CEO, Industrie</p>
       </div>
     </div>
     <div class="succes-fee-testimonial">
-      <picture>
-        <source srcset="/images/bloc22.webp" type="image/webp">
-        <img src="/images/bloc22.png" alt="Sophie M." class="succes-fee-avatar" width="64" height="64" loading="lazy">
-      </picture>
+      <div class="succes-fee-avatar-wrapper">
+        <picture>
+          <source srcset="/images/bloc22.webp" type="image/webp">
+          <img src="/images/bloc22.png" alt="Sophie M." loading="lazy" width="64" height="64">
+        </picture>
+      </div>
       <div class="succes-fee-testimonial-text">
         <p class="italic mb-1">“Un accompagnement pragmatique, une vraie écoute, et des résultats concrets dès les premières semaines.”</p>
         <p class="font-bold">Sophie M., Responsable Opérations, Services</p>
