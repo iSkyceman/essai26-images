@@ -3,7 +3,7 @@
 <head>
   <!-- Encodage et responsive -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=yes" />
 
   <!-- SEO : titre clair, mot-clé principal en début, max 60 caractères -->
   <title>Industrie 5.0 : Audit IA & Transformation - iSkyce Michel Klein</title>
@@ -37,7 +37,7 @@
   <meta name="twitter:description" content="Audit et transformation Industrie 5.0 : +15% productivité, -20% coûts, -40% CO₂. Feuille de route stratégique personnalisée." />
   <meta name="twitter:image" content="/images/og-image.jpg" /> <!-- Remplace par ton image -->
 
-  <!-- Feuille de style personnalisée (si besoin) -->
+  <!-- Place ici ton <style> ou lien vers ton CSS optimisé -->
   <style>
 :root {
   --bleu: #0A1F3D;
@@ -65,7 +65,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* === HEADER HERO === */
 header.hero {
   position: relative;
-  min-height: 65vh; /* Moins haut que 100vh pour un effet moins massif */
+  min-height: 65vh;
   display: flex;
   align-items: flex-start;
   color: white;
@@ -134,7 +134,7 @@ header.hero::before {
 
 /* Logo responsive et animé */
 .hero-logo {
-  width: clamp(120px, 14vw, 170px);
+  width: clamp(120px, 14vw, 220px); /* max augmenté pour 27"+ */
   display: block;
   margin-left: 0;
   margin-right: auto;
@@ -146,7 +146,7 @@ header.hero::before {
 
 /* Titre responsive et animé */
 header h1 {
-  font-size: clamp(2rem, 4vw, 3.2rem); /* Plus fluide et lisible sur grands écrans */
+  font-size: clamp(2.2rem, 5vw, 4.2rem); /* max augmenté pour très grands écrans */
   margin: 0 0 1rem 0;
   text-align: left;
   opacity: 0;
@@ -156,7 +156,7 @@ header h1 {
 
 /* Paragraphe responsive et animé */
 header p {
-  font-size: clamp(1.1rem, 2vw, 1.6rem); /* Adaptatif sur tous les écrans */
+  font-size: clamp(1.1rem, 2.5vw, 2.2rem); /* max augmenté pour très grands écrans */
   margin-bottom: 2.5rem;
   line-height: 1.6;
   max-width: 800px;
@@ -174,6 +174,17 @@ header p {
   }
 }
 
+/* XXL : Pour écrans très larges (27 pouces et +) */
+@media (min-width: 2000px) {
+  html { font-size: 120%; }
+  header h1 { font-size: 5vw; }
+  header p { font-size: 2.5vw; }
+  .hero-logo { width: clamp(160px, 18vw, 300px); }
+}
+@media (min-width: 3000px) {
+  html { font-size: 140%; }
+}
+
 /* === CTA ROW : bouton + mini-icônes === */
 .cta-row {
   display: flex;
@@ -188,7 +199,7 @@ header p {
   color: #fff;
   border: none;
   padding: 1rem 2.5rem;
-  font-size: clamp(1.05rem, 1.6vw, 1.3rem); /* Responsive */
+  font-size: clamp(1.05rem, 2vw, 2rem); /* max augmenté */
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -237,7 +248,7 @@ header p {
   background: rgba(255,255,255,0.13);
   border-radius: 16px;
   padding: 0.5rem 1.1rem;
-  font-size: clamp(0.85rem, 1.1vw, 0.92rem); /* Responsive */
+  font-size: clamp(0.85rem, 1.5vw, 1.3rem); /* max augmenté */
   font-weight: 600;
   color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -300,6 +311,16 @@ header p {
   .cta-main { font-size: 1rem; padding: 0.8rem 1.2rem; height: 48px; }
 }
 
+/* XXL : Pour écrans très larges (27 pouces et +) */
+@media (min-width: 2000px) {
+  .cta-main { font-size: 2.5vw; }
+  .icon-card-mini { font-size: 2vw; }
+}
+@media (min-width: 3000px) {
+  .cta-main { font-size: 3vw; }
+  .icon-card-mini { font-size: 2.2vw; }
+}
+
 /* Forcer l'alignement à gauche partout */
 .hero-content,
 .hero-logo,
@@ -340,14 +361,14 @@ header p {
 .popup-ia-content h2 {
   margin-bottom: 1rem;
   color: var(--bleu);
-  font-size: clamp(1.1rem, 2vw, 1.5rem); /* Responsive */
+  font-size: clamp(1.3rem, 3vw, 2.2rem); /* max augmenté */
   text-align: center;
 }
 .popup-ia-content label {
   display: block;
   margin: 0.7rem 0 0.2rem 0;
   font-weight: 600;
-  font-size: clamp(0.98rem, 1.2vw, 1.1rem); /* Responsive */
+  font-size: clamp(1rem, 1.7vw, 1.4rem); /* max augmenté */
 }
 .popup-ia-content input,
 .popup-ia-content select,
@@ -357,7 +378,7 @@ header p {
   border-radius: 6px;
   border: 1px solid #ccc;
   margin-bottom: 0.6rem;
-  font-size: clamp(0.98rem, 1.2vw, 1.08rem); /* Responsive */
+  font-size: clamp(1rem, 1.5vw, 1.3rem); /* max augmenté */
 }
 .popup-ia-content button {
   background: var(--bleu);
@@ -365,7 +386,7 @@ header p {
   border: none;
   padding: 0.7rem 2rem;
   border-radius: 6px;
-  font-size: clamp(1rem, 1.5vw, 1.1rem); /* Responsive */
+  font-size: clamp(1.1rem, 2vw, 1.5rem); /* max augmenté */
   cursor: pointer;
   margin-top: 1rem;
   transition: background 0.2s;
@@ -419,24 +440,24 @@ header p {
 .tarif-card h3 {
   margin: 0 0 0.5rem 0;
   color: var(--orange);
-  font-size: clamp(1.1rem, 2vw, 1.3rem); /* Responsive */
+  font-size: clamp(1.2rem, 2.5vw, 2rem); /* max augmenté */
 }
 .tarif-card .tarif-prix {
-  font-size: clamp(1.3rem, 2.5vw, 2rem); /* Responsive */
+  font-size: clamp(1.5rem, 3vw, 2.6rem); /* max augmenté */
   font-weight: bold;
   color: var(--bleu);
   margin: 1rem 0 0.5rem 0;
 }
 .tarif-card small {
   color: #555;
-  font-size: clamp(0.9rem, 1vw, 0.95rem); /* Responsive */
+  font-size: clamp(1rem, 1.3vw, 1.2rem); /* max augmenté */
 }
 .tarif-card select {
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: clamp(0.98rem, 1.2vw, 1.08rem); /* Responsive */
+  font-size: clamp(1rem, 1.5vw, 1.3rem); /* max augmenté */
   background: #fff;
   width: 100%;
 }
@@ -464,7 +485,7 @@ header p {
   transform: translateY(-4px) scale(1.03);
 }
 .benefice i, .risque i {
-  font-size: clamp(1.6rem, 2.2vw, 2.2rem); /* Responsive */
+  font-size: clamp(1.6rem, 2.8vw, 3.2rem); /* max augmenté */
   margin-bottom: 0.7rem;
   color: var(--orange);
 }
@@ -472,13 +493,13 @@ header p {
   color: #e53935;
 }
 .benefice h4, .risque h4 {
-  font-size: clamp(1.05rem, 2vw, 1.35rem); /* Responsive */
+  font-size: clamp(1.1rem, 2vw, 1.65rem); /* max augmenté */
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--bleu);
 }
 .benefice p, .risque p {
-  font-size: clamp(0.98rem, 1.2vw, 1.1rem); /* Responsive */
+  font-size: clamp(1rem, 1.5vw, 1.3rem); /* max augmenté */
   color: #444;
   margin: 0;
 }
@@ -500,6 +521,38 @@ header p {
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+}
+
+/* XXL : Pour écrans très larges (27 pouces et +) */
+@media (min-width: 2000px) {
+  .popup-ia-content h2 { font-size: 3vw; }
+  .popup-ia-content label { font-size: 2vw; }
+  .popup-ia-content input,
+  .popup-ia-content select,
+  .popup-ia-content textarea { font-size: 2vw; }
+  .popup-ia-content button { font-size: 2.2vw; }
+  .tarif-card h3 { font-size: 2.7vw; }
+  .tarif-card .tarif-prix { font-size: 3.5vw; }
+  .tarif-card small { font-size: 1.8vw; }
+  .tarif-card select { font-size: 2vw; }
+  .benefice i, .risque i { font-size: 3.5vw; }
+  .benefice h4, .risque h4 { font-size: 2.2vw; }
+  .benefice p, .risque p { font-size: 1.7vw; }
+}
+@media (min-width: 3000px) {
+  .popup-ia-content h2 { font-size: 4vw; }
+  .popup-ia-content label { font-size: 3vw; }
+  .popup-ia-content input,
+  .popup-ia-content select,
+  .popup-ia-content textarea { font-size: 3vw; }
+  .popup-ia-content button { font-size: 3vw; }
+  .tarif-card h3 { font-size: 3.5vw; }
+  .tarif-card .tarif-prix { font-size: 4vw; }
+  .tarif-card small { font-size: 2.7vw; }
+  .tarif-card select { font-size: 3vw; }
+  .benefice i, .risque i { font-size: 4vw; }
+  .benefice h4, .risque h4 { font-size: 3vw; }
+  .benefice p, .risque p { font-size: 2.5vw; }
 }
 
 /* MENTIONS LEGALES avec fond dégradé linéaire bleu foncé -> bleu clair */
@@ -545,12 +598,12 @@ header p {
 
 .mentions-legales .legal-section p {
   margin: 0;
-  font-size: clamp(0.98rem, 1.1vw, 1rem); /* Responsive */
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem); /* max augmenté */
 }
 
 .mentions-legales .legal-section h3 {
   margin-bottom: 0.2rem;
-  font-size: clamp(1rem, 1.2vw, 1.08rem); /* Responsive */
+  font-size: clamp(1.1rem, 2vw, 1.65rem); /* max augmenté */
 }
 
 /* Style pour le lien orange */
@@ -581,7 +634,7 @@ header p {
   height: 1.5em;
   text-align: center;
   line-height: 1.5em;
-  font-size: clamp(0.95em, 1vw, 1.05em); /* Responsive */
+  font-size: clamp(1.05em, 1.5vw, 1.3em); /* max augmenté */
   cursor: pointer;
   border: 1px solid #b3d2f3;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -607,7 +660,7 @@ header p {
   height: 1.3em;
   text-align: center;
   line-height: 1.3em;
-  font-size: clamp(0.95em, 1vw, 1.05em); /* Responsive */
+  font-size: clamp(1.05em, 1.5vw, 1.3em); /* max augmenté */
   transition: background 0.2s;
 }
 
@@ -632,7 +685,7 @@ header p {
   padding: 1em;
   box-shadow: 0 2px 8px #0002;
   z-index: 100;
-  font-size: clamp(0.93em, 1vw, 0.98em); /* Responsive */
+  font-size: clamp(1em, 1.3vw, 1.2em); /* max augmenté */
   text-align: left;
 }
 
@@ -654,6 +707,20 @@ header p {
     min-width: 180px;
     max-width: 90vw;
   }
+}
+
+/* XXL : Pour écrans très larges (27 pouces et +) */
+@media (min-width: 2000px) {
+  .mentions-legales .legal-section p { font-size: 2vw; }
+  .mentions-legales .legal-section h3 { font-size: 2.2vw; }
+  .info-bulle, .info-bulle-custom { font-size: 2vw; }
+  .info-bulle-content { font-size: 1.7vw; }
+}
+@media (min-width: 3000px) {
+  .mentions-legales .legal-section p { font-size: 2.7vw; }
+  .mentions-legales .legal-section h3 { font-size: 3vw; }
+  .info-bulle, .info-bulle-custom { font-size: 2.5vw; }
+  .info-bulle-content { font-size: 2vw; }
 }
 
 /* Variables supplémentaires */
@@ -747,7 +814,7 @@ header p {
   position: relative;
   z-index: 1;
   /* Typo responsive */
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-size: clamp(1.1rem, 2vw, 1.7rem); /* max augmenté */
 }
 
 /* Listes à puces personnalisées pour sécurité */
@@ -812,6 +879,28 @@ h1, h2, h3, p {
   word-break: break-word;
 }
 
+/* XXL : Pour écrans très larges (27 pouces et +) */
+@media (min-width: 2000px) {
+  .notre-methode-bg h3,
+  .succes-fee h3,
+  .donnees-securisees h3,
+  .notre-methode-bg p,
+  .succes-fee p,
+  .donnees-securisees p {
+    font-size: 2.5vw;
+  }
+}
+@media (min-width: 3000px) {
+  .notre-methode-bg h3,
+  .succes-fee h3,
+  .donnees-securisees h3,
+  .notre-methode-bg p,
+  .succes-fee p,
+  .donnees-securisees p {
+    font-size: 3vw;
+  }
+}
+
 /* Bloc Succès Fee */
 .succes-fee {
   position: relative;
@@ -842,13 +931,13 @@ h1, h2, h3, p {
 .succes-fee h2 {
   color: var(--primary, #0a1f3d);
   margin-bottom: 1rem;
-  font-size: clamp(1.15rem, 2vw, 1.6rem); /* Responsive */
+  font-size: clamp(1.5rem, 3.5vw, 2.7rem); /* max augmenté */
   position: relative;
   z-index: 1;
 }
 .succes-fee p {
   color: var(--text, #223);
-  font-size: clamp(1rem, 1.3vw, 1.15rem); /* Responsive */
+  font-size: clamp(1.15rem, 2vw, 2rem); /* max augmenté */
   line-height: 1.6;
   position: relative;
   z-index: 1;
@@ -866,7 +955,7 @@ h1, h2, h3, p {
   justify-content: center;
   gap: 1.2rem;
   margin: 0.8rem 0 0.2rem 0;
-  font-size: clamp(0.95rem, 1.1vw, 1.05rem); /* Responsive */
+  font-size: clamp(1.05rem, 1.5vw, 1.5rem); /* max augmenté */
   opacity: 0.92;
   position: relative;
   z-index: 1;
@@ -882,16 +971,16 @@ h1, h2, h3, p {
   min-width: 70px;
 }
 .succes-fee-step i {
-  font-size: 1.1em;
+  font-size: 1.2em;
   margin-bottom: 0.15em;
 }
 .succes-fee-arrow {
-  font-size: 1.4em;
+  font-size: 1.7em;
   color: #2563eb;
   margin: 0 0.25em;
 }
 .succes-fee-step small {
-  font-size: clamp(0.88em, 1vw, 0.93em); /* Responsive */
+  font-size: clamp(1em, 1.2vw, 1.2em); /* max augmenté */
   color: #223;
   font-weight: normal;
 }
@@ -941,7 +1030,7 @@ h1, h2, h3, p {
 }
 
 .succes-fee-testimonial-text {
-  font-size: clamp(0.97rem, 1.1vw, 1rem); /* Responsive */
+  font-size: clamp(1.1rem, 1.7vw, 1.4rem); /* max augmenté */
   color: #1a202c;
   min-width: 0;
 }
@@ -961,13 +1050,13 @@ h1, h2, h3, p {
   border-radius: 8px;
   padding: 0.7em 1em;
   margin: 1.1em 0 0.2em 0;
-  font-size: clamp(0.98rem, 1.1vw, 1.04rem); /* Responsive */
+  font-size: clamp(1.1rem, 1.7vw, 1.4rem); /* max augmenté */
   box-shadow: 0 1px 4px rgba(10,31,61,0.04);
   position: relative;
   z-index: 1;
 }
 .case-study-icon {
-  font-size: 1.3em;
+  font-size: 2em;
   margin-top: 0.05em;
   margin-right: 0.5em;
   color: #2563eb;
@@ -1025,6 +1114,24 @@ h1, h2, h3, p {
 }
 .animate-pulse {
   animation: pulse 2s infinite;
+}
+
+/* XXL : Pour écrans très larges (27 pouces et +) */
+@media (min-width: 2000px) {
+  .succes-fee h2 { font-size: 4vw; }
+  .succes-fee p { font-size: 2.7vw; }
+  .succes-fee-mini-schema { font-size: 2.5vw; }
+  .succes-fee-step small { font-size: 2vw; }
+  .succes-fee-testimonial-text { font-size: 2.5vw; }
+  .succes-fee-case-study { font-size: 2.5vw; }
+}
+@media (min-width: 3000px) {
+  .succes-fee h2 { font-size: 5vw; }
+  .succes-fee p { font-size: 3.5vw; }
+  .succes-fee-mini-schema { font-size: 3vw; }
+  .succes-fee-step small { font-size: 2.5vw; }
+  .succes-fee-testimonial-text { font-size: 3vw; }
+  .succes-fee-case-study { font-size: 3vw; }
 }
 
   </style> 
