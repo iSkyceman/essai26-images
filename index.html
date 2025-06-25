@@ -768,7 +768,7 @@ h1, h2, h3, p {
   overflow-wrap: break-word;
   word-break: break-word;
 }
-/* Bloc Succès Fee - Optimisé et adapté */
+/* Bloc Succès Fee - Groupe horizontal optimisé */
 .succes-fee {
   position: relative;
   overflow: hidden;
@@ -817,19 +817,32 @@ h1, h2, h3, p {
   z-index: 1;
 }
 
+/* Groupe horizontal principal */
+.succes-fee-horizontal-group {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0 1.2rem 0;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
 /* Témoignages */
 .succes-fee-testimonial-row {
   display: flex;
   align-items: center;
   gap: 1rem;
-  max-width: 600px;
+  max-width: 320px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 1px 6px rgba(10,31,61,0.06);
   padding: 0.7em 1em;
-  margin: 1.2em 0;
   position: relative;
   z-index: 1;
+  min-width: 0;
+  flex: 1 1 260px;
 }
 .succes-fee-avatar {
   width: 64px;
@@ -840,10 +853,12 @@ h1, h2, h3, p {
   background: #f7fafc;
   box-shadow: 0 2px 8px rgba(10,31,61,0.06);
   flex-shrink: 0;
+  display: block;
 }
 .succes-fee-testimonial-text {
   font-size: 1rem;
   color: #1a202c;
+  min-width: 0;
 }
 .succes-fee-testimonial-text .font-bold {
   font-weight: bold;
@@ -857,11 +872,16 @@ h1, h2, h3, p {
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
-  margin: 1.5em 0 1.5em 0;
+  background: #f5faff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(10,31,61,0.04);
+  padding: 1em 1.5em;
   font-size: 1.15rem;
   opacity: 0.92;
   z-index: 1;
   position: relative;
+  min-width: 220px;
+  flex: 1 1 220px;
 }
 .succes-fee-step {
   background: #fff;
@@ -918,19 +938,15 @@ h1, h2, h3, p {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .succes-fee-testimonial-row {
+@media (max-width: 1100px) {
+  .succes-fee-horizontal-group {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.7rem;
-    max-width: 100%;
-    padding: 0.6em 0.7em;
+    align-items: stretch;
+    gap: 1.2rem;
   }
   .succes-fee-central-schema {
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 1rem;
-    margin: 1em 0 1em 0;
+    justify-content: flex-start;
+    margin: 0 auto;
   }
 }
 @media (max-width: 600px) {
@@ -939,10 +955,16 @@ h1, h2, h3, p {
   }
   .succes-fee-testimonial-row {
     padding: 0.5em 0.7em;
+    max-width: 100%;
   }
   .succes-fee-avatar {
     width: 52px;
     height: 52px;
+  }
+  .succes-fee-central-schema {
+    padding: 0.7em 0.5em;
+    font-size: 1rem;
+    min-width: 0;
   }
 }
 
@@ -955,7 +977,6 @@ h1, h2, h3, p {
   0% { background-position-y: 100%; }
   100% { background-position-y: 0%; }
 }
-
 .case-study-icon {
   font-size: 1.3em;
   margin-top: 0.05em;
@@ -1666,34 +1687,32 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
     <b>Vous restez libre : cette option n’est proposée qu’aux clients engagés dans une démarche de transformation IA, sans aucune obligation.</b>
   </p>
 
-  <!-- Bloc témoignage Pierre -->
-  <div class="succes-fee-testimonial-row">
-    <img src="bloc23.webp" alt="Pierre L." class="succes-fee-avatar" width="64" height="64" loading="lazy">
-    <div class="succes-fee-testimonial-text">
-      <p class="italic mb-1">“L’équipe a su comprendre nos enjeux et adapter l’IA à nos process, sans jamais survendre les résultats. Nous avons avancé ensemble, étape par étape.”</p>
-      <p class="font-bold">Pierre L., CEO, Industrie</p>
+  <!-- Bloc horizontal : témoignage Pierre | schéma | témoignage Sophie -->
+  <div class="succes-fee-horizontal-group">
+    <div class="succes-fee-testimonial-row">
+      <img src="bloc23.webp" alt="Pierre L." class="succes-fee-avatar" width="64" height="64" loading="lazy">
+      <div class="succes-fee-testimonial-text">
+        <p class="italic mb-1">“L’équipe a su comprendre nos enjeux et adapter l’IA à nos process, sans jamais survendre les résultats. Nous avons avancé ensemble, étape par étape.”</p>
+        <p class="font-bold">Pierre L., CEO, Industrie</p>
+      </div>
     </div>
-  </div>
-
-  <!-- Schéma central -->
-  <div class="succes-fee-central-schema">
-    <span class="succes-fee-step">
-      <i aria-hidden="true">💡</i>
-      <span class="nowrap">30% <small>à la signature</small></span>
-    </span>
-    <span class="succes-fee-arrow">→</span>
-    <span class="succes-fee-step">
-      <i aria-hidden="true">🎯</i>
-      <span class="nowrap">70% <small>si objectifs atteints</small></span>
-    </span>
-  </div>
-
-  <!-- Bloc témoignage Sophie -->
-  <div class="succes-fee-testimonial-row">
-    <img src="bloc22.webp" alt="Sophie M." class="succes-fee-avatar" width="64" height="64" loading="lazy">
-    <div class="succes-fee-testimonial-text">
-      <p class="italic mb-1">“Un accompagnement pragmatique, une vraie écoute, et des résultats concrets dès les premières semaines.”</p>
-      <p class="font-bold">Sophie M., Responsable Opérations, Services</p>
+    <div class="succes-fee-central-schema">
+      <span class="succes-fee-step">
+        <i aria-hidden="true">💡</i>
+        <span class="nowrap">30% <small>à la signature</small></span>
+      </span>
+      <span class="succes-fee-arrow">→</span>
+      <span class="succes-fee-step">
+        <i aria-hidden="true">🎯</i>
+        <span class="nowrap">70% <small>si objectifs atteints</small></span>
+      </span>
+    </div>
+    <div class="succes-fee-testimonial-row">
+      <img src="bloc22.webp" alt="Sophie M." class="succes-fee-avatar" width="64" height="64" loading="lazy">
+      <div class="succes-fee-testimonial-text">
+        <p class="italic mb-1">“Un accompagnement pragmatique, une vraie écoute, et des résultats concrets dès les premières semaines.”</p>
+        <p class="font-bold">Sophie M., Responsable Opérations, Services</p>
+      </div>
     </div>
   </div>
 
@@ -1706,7 +1725,6 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
     </span>
   </div>
 </section>
-
 
   <!-- ABONNEMENT DATA+ -->
 <section>
