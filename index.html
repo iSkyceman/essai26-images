@@ -854,30 +854,28 @@ h1, h2, h3, p {
   font-weight: normal;
 }
 
-/* Témoignages pleine largeur, harmonisés avec l'étude de cas */
+/* Témoignages côte à côte - largeur agrandie */
 .succes-fee-testimonials-row {
   display: flex;
-  flex-direction: row;
   gap: 2rem;
   justify-content: center;
   align-items: stretch;
-  margin: 2rem auto 1rem auto;
-  max-width: 900px;
-  width: 100%;
+  margin: 2rem 0 1rem 0;
+  flex-wrap: wrap;
   position: relative;
   z-index: 1;
 }
 .succes-fee-testimonial {
   display: flex;
   align-items: flex-start;
-  gap: 1.2rem;
+  gap: 1rem;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 1px 6px rgba(10,31,61,0.06);
-  padding: 1.2em 2em;
+  padding: 0.7em 1em;
+  max-width: 600px;        /* <-- élargi ici */
   min-width: 0;
-  flex: 1 1 0;
-  max-width: 100%;
+  flex: 1 1 500px;         /* <-- élargi ici */
 }
 .succes-fee-avatar {
   width: 64px;
@@ -892,10 +890,9 @@ h1, h2, h3, p {
   aspect-ratio: 1/1;
 }
 .succes-fee-testimonial-text {
-  font-size: 1.08rem;
+  font-size: 1rem;
   color: #1a202c;
   min-width: 0;
-  line-height: 1.6;
 }
 .succes-fee-testimonial-text .font-bold {
   font-weight: bold;
@@ -912,13 +909,11 @@ h1, h2, h3, p {
   border-left: 4px solid #2563eb;
   border-radius: 8px;
   padding: 0.7em 1em;
-  margin: 1.1em auto 0.2em auto;
+  margin: 1.1em 0 0.2em 0;
   font-size: 1.04rem;
   box-shadow: 0 1px 4px rgba(10,31,61,0.04);
   position: relative;
   z-index: 1;
-  max-width: 900px;
-  width: 100%;
 }
 .case-study-icon {
   font-size: 2em;
@@ -927,32 +922,27 @@ h1, h2, h3, p {
 }
 
 /* Responsive */
-@media (max-width: 950px) {
-  .succes-fee-testimonials-row,
-  .succes-fee-case-study {
-    max-width: 98vw;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  .succes-fee-testimonial {
-    padding: 1em 1em;
-  }
-}
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .succes-fee-testimonials-row {
     flex-direction: column;
     gap: 1.2rem;
     align-items: stretch;
   }
   .succes-fee-testimonial {
-    padding: 0.8em 0.7em;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 600px) {
+  .succes-fee {
+    padding: 1.2rem 0.5rem;
+  }
+  .succes-fee-testimonial {
+    padding: 0.5em 0.7em;
   }
   .succes-fee-avatar {
     width: 52px;
     height: 52px;
-  }
-  .succes-fee-testimonial-text {
-    font-size: 0.97rem;
   }
 }
 
@@ -965,6 +955,7 @@ h1, h2, h3, p {
   0% { background-position-y: 100%; }
   100% { background-position-y: 0%; }
 }
+
 
 .case-study-icon {
   font-size: 1.3em;
