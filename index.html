@@ -854,14 +854,15 @@ h1, h2, h3, p {
   font-weight: normal;
 }
 
-/* Témoignages côte à côte, plus larges et équilibrés */
+/* Témoignages côte à côte, largeur harmonisée avec l'étude de cas */
 .succes-fee-testimonials-row {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   justify-content: center;
   align-items: stretch;
-  margin: 2.5rem 0 1.5rem 0;
-  flex-wrap: wrap;
+  margin: 2.5rem auto 1.5rem auto;
+  max-width: 900px;
+  width: 100%;
   position: relative;
   z-index: 1;
 }
@@ -872,18 +873,18 @@ h1, h2, h3, p {
   background: #fff;
   border-radius: 14px;
   box-shadow: 0 2px 14px rgba(10,31,61,0.08);
-  padding: 1.3em 2.5em;
-  max-width: 620px;
+  padding: 1.2em 2em;
   min-width: 0;
-  flex: 1 1 500px;
-  transition: box-shadow 0.3s ease;
+  flex: 1 1 0;
+  transition: box-shadow 0.3s;
+  max-width: 430px;
 }
 .succes-fee-testimonial:hover {
   box-shadow: 0 6px 28px rgba(10,31,61,0.12);
 }
 .succes-fee-avatar {
-  width: 72px;
-  height: 72px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #e2e8f0;
@@ -894,7 +895,7 @@ h1, h2, h3, p {
   aspect-ratio: 1 / 1;
 }
 .succes-fee-testimonial-text {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   color: #1a202c;
   min-width: 0;
   line-height: 1.6;
@@ -914,11 +915,13 @@ h1, h2, h3, p {
   border-left: 4px solid #2563eb;
   border-radius: 8px;
   padding: 0.7em 1em;
-  margin: 1.2em 0 0.3em 0;
+  margin: 1.2em auto 0.3em auto;
   font-size: 1.06rem;
   box-shadow: 0 1px 5px rgba(10,31,61,0.05);
   position: relative;
   z-index: 1;
+  max-width: 900px;
+  width: 100%;
 }
 .case-study-icon {
   font-size: 2.1em;
@@ -927,38 +930,34 @@ h1, h2, h3, p {
 }
 
 /* Responsive */
-@media (max-width: 1100px) {
+@media (max-width: 950px) {
+  .succes-fee-testimonials-row,
+  .succes-fee-case-study {
+    max-width: 98vw;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .succes-fee-testimonial {
+    max-width: 100%;
+    padding: 1em 1em;
+  }
+}
+@media (max-width: 700px) {
   .succes-fee-testimonials-row {
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 1.2rem;
     align-items: stretch;
   }
   .succes-fee-testimonial {
     max-width: 100%;
-    flex: 1 1 100%;
-    padding: 1em 1.2em;
-  }
-  .succes-fee-avatar {
-    width: 60px;
-    height: 60px;
-  }
-  .succes-fee-testimonial-text {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 700px) {
-  .succes-fee {
-    padding: 1.2rem 0.8rem;
-  }
-  .succes-fee-testimonial {
-    padding: 0.8em 1em;
+    padding: 0.8em 0.7em;
   }
   .succes-fee-avatar {
     width: 52px;
     height: 52px;
   }
   .succes-fee-testimonial-text {
-    font-size: 0.95rem;
+    font-size: 0.97rem;
   }
 }
 
