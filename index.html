@@ -1975,30 +1975,6 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
       </div>
     </div>
   </div>
-<footer class="mentions-legales-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <!-- Autres éléments éventuels du footer ici -->
-
-      <div class="legal-link">
-        <a href="/mentions-legales.html"><span>Mentions légales</span></a>
-        &nbsp;|&nbsp;
-        <a href="/politique-de-confidentialite.html"><span>Politique de confidentialité</span></a>
-        &nbsp;|&nbsp;
-        <a href="/cgv.html"><span>CGV</span></a>
-      </div>
-
-      <!-- Exemple de coordonnées ou réseaux sociaux -->
-      <div class="footer-coords">
-        <span>© 2025 iSkyce – Tous droits réservés</span>
-      </div>
-      <div class="footer-social">
-        <!-- Exemples de liens sociaux -->
-        <a href="https://www.linkedin.com/company/iskyce" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i>LinkedIn</a>
-        <!-- Ajoute d'autres réseaux si besoin -->
-      </div>
-    </div>
-  </div>
 </footer>
 <style>
 .mentions-legales-footer {
@@ -2031,11 +2007,12 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
 .mentions-legales-footer .footer-grid {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: center;   /* centre horizontalement */
+  text-align: center;    /* centre le texte */
   position: relative;
   z-index: 2;
 }
+
 .mentions-legales-footer .footer-grid > div {
   margin-bottom: 1.2rem;
 }
@@ -2084,11 +2061,12 @@ brancherSelectPrix('select-accompagnement', 'prix-accompagnement', 'accompagneme
   0% { background-position: center 60%; }
   100% { background-position: center 10%; }
 }
+
 .mentions-legales-footer {
   animation: moveBackground 5s linear infinite alternate;
 }
-</style>
 
+</style>
 
   <!-- POPUP RÉSERVATION (pour tous les boutons offres) -->
 <div id="popup-reservation"
